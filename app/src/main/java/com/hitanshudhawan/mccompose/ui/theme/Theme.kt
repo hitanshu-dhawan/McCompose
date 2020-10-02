@@ -1,4 +1,4 @@
-package com.hitanshudhawan.mccompose.ui
+package com.hitanshudhawan.mccompose.ui.theme
 
 import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.material.MaterialTheme

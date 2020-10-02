@@ -1,4 +1,4 @@
-package com.hitanshudhawan.mccompose.ui
+package com.hitanshudhawan.mccompose.ui.theme
 
 import androidx.compose.material.Typography
 import androidx.compose.ui.text.TextStyle
