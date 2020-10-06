@@ -26,7 +26,7 @@ fun SpotlightCard(
     Box(
         modifier = modifier
             .preferredWidth(170.dp)
-            .clip(RoundedCornerShape(32.dp)),
+            .clip(RoundedCornerShape(16.dp)),
         backgroundColor = Color.White,
     ) {
         Column(
