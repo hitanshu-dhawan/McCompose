@@ -15,10 +15,14 @@ import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
 import androidx.ui.tooling.preview.Preview
+import com.hitanshudhawan.mccompose.data.HomeRepository
 import com.hitanshudhawan.mccompose.ui.components.SpotlightCard
 
 @Composable
 fun HomeScreen() {
+
+    val data = HomeRepository.getHomeData()
+
     Scaffold(
         topBar = {
             TopAppBar(
@@ -36,7 +40,7 @@ fun HomeScreen() {
             Spacer(modifier = Modifier.preferredHeight(16.dp))
 
             Text(
-                text = "Hello Hitanshu!", // todo : make this name bold.
+                text = "Hello ${data.user.name}!", // todo : make this name bold.
                 style = MaterialTheme.typography.h3,
                 modifier = Modifier.padding(horizontal = horizontalPadding)
             )
@@ -73,10 +77,10 @@ fun HomeScreen() {
             // Spotlight Cards
             ScrollableRow {
                 Spacer(modifier = Modifier.preferredWidth(horizontalPadding))
-                items.forEach { item ->
+                data.categories.forEach { category ->
                     SpotlightCard(
-                        imageUrl = item.imageUrl,
-                        title = item.title
+                        imageUrl = category.image,
+                        title = category.name
                     )
                     Spacer(modifier = Modifier.preferredWidth(horizontalPadding))
                 }
@@ -95,35 +99,6 @@ fun HomeScreen() {
 
     }
 }
-
-private data class Data(val imageUrl: String, val title: String)
-
-private val items = listOf(
-    Data(
-        imageUrl = "https://www.mcdonalds.com/is/image/content/dam/usa/nfl/assets/meal/desktop/h-mcdonalds-2-Cheeseburger-Extra-Value-Meals.jpg",
-        title = "Combo Meals"
-    ),
-    Data(
-        imageUrl = "https://www.mcdonalds.com/is/image/content/dam/usa/nfl/assets/meal/desktop/h-mcdonalds-Hamburger.png",
-        title = "Happy Meals",
-    ),
-    Data(
-        imageUrl = "https://www.mcdonalds.com/is/image/content/dam/usa/nfl/nutrition/items/hero/desktop/t-mcdonalds-qpc-deluxe-burger.jpg",
-        title = "Burgers",
-    ),
-    Data(
-        imageUrl = "https://www.mcdonalds.com/is/image/content/dam/usa/nfl/nutrition/items/hero/desktop/t-mcdonalds-fries-medium.jpg",
-        title = "Fries",
-    ),
-    Data(
-        imageUrl = "https://www.mcdonalds.com/is/image/content/dam/usa/nfl/nutrition/items/hero/desktop/t-mcdonalds-Vanilla-Reduced-Fat-Ice-Cream-Cone.jpg",
-        title = "Desserts",
-    ),
-    Data(
-        imageUrl = "https://www.mcdonalds.com/is/image/content/dam/usa/nfl/nutrition/items/hero/desktop/t-mcdonalds-Coca-Cola-Classic-Small.jpg",
-        title = "Beverages",
-    ),
-)
 
 @Preview("HomeScreen")
 @Composable
