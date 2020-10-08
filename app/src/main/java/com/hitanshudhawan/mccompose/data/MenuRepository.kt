@@ -81,6 +81,30 @@ object MenuRepository {
                     price = 0.00,
                     categoryId = 1
                 ),
+                MenuItem(
+                    id = 2001,
+                    name = "Small French Fries",
+                    description = "Our World Famous Fries are made with premium potatoes such as the Russet Burbank and the Shepody. With 0g of trans fat per labeled serving, these epic fries are crispy and golden on the outside and fluffy on the inside.",
+                    image = "small_french_fries.png",
+                    price = 0.00,
+                    categoryId = 2
+                ),
+                MenuItem(
+                    id = 2002,
+                    name = "Medium French Fries",
+                    description = "Our World Famous Fries are made with premium potatoes such as the Russet Burbank and the Shepody. With 0g of trans fat per labeled serving, these epic fries are crispy and golden on the outside and fluffy on the inside.",
+                    image = "medium_french_fries.png",
+                    price = 0.00,
+                    categoryId = 2
+                ),
+                MenuItem(
+                    id = 2003,
+                    name = "Large French Fries",
+                    description = "Our World Famous Fries are made with premium potatoes such as the Russet Burbank and the Shepody. With 0g of trans fat per labeled serving, these epic fries are crispy and golden on the outside and fluffy on the inside.",
+                    image = "large_french_fries.png",
+                    price = 0.00,
+                    categoryId = 2
+                ),
             ),
         )
     }
