@@ -8,12 +8,12 @@ object CategoriesRepository {
         return listOf(
             Category(
                 id = 1,
-                image = "https://www.mcdonalds.com/is/image/content/dam/usa/nfl/nutrition/items/hero/desktop/t-mcdonalds-qpc-deluxe-burger.jpg",
+                image = "https://raw.githubusercontent.com/DumbPolyglotProgrammer/PigGame/master/images/" + "quarter_pounder_with_cheese_deluxe.png",
                 name = "Burgers",
             ),
             Category(
                 id = 2,
-                image = "https://www.mcdonalds.com/is/image/content/dam/usa/nfl/nutrition/items/hero/desktop/t-mcdonalds-fries-medium.jpg",
+                image = "https://raw.githubusercontent.com/DumbPolyglotProgrammer/PigGame/master/images/" + "medium_french_fries.png",
                 name = "Fries",
             ),
             Category(
