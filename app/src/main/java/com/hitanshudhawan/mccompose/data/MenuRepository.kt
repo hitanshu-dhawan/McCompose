@@ -105,6 +105,110 @@ object MenuRepository {
                     price = 0.00,
                     categoryId = 2
                 ),
+                MenuItem(
+                    id = 3001,
+                    name = "Coca-Cola",
+                    description = "Coca-Cola is a refreshing McDonald's soda option that complements all of your menu favorites.",
+                    image = "https://raw.githubusercontent.com/DumbPolyglotProgrammer/PigGame/master/images/" + "coca_cola.png",
+                    price = 0.00,
+                    categoryId = 3
+                ),
+                MenuItem(
+                    id = 3002,
+                    name = "Sprite",
+                    description = "Sprite fountain drink has a delicious lemon-lime taste.",
+                    image = "https://raw.githubusercontent.com/DumbPolyglotProgrammer/PigGame/master/images/" + "sprite.png",
+                    price = 0.00,
+                    categoryId = 3
+                ),
+                MenuItem(
+                    id = 3003,
+                    name = "Fanta Orange",
+                    description = "Fanta Orange full of bubbly, refreshing orange flavor.",
+                    image = "https://raw.githubusercontent.com/DumbPolyglotProgrammer/PigGame/master/images/" + "fanta_orange.png",
+                    price = 0.00,
+                    categoryId = 3
+                ),
+                MenuItem(
+                    id = 3004,
+                    name = "Diet Coke",
+                    description = "Icy cold Diet Coke, with zero calories.",
+                    image = "https://raw.githubusercontent.com/DumbPolyglotProgrammer/PigGame/master/images/" + "diet_coke.png",
+                    price = 0.00,
+                    categoryId = 3
+                ),
+                MenuItem(
+                    id = 3005,
+                    name = "Chocolate Shake",
+                    description = "Chocolate Shake featuring our deliciously creamy vanilla soft serve and chocolate syrup, topped with whipped topping.",
+                    image = "https://raw.githubusercontent.com/DumbPolyglotProgrammer/PigGame/master/images/" + "chocolate_shake.png",
+                    price = 0.00,
+                    categoryId = 3
+                ),
+                MenuItem(
+                    id = 3006,
+                    name = "Vanilla Shake",
+                    description = "The classic vanilla shake from McDonald’s. It’s made with our creamy vanilla soft serve and topped with whipped topping for a cool, tasty treat.",
+                    image = "https://raw.githubusercontent.com/DumbPolyglotProgrammer/PigGame/master/images/" + "vanilla_shake.png",
+                    price = 0.00,
+                    categoryId = 3
+                ),
+                MenuItem(
+                    id = 3007,
+                    name = "Strawberry Shake",
+                    description = "Strawberry Shake made with creamy vanilla soft serve, blended with strawberry flavored deliciousness, topped with whipped topping.",
+                    image = "https://raw.githubusercontent.com/DumbPolyglotProgrammer/PigGame/master/images/" + "strawberry_shake.png",
+                    price = 0.00,
+                    categoryId = 3
+                ),
+                MenuItem(
+                    id = 3008,
+                    name = "McCafé Hot Chocolate",
+                    description = "Taste the delicious chocolaty flavor of a McCafé hot chocolate. Hot chocolate made with steamed whole or nonfat milk, rich chocolate syrup, and topped with whipped topping and chocolate drizzle.",
+                    image = "https://raw.githubusercontent.com/DumbPolyglotProgrammer/PigGame/master/images/" + "mccafe_hot_chocolate.png",
+                    price = 0.00,
+                    categoryId = 3
+                ),
+                MenuItem(
+                    id = 3009,
+                    name = "Iced Tea",
+                    description = "A refreshing drink of McDonald’s Iced Tea, freshly brewed with a brisk blend of orange pekoe and pekoe cut black tea, served ice cold.",
+                    image = "https://raw.githubusercontent.com/DumbPolyglotProgrammer/PigGame/master/images/" + "iced_tea.png",
+                    price = 0.00,
+                    categoryId = 3
+                ),
+                MenuItem(
+                    id = 3010,
+                    name = "Minute Maid Premium Orange Juice",
+                    description = "100% orange juice, packed with Vitamin C. Available in Small, Medium and Large.",
+                    image = "https://raw.githubusercontent.com/DumbPolyglotProgrammer/PigGame/master/images/" + "minute_maid_premium_orange_juice.png",
+                    price = 0.00,
+                    categoryId = 3
+                ),
+                MenuItem(
+                    id = 3011,
+                    name = "Minute Maid Fruit Punch Slushie",
+                    description = "Turn up summer with this fruit punch slushie made with crushed ice and blended with Minute Maid fruit punch flavor, available only at McDonald’s.",
+                    image = "https://raw.githubusercontent.com/DumbPolyglotProgrammer/PigGame/master/images/" + "minute_maid_fruit_punch_slushie.png",
+                    price = 0.00,
+                    categoryId = 3
+                ),
+                MenuItem(
+                    id = 3012,
+                    name = "Minute Maid Blue Raspberry Slushie",
+                    description = "Turn up summer with this Minute Maid Blue Raspberry Slushie, full of sweet, fruity blue raspberry flavor, available only at McDonald’s.",
+                    image = "https://raw.githubusercontent.com/DumbPolyglotProgrammer/PigGame/master/images/" + "minute_maid_blue_raspberry_slushie.png",
+                    price = 0.00,
+                    categoryId = 3
+                ),
+                MenuItem(
+                    id = 3013,
+                    name = "Minute Maid Pink Lemonade Slushie",
+                    description = "Sip a Minute Maid Pink Lemonade Slushie at McDonald's! Minute Maid Pink Lemonade is the newest addition to our lineup of McDonald's slushie flavors!",
+                    image = "https://raw.githubusercontent.com/DumbPolyglotProgrammer/PigGame/master/images/" + "minute_maid_pink_lemonade_slushie.png",
+                    price = 0.00,
+                    categoryId = 3
+                ),
             ),
         )
     }

@@ -18,7 +18,7 @@ object CategoriesRepository {
             ),
             Category(
                 id = 3,
-                image = "https://www.mcdonalds.com/is/image/content/dam/usa/nfl/nutrition/items/hero/desktop/t-mcdonalds-Coca-Cola-Classic-Small.jpg",
+                image = "https://raw.githubusercontent.com/DumbPolyglotProgrammer/PigGame/master/images/" + "coca_cola.png",
                 name = "Beverages",
             ),
             Category(
