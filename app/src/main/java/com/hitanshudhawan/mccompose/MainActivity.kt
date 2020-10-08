@@ -2,22 +2,17 @@ package com.hitanshudhawan.mccompose
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
-import androidx.compose.runtime.Composable
 import androidx.compose.ui.platform.setContent
-import androidx.ui.tooling.preview.Preview
 import com.hitanshudhawan.mccompose.ui.home.HomeScreen
+import com.hitanshudhawan.mccompose.ui.theme.McComposeTheme
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
-            HomeScreen()
+            McComposeTheme(lightTheme = true) {
+                HomeScreen()
+            }
         }
     }
-}
-
-@Preview(showBackground = true)
-@Composable
-fun DefaultPreview() {
-    HomeScreen()
 }

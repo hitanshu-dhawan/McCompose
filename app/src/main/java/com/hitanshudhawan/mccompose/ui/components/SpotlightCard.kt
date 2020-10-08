@@ -6,28 +6,26 @@ import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.MaterialTheme
+import androidx.compose.material.Surface
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
-import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import androidx.ui.tooling.preview.Preview
+import com.hitanshudhawan.mccompose.ui.theme.McComposeTheme
 import dev.chrisbanes.accompanist.coil.CoilImage
 
 @Composable
 fun SpotlightCard(
     imageUrl: String,
-    title: String,
-    modifier: Modifier = Modifier
+    title: String
 ) {
-    Box(
-        modifier = modifier
-            .preferredWidth(170.dp)
-            .clip(RoundedCornerShape(16.dp)),
-        backgroundColor = Color.White,
+    Surface(
+        modifier = Modifier.preferredWidth(170.dp),
+        shape = MaterialTheme.shapes.medium
     ) {
         Column(
             modifier = Modifier
@@ -62,8 +60,23 @@ fun SpotlightCard(
 @Preview("Spotlight Card")
 @Composable
 fun SpotlightCardPreview() {
-    SpotlightCard(
-        imageUrl = "https://www.mcdonalds.com/is/image/content/dam/usa/nfl/assets/meal/desktop/h-mcdonalds-Double-Quarter-Pounder-with-Cheese-Extra-Value-Meals.jpg",
-        title = "Happy Meals"
-    )
+    McComposeTheme {
+        SpotlightCard(
+            // todo : image in preview
+            imageUrl = "https://www.mcdonalds.com/is/image/content/dam/usa/nfl/assets/meal/desktop/h-mcdonalds-Double-Quarter-Pounder-with-Cheese-Extra-Value-Meals.jpg",
+            title = "Happy Meals"
+        )
+    }
+}
+
+@Preview("Spotlight Card • Dark")
+@Composable
+fun SpotlightCardDarkPreview() {
+    McComposeTheme(lightTheme = false) {
+        SpotlightCard(
+            // todo : image in preview
+            imageUrl = "https://www.mcdonalds.com/is/image/content/dam/usa/nfl/assets/meal/desktop/h-mcdonalds-Double-Quarter-Pounder-with-Cheese-Extra-Value-Meals.jpg",
+            title = "Happy Meals"
+        )
+    }
 }

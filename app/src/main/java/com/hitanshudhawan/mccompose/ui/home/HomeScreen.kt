@@ -2,21 +2,17 @@ package com.hitanshudhawan.mccompose.ui.home
 
 import androidx.compose.foundation.*
 import androidx.compose.foundation.layout.*
-import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Scaffold
 import androidx.compose.material.TopAppBar
-import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.filled.Search
 import androidx.compose.runtime.Composable
-import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.draw.clip
-import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
 import androidx.ui.tooling.preview.Preview
 import com.hitanshudhawan.mccompose.data.HomeRepository
+import com.hitanshudhawan.mccompose.ui.components.SearchBar
 import com.hitanshudhawan.mccompose.ui.components.SpotlightCard
+import com.hitanshudhawan.mccompose.ui.theme.McComposeTheme
 
 @Composable
 fun HomeScreen() {
@@ -28,53 +24,32 @@ fun HomeScreen() {
             TopAppBar(
                 title = { Text(text = "McDonald's") }
             )
-        },
-        backgroundColor = Color(0xFFEEEEEE) // todo : theme color or something
+        }
     ) {
 
         val horizontalPadding = 16.dp
 
         ScrollableColumn(
-            modifier = Modifier.fillMaxSize()
+            modifier = Modifier
+                .fillMaxSize()
+                .padding(vertical = 16.dp)
         ) {
-            Spacer(modifier = Modifier.preferredHeight(16.dp))
 
             Text(
-                text = "Hello ${data.user.name}!", // todo : make this name bold.
-                style = MaterialTheme.typography.h3,
+                text = "Hi ${data.user.name}!",
+                style = MaterialTheme.typography.h4,
                 modifier = Modifier.padding(horizontal = horizontalPadding)
             )
 
             Spacer(modifier = Modifier.preferredHeight(16.dp))
 
-            // Search Bar
-            Box(
-                modifier = Modifier
-                    .fillMaxWidth()
-                    .padding(horizontal = horizontalPadding)
-            ) {
-                Row(
-                    modifier = Modifier
-                        .fillMaxWidth()
-                        .clip(RoundedCornerShape(16.dp))
-                        .background(Color.White)
-                        .padding(16.dp)
-                        .gravity(Alignment.CenterHorizontally)
-                ) {
-                    Icon(
-                        asset = Icons.Default.Search
-                    )
-                    Spacer(modifier = Modifier.preferredWidth(8.dp))
-                    Text(
-                        text = "Find what you want...",
-                        style = MaterialTheme.typography.subtitle1
-                    )
-                }
-            }
+            SearchBar(
+                text = "Find what you want...",
+                modifier = Modifier.padding(horizontal = horizontalPadding)
+            )
 
             Spacer(modifier = Modifier.preferredHeight(16.dp))
 
-            // Spotlight Cards
             ScrollableRow {
                 Spacer(modifier = Modifier.preferredWidth(horizontalPadding))
                 data.categories.forEach { category ->
@@ -90,9 +65,11 @@ fun HomeScreen() {
 
             Text(
                 text = "Recommended",
-                style = MaterialTheme.typography.h5,
+                style = MaterialTheme.typography.h6,
                 modifier = Modifier.padding(horizontal = horizontalPadding)
             )
+
+            Spacer(modifier = Modifier.preferredHeight(16.dp))
 
             // ...
         }
@@ -103,5 +80,15 @@ fun HomeScreen() {
 @Preview("HomeScreen")
 @Composable
 fun HomeScreenPreview() {
-    HomeScreen()
+    McComposeTheme {
+        HomeScreen()
+    }
+}
+
+@Preview("HomeScreen • Dark")
+@Composable
+fun HomeScreenDarkPreview() {
+    McComposeTheme(lightTheme = false) {
+        HomeScreen()
+    }
 }
