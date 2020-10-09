@@ -273,6 +273,30 @@ object MenuRepository {
                     price = 0.00,
                     categoryId = 4
                 ),
+                MenuItem(
+                    id = 5001,
+                    name = "Hamburger Happy Meal",
+                    description = "A juicy hamburger with kid-sized World Famous Fries and your choice of a Happy Meal side: Apple Slices or Yoplait GO-GURT Low Fat Strawberry Yogurt. Then pick a kids’ drink: 1% Low Fat Milk Jug, DASANI Water or Honest Kids Appley Ever After Organic Juice Drink.",
+                    image = "https://raw.githubusercontent.com/DumbPolyglotProgrammer/PigGame/master/images/" + "hamburger_happy_meal.png",
+                    price = 0.00,
+                    categoryId = 5
+                ),
+                MenuItem(
+                    id = 5002,
+                    name = "4 Piece Chicken McNuggets Happy Meal",
+                    description = "Grab a McDonald’s Happy Meal and get four tender Chicken McNuggets made with white meat with kid-sized World Famous Fries and a side of Apple Slices. Then pick a kids’ drink: 1% Low Fat Milk Jug, Reduced Sugar Low Fat Chocolate Milk Jug, DASANI Water or Honest Kids Appley Ever After Organic Juice Drink. Plus, a fun toy completes every Happy Meal from McDonald’s.",
+                    image = "https://raw.githubusercontent.com/DumbPolyglotProgrammer/PigGame/master/images/" + "four_piece_chicken_mcnuggets_happy_meal.png",
+                    price = 0.00,
+                    categoryId = 5
+                ),
+                MenuItem(
+                    id = 5003,
+                    name = "6 Piece Chicken McNuggets Happy Meal",
+                    description = "Enjoy a McDonald’s Happy Meal and get six tender Chicken McNuggets made with white meat with kid-sized World Famous Fries and a side of Apple Slices. Then pick a kids’ drink: 1% Low Fat Milk Jug, Reduced Sugar Low Fat Chocolate Milk Jug, DASANI Water or Honest Kids Appley Ever After Organic Juice Drink. Plus, every McDonald’s kids’ meal comes with a McDonald’s Happy Meal toy!",
+                    image = "https://raw.githubusercontent.com/DumbPolyglotProgrammer/PigGame/master/images/" + "six_piece_chicken_mcnuggets_happy_meal.png",
+                    price = 0.00,
+                    categoryId = 5
+                ),
             ),
         )
     }
