@@ -297,6 +297,70 @@ object MenuRepository {
                     price = 0.00,
                     categoryId = 5
                 ),
+                MenuItem(
+                    id = 6001,
+                    name = "Vanilla Cone",
+                    description = "Enjoy our creamy vanilla soft serve in a crispy cone! It's the perfect sweet treat in addition to any McDonald's meal or on its own!",
+                    image = "https://raw.githubusercontent.com/DumbPolyglotProgrammer/PigGame/master/images/" + "vanilla_cone.png",
+                    price = 0.00,
+                    categoryId = 6
+                ),
+                MenuItem(
+                    id = 6002,
+                    name = "Hot Fudge Sundae",
+                    description = "Our classic hot fudge sundae is made with creamy vanilla soft serve and smothered in chocolaty hot fudge topping.",
+                    image = "https://raw.githubusercontent.com/DumbPolyglotProgrammer/PigGame/master/images/" + "hot_fudge_sundae.png",
+                    price = 0.00,
+                    categoryId = 6
+                ),
+                MenuItem(
+                    id = 6003,
+                    name = "McFlurry with M&M'S Candies",
+                    description = "The McDonald’s M&M McFlurry is a sweet, creamy M&M’S dessert of vanilla soft serve with M&M’S chocolate candies swirled in.",
+                    image = "https://raw.githubusercontent.com/DumbPolyglotProgrammer/PigGame/master/images/" + "mcflurry_with_m_and_m_candies.png",
+                    price = 0.00,
+                    categoryId = 6
+                ),
+                MenuItem(
+                    id = 6004,
+                    name = "Kiddie Cone",
+                    description = "Our Kiddie Cone is the perfect sweet little treat made with creamy McDonald's soft serve and a crispy mini cone!",
+                    image = "https://raw.githubusercontent.com/DumbPolyglotProgrammer/PigGame/master/images/" + "kiddie_cone.png",
+                    price = 0.00,
+                    categoryId = 6
+                ),
+                MenuItem(
+                    id = 6005,
+                    name = "Hot Caramel Sundae",
+                    description = "Treat yourself to a Hot Caramel Sundae at McDonald's! This Caramel Sundae combines creamy vanilla soft serve and warm, buttery caramel topping.",
+                    image = "https://raw.githubusercontent.com/DumbPolyglotProgrammer/PigGame/master/images/" + "hot_caramel_sundae.png",
+                    price = 0.00,
+                    categoryId = 6
+                ),
+                MenuItem(
+                    id = 6006,
+                    name = "McFlurry with OREO Cookies",
+                    description = "The McDonald’s McFlurry with OREO Cookies is an popular combination of OREO pieces and vanilla soft serve!",
+                    image = "https://raw.githubusercontent.com/DumbPolyglotProgrammer/PigGame/master/images/" + "mcflurry_with_oreo_cookies.png",
+                    price = 0.00,
+                    categoryId = 6
+                ),
+                MenuItem(
+                    id = 6007,
+                    name = "Baked Apple Pie",
+                    description = "McDonald's Baked Apple Pie is loaded with 100% American-grown apples, with a lattice crust baked to perfection and topped with sprinkled sugar.",
+                    image = "https://raw.githubusercontent.com/DumbPolyglotProgrammer/PigGame/master/images/" + "baked_apple_pie.png",
+                    price = 0.00,
+                    categoryId = 6
+                ),
+                MenuItem(
+                    id = 6008,
+                    name = "Chocolate Chip Cookie",
+                    description = "McDonald's classic chocolate chip cookie, loaded with chocolate chips. It's a soft baked cookie and warmed to perfection.",
+                    image = "https://raw.githubusercontent.com/DumbPolyglotProgrammer/PigGame/master/images/" + "chocolate_chip_cookie.png",
+                    price = 0.00,
+                    categoryId = 6
+                ),
             ),
         )
     }
