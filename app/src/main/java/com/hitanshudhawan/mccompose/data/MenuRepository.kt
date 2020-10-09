@@ -225,6 +225,54 @@ object MenuRepository {
                     price = 0.00,
                     categoryId = 3
                 ),
+                MenuItem(
+                    id = 4001,
+                    name = "Big Mac Combo Meal",
+                    description = "The one and only McDonald’s Big Mac Combo Meal. Big Mac Ingredients include a classic sesame hamburger bun, Big Mac Sauce, American cheese and sliced pickles. The Big Mac Combo Meal is served with our World Famous Fries and your choice of an icy Coca-Cola fountain drink.",
+                    image = "https://raw.githubusercontent.com/DumbPolyglotProgrammer/PigGame/master/images/" + "big_mac_combo_meal.png",
+                    price = 0.00,
+                    categoryId = 4
+                ),
+                MenuItem(
+                    id = 4002,
+                    name = "Cheeseburger Combo Meal",
+                    description = "Our Cheeseburger Combo Meal is a simple, satisfying classic McDonald’s 100% beef burger, served with our World Famous Fries and your choice of a Medium McDonald’s soda or soft drink.",
+                    image = "https://raw.githubusercontent.com/DumbPolyglotProgrammer/PigGame/master/images/" + "cheeseburger_combo_meal.png",
+                    price = 0.00,
+                    categoryId = 4
+                ),
+                MenuItem(
+                    id = 4003,
+                    name = "Quarter Pounder with Cheese Meal",
+                    description = "Refuel with a Quarter Pounder with Cheese made with fresh beef that’s cooked when you order. The Quarter Pounder with Cheese Combo Meal is served with our World Famous Fries and your choice of an icy medium fountain drink.",
+                    image = "https://raw.githubusercontent.com/DumbPolyglotProgrammer/PigGame/master/images/" + "quarter_pounder_with_cheese_meal.png",
+                    price = 0.00,
+                    categoryId = 4
+                ),
+                MenuItem(
+                    id = 4004,
+                    name = "Double Quarter Pounder with Cheese Meal",
+                    description = "Get double the fresh beef flavor with a Double Quarter Pounder with Cheese made with fresh beef that’s cooked when you order. Served with our World Famous Fries and your choice of an icy soft drink.",
+                    image = "https://raw.githubusercontent.com/DumbPolyglotProgrammer/PigGame/master/images/" + "double_quarter_pounder_with_cheese_meal.png",
+                    price = 0.00,
+                    categoryId = 4
+                ),
+                MenuItem(
+                    id = 4005,
+                    name = "10 piece Chicken McNuggets Meal",
+                    description = "Enjoy 10 tender and delicious Chicken McNuggets made with all white meat chicken—plus our World Famous Fries and your choice of a Medium McDonald’s drink with the 10 Piece McNuggets for the ultimate McDonald’s Combo Meal.",
+                    image = "https://raw.githubusercontent.com/DumbPolyglotProgrammer/PigGame/master/images/" + "ten_piece_chicken_mcnuggets_meal.png",
+                    price = 0.00,
+                    categoryId = 4
+                ),
+                MenuItem(
+                    id = 4006,
+                    name = "Filet-O-Fish Meal",
+                    description = "A classic fish sandwich value meal made with wild-caught Alaskan Pollock on a regular McDonald’s bun, served with our World Famous Fries and your choice of an icy soft drink. Enjoy a Filet-O-Fish Meal today.",
+                    image = "https://raw.githubusercontent.com/DumbPolyglotProgrammer/PigGame/master/images/" + "filet_o_fish_meal.png",
+                    price = 0.00,
+                    categoryId = 4
+                ),
             ),
         )
     }
