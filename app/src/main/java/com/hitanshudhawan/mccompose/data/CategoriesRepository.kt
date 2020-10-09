@@ -24,17 +24,17 @@ object CategoriesRepository {
             Category(
                 id = 4,
                 name = "Combo Meals",
-                image = "https://www.mcdonalds.com/is/image/content/dam/usa/nfl/assets/meal/desktop/h-mcdonalds-2-Cheeseburger-Extra-Value-Meals.jpg",
+                image = "https://raw.githubusercontent.com/DumbPolyglotProgrammer/PigGame/master/images/" + "cheeseburger_combo_meal.png",
             ),
             Category(
                 id = 5,
                 name = "Happy Meals",
-                image = "https://www.mcdonalds.com/is/image/content/dam/usa/nfl/assets/meal/desktop/h-mcdonalds-Hamburger.png",
+                image = "https://raw.githubusercontent.com/DumbPolyglotProgrammer/PigGame/master/images/" + "hamburger_happy_meal.png",
             ),
             Category(
                 id = 6,
                 name = "Desserts",
-                image = "https://www.mcdonalds.com/is/image/content/dam/usa/nfl/nutrition/items/hero/desktop/t-mcdonalds-Vanilla-Reduced-Fat-Ice-Cream-Cone.jpg",
+                image = "https://raw.githubusercontent.com/DumbPolyglotProgrammer/PigGame/master/images/" + "vanilla_cone.png",
             )
         )
     }
