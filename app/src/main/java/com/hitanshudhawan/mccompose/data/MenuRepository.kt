@@ -82,6 +82,22 @@ object MenuRepository {
                     categoryId = 1
                 ),
                 MenuItem(
+                    id = 1010,
+                    name = "McChicken",
+                    description = "The McChicken is a delightfully crispy chicken sandwich with a crispy chicken fillet topped with mayonnaise, shredded iceberg lettuce, and served on a perfectly toasty bun.",
+                    image = "https://raw.githubusercontent.com/DumbPolyglotProgrammer/PigGame/master/images/" + "mcchicken.png",
+                    price = 0.00,
+                    categoryId = 1
+                ),
+                MenuItem(
+                    id = 1011,
+                    name = "Filet-O-Fish",
+                    description = "Dive into our wild-caught Filet-O-Fish! Sourced from sustainable fisheries, topped with melty American cheese and creamy tartar sauce, and served on a soft, steamed bun.",
+                    image = "https://raw.githubusercontent.com/DumbPolyglotProgrammer/PigGame/master/images/" + "filet_o_fish.png",
+                    price = 0.00,
+                    categoryId = 1
+                ),
+                MenuItem(
                     id = 2001,
                     name = "Small French Fries",
                     description = "Our World Famous Fries are made with premium potatoes such as the Russet Burbank and the Shepody. With 0g of trans fat per labeled serving, these epic fries are crispy and golden on the outside and fluffy on the inside.",
