@@ -7,8 +7,10 @@ import androidx.compose.foundation.layout.*
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Surface
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.remember
 import androidx.compose.ui.Layout
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
@@ -21,9 +23,14 @@ fun SpotlightCard(
     imageUrl: String,
     title: String
 ) {
+
+    val isLightTheme = MaterialTheme.colors.isLight
+
     Surface(
         modifier = Modifier.preferredWidth(170.dp),
-        shape = MaterialTheme.shapes.medium
+        shape = MaterialTheme.shapes.medium,
+        color = remember { getRandomBackgroundColor(isLightTheme) },
+        contentColor = MaterialTheme.colors.onSurface
     ) {
         Column(
             modifier = Modifier
@@ -71,6 +78,21 @@ fun SpotlightCard(
             }
         }
     }
+}
+
+private fun getRandomBackgroundColor(isLightTheme: Boolean): Color {
+
+    // List of light (50) and dark (700) colors
+    val colors = listOf(
+        Pair(Color(0xFFFCE4EC), Color(0xFFC2185B)), // Pink
+        Pair(Color(0xFFF3E5F5), Color(0xFF7B1FA2)), // Purple
+        Pair(Color(0xFFE1F5FE), Color(0xFF0288D1)), // Light Blue
+        Pair(Color(0xFFF1F8E9), Color(0xFF689F38)), // Light Green
+        Pair(Color(0xFFFFFDE7), Color(0xFFFBC02D)), // Yellow
+    )
+
+    val color = colors.random()
+    return if (isLightTheme) color.first else color.second
 }
 
 @Preview("Spotlight Card")

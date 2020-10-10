@@ -64,6 +64,14 @@ fun HomeScreen() {
             Spacer(modifier = Modifier.preferredHeight(16.dp))
 
             Text(
+                text = "Popular",
+                style = MaterialTheme.typography.h6,
+                modifier = Modifier.padding(horizontal = horizontalPadding)
+            )
+
+            Spacer(modifier = Modifier.preferredHeight(16.dp))
+
+            Text(
                 text = "Recommended",
                 style = MaterialTheme.typography.h6,
                 modifier = Modifier.padding(horizontal = horizontalPadding)
