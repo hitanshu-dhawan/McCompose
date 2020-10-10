@@ -29,8 +29,8 @@ fun SpotlightCard(
             modifier = Modifier
                 .fillMaxWidth()
                 .clickable(onClick = { /*todo*/ })
+                .padding(vertical = 16.dp)
         ) {
-            Spacer(modifier = Modifier.preferredHeight(16.dp))
             Text(
                 text = title,
                 maxLines = 1,
