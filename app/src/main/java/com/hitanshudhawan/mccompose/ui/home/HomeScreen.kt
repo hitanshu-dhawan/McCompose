@@ -27,6 +27,7 @@ fun HomeScreen() {
         }
     ) {
 
+        // TODO : Use a global size here, e.g. like in shapes and colors (theme)
         val horizontalPadding = 16.dp
 
         ScrollableColumn(
@@ -71,6 +72,10 @@ fun HomeScreen() {
 
             Spacer(modifier = Modifier.preferredHeight(16.dp))
 
+            // ...
+
+            Spacer(modifier = Modifier.preferredHeight(16.dp))
+
             Text(
                 text = "Recommended",
                 style = MaterialTheme.typography.h6,
@@ -80,6 +85,8 @@ fun HomeScreen() {
             Spacer(modifier = Modifier.preferredHeight(16.dp))
 
             // ...
+
+            Spacer(modifier = Modifier.preferredHeight(16.dp))
         }
 
     }

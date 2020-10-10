@@ -27,7 +27,7 @@ fun SpotlightCard(
     val isLightTheme = MaterialTheme.colors.isLight
 
     Surface(
-        modifier = Modifier.preferredWidth(170.dp),
+        modifier = Modifier.preferredWidth(160.dp),
         shape = MaterialTheme.shapes.medium,
         color = remember { getRandomBackgroundColor(isLightTheme) },
         contentColor = MaterialTheme.colors.onSurface
