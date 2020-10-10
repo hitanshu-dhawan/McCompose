@@ -33,8 +33,8 @@ fun HomeScreen() {
         ScrollableColumn(
             modifier = Modifier
                 .fillMaxSize()
-                .padding(vertical = 16.dp)
         ) {
+            Spacer(modifier = Modifier.preferredHeight(16.dp))
 
             Text(
                 text = "Hi ${data.user.name}!",
@@ -72,7 +72,17 @@ fun HomeScreen() {
 
             Spacer(modifier = Modifier.preferredHeight(16.dp))
 
-            // ...
+            // TODO
+            ScrollableRow {
+                Spacer(modifier = Modifier.preferredWidth(horizontalPadding))
+                data.popularMenuItems.forEach { menuItem ->
+                    SpotlightCard(
+                        imageUrl = menuItem.image,
+                        title = menuItem.name
+                    )
+                    Spacer(modifier = Modifier.preferredWidth(horizontalPadding))
+                }
+            }
 
             Spacer(modifier = Modifier.preferredHeight(16.dp))
 
@@ -84,7 +94,17 @@ fun HomeScreen() {
 
             Spacer(modifier = Modifier.preferredHeight(16.dp))
 
-            // ...
+            // TODO
+            ScrollableRow {
+                Spacer(modifier = Modifier.preferredWidth(horizontalPadding))
+                data.recommendedMenuItems.forEach { menuItem ->
+                    SpotlightCard(
+                        imageUrl = menuItem.image,
+                        title = menuItem.name
+                    )
+                    Spacer(modifier = Modifier.preferredWidth(horizontalPadding))
+                }
+            }
 
             Spacer(modifier = Modifier.preferredHeight(16.dp))
         }
