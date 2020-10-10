@@ -37,6 +37,7 @@ fun SearchBar(
                 style = MaterialTheme.typography.subtitle1
             )
             // TODO : Fix tint of icon and text, by contentColor or onPrimary/onSurface from Theme
+            // TODO : MaterialTheme.colors.onSurface.copy(alpha = 0.1f)
         }
     }
 }
