@@ -20,8 +20,8 @@ import dev.chrisbanes.accompanist.coil.CoilImage
 
 @Composable
 fun SpotlightCard(
+    title: String,
     imageUrl: String,
-    title: String
 ) {
 
     val isLightTheme = MaterialTheme.colors.isLight
@@ -88,7 +88,7 @@ private fun getRandomBackgroundColor(isLightTheme: Boolean): Color {
         Pair(Color(0xFFF3E5F5), Color(0xFF7B1FA2)), // Purple
         Pair(Color(0xFFE1F5FE), Color(0xFF0288D1)), // Light Blue
         Pair(Color(0xFFF1F8E9), Color(0xFF689F38)), // Light Green
-        Pair(Color(0xFFFFFDE7), Color(0xFFFBC02D)), // Yellow
+        Pair(Color(0xFFFFF3E0), Color(0xFFF57C00)), // Orange
     )
 
     val color = colors.random()
