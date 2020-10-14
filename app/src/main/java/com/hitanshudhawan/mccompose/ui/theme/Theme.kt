@@ -9,7 +9,7 @@ import androidx.compose.ui.graphics.Color
 private val LightThemeColors = lightColors(
     primary = Red500,
     primaryVariant = Red700,
-    // TODO : secondary color, if required
+    // TODO : secondary color, if required. also change in themes.xml
     background = Color.White,
     surface = Gray100,
 )
@@ -17,7 +17,7 @@ private val LightThemeColors = lightColors(
 private val DarkThemeColors = darkColors(
     primary = Red200,
     primaryVariant = Red700,
-    // TODO : secondary color, if required
+    // TODO : secondary color, if required. also change in themes.xml
     background = Color.Black,
     surface = Gray900,
 )
