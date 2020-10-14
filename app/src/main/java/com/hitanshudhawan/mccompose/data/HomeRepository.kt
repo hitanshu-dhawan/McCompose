@@ -45,22 +45,22 @@ object HomeRepository {
                     price = 0.00,
                     categoryId = 4
                 ),
-                MenuItem(
-                    id = 1001,
-                    name = "Big Mac",
-                    description = "Mouthwatering perfection starts with two 100% pure beef patties and Big Mac sauce sandwiched between a sesame seed bun. It’s topped off with pickles, crisp shredded lettuce, finely chopped onion and American cheese.",
-                    image = "https://raw.githubusercontent.com/DumbPolyglotProgrammer/PigGame/master/images/" + "menu_item_big_mac.png",
-                    price = 0.00,
-                    categoryId = 1
-                ),
-                MenuItem(
-                    id = 1003,
-                    name = "Double Quarter Pounder with Cheese",
-                    description = "Each Double Quarter Pounder with Cheese features two quarter pound 100% fresh beef burger patties that are hot, deliciously juicy and cooked when you order. McDonald’s beef patties are seasoned with just a pinch of salt and pepper, sizzled on a flat iron grill, then topped with slivered onions, tangy pickles and two slices of melty cheese on a sesame seed bun.",
-                    image = "https://raw.githubusercontent.com/DumbPolyglotProgrammer/PigGame/master/images/" + "menu_item_double_quarter_pounder_with_cheese.png",
-                    price = 0.00,
-                    categoryId = 1
-                ),
+//                MenuItem(
+//                    id = 1001,
+//                    name = "Big Mac",
+//                    description = "Mouthwatering perfection starts with two 100% pure beef patties and Big Mac sauce sandwiched between a sesame seed bun. It’s topped off with pickles, crisp shredded lettuce, finely chopped onion and American cheese.",
+//                    image = "https://raw.githubusercontent.com/DumbPolyglotProgrammer/PigGame/master/images/" + "menu_item_big_mac.png",
+//                    price = 0.00,
+//                    categoryId = 1
+//                ),
+//                MenuItem(
+//                    id = 1003,
+//                    name = "Double Quarter Pounder with Cheese",
+//                    description = "Each Double Quarter Pounder with Cheese features two quarter pound 100% fresh beef burger patties that are hot, deliciously juicy and cooked when you order. McDonald’s beef patties are seasoned with just a pinch of salt and pepper, sizzled on a flat iron grill, then topped with slivered onions, tangy pickles and two slices of melty cheese on a sesame seed bun.",
+//                    image = "https://raw.githubusercontent.com/DumbPolyglotProgrammer/PigGame/master/images/" + "menu_item_double_quarter_pounder_with_cheese.png",
+//                    price = 0.00,
+//                    categoryId = 1
+//                ),
                 MenuItem(
                     id = 5001,
                     name = "Hamburger Happy Meal",
@@ -88,21 +88,45 @@ object HomeRepository {
             ),
             recommendedMenuItems = listOf(
                 MenuItem(
-                    id = 1004,
-                    name = "Quarter Pounder with Cheese Deluxe",
-                    description = "The Quarter Pounder with Cheese Deluxe is a fresh take on a Quarter Pounder classic burger. Crisp leaf lettuce and three Roma tomato slices top a ¼ lb. of 100% McDonald’s fresh beef that’s hot, deliciously juicy and cooked when you order. Seasoned with just a pinch of salt and pepper and sizzled on our flat iron grill. Layered with two slices of melty American cheese, creamy mayo, slivered onions and tangy pickles on a soft, fluffy sesame seed hamburger bun.",
-                    image = "https://raw.githubusercontent.com/DumbPolyglotProgrammer/PigGame/master/images/" + "menu_item_quarter_pounder_with_cheese_deluxe.png",
+                    id = 4001,
+                    name = "Big Mac Combo Meal",
+                    description = "The one and only McDonald’s Big Mac Combo Meal. Big Mac Ingredients include a classic sesame hamburger bun, Big Mac Sauce, American cheese and sliced pickles. The Big Mac Combo Meal is served with our World Famous Fries and your choice of an icy Coca-Cola fountain drink.",
+                    image = "https://raw.githubusercontent.com/DumbPolyglotProgrammer/PigGame/master/images/" + "menu_item_big_mac_combo_meal.png",
                     price = 0.00,
-                    categoryId = 1
+                    categoryId = 4
                 ),
                 MenuItem(
-                    id = 1006,
-                    name = "Quarter Pounder with Cheese Bacon",
-                    description = "Each Quarter Pounder with Cheese Bacon burger features thick-cut applewood smoked bacon atop a ¼ lb. of 100% fresh McDonald’s beef that’s cooked when you order. It’s a hot, deliciously juicy bacon cheeseburger, seasoned with just a pinch of salt and pepper and sizzled on our flat iron grill. Layered with two slices of melty American cheese, slivered onions and tangy pickles on a soft, fluffy sesame seed hamburger bun.",
-                    image = "https://raw.githubusercontent.com/DumbPolyglotProgrammer/PigGame/master/images/" + "menu_item_quarter_pounder_with_cheese_bacon.png",
+                    id = 4004,
+                    name = "Double Quarter Pounder with Cheese Meal",
+                    description = "Get double the fresh beef flavor with a Double Quarter Pounder with Cheese made with fresh beef that’s cooked when you order. Served with our World Famous Fries and your choice of an icy soft drink.",
+                    image = "https://raw.githubusercontent.com/DumbPolyglotProgrammer/PigGame/master/images/" + "menu_item_double_quarter_pounder_with_cheese_meal.png",
                     price = 0.00,
-                    categoryId = 1
+                    categoryId = 4
                 ),
+                MenuItem(
+                    id = 4006,
+                    name = "Filet-O-Fish Meal",
+                    description = "A classic fish sandwich value meal made with wild-caught Alaskan Pollock on a regular McDonald’s bun, served with our World Famous Fries and your choice of an icy soft drink. Enjoy a Filet-O-Fish Meal today.",
+                    image = "https://raw.githubusercontent.com/DumbPolyglotProgrammer/PigGame/master/images/" + "menu_item_filet_o_fish_meal.png",
+                    price = 0.00,
+                    categoryId = 4
+                ),
+//                MenuItem(
+//                    id = 1004,
+//                    name = "Quarter Pounder with Cheese Deluxe",
+//                    description = "The Quarter Pounder with Cheese Deluxe is a fresh take on a Quarter Pounder classic burger. Crisp leaf lettuce and three Roma tomato slices top a ¼ lb. of 100% McDonald’s fresh beef that’s hot, deliciously juicy and cooked when you order. Seasoned with just a pinch of salt and pepper and sizzled on our flat iron grill. Layered with two slices of melty American cheese, creamy mayo, slivered onions and tangy pickles on a soft, fluffy sesame seed hamburger bun.",
+//                    image = "https://raw.githubusercontent.com/DumbPolyglotProgrammer/PigGame/master/images/" + "menu_item_quarter_pounder_with_cheese_deluxe.png",
+//                    price = 0.00,
+//                    categoryId = 1
+//                ),
+//                MenuItem(
+//                    id = 1006,
+//                    name = "Quarter Pounder with Cheese Bacon",
+//                    description = "Each Quarter Pounder with Cheese Bacon burger features thick-cut applewood smoked bacon atop a ¼ lb. of 100% fresh McDonald’s beef that’s cooked when you order. It’s a hot, deliciously juicy bacon cheeseburger, seasoned with just a pinch of salt and pepper and sizzled on our flat iron grill. Layered with two slices of melty American cheese, slivered onions and tangy pickles on a soft, fluffy sesame seed hamburger bun.",
+//                    image = "https://raw.githubusercontent.com/DumbPolyglotProgrammer/PigGame/master/images/" + "menu_item_quarter_pounder_with_cheese_bacon.png",
+//                    price = 0.00,
+//                    categoryId = 1
+//                ),
                 MenuItem(
                     id = 2002,
                     name = "Medium French Fries",
@@ -135,30 +159,6 @@ object HomeRepository {
 //                    price = 0.00,
 //                    categoryId = 3
 //                ),
-                MenuItem(
-                    id = 4001,
-                    name = "Big Mac Combo Meal",
-                    description = "The one and only McDonald’s Big Mac Combo Meal. Big Mac Ingredients include a classic sesame hamburger bun, Big Mac Sauce, American cheese and sliced pickles. The Big Mac Combo Meal is served with our World Famous Fries and your choice of an icy Coca-Cola fountain drink.",
-                    image = "https://raw.githubusercontent.com/DumbPolyglotProgrammer/PigGame/master/images/" + "menu_item_big_mac_combo_meal.png",
-                    price = 0.00,
-                    categoryId = 4
-                ),
-                MenuItem(
-                    id = 4004,
-                    name = "Double Quarter Pounder with Cheese Meal",
-                    description = "Get double the fresh beef flavor with a Double Quarter Pounder with Cheese made with fresh beef that’s cooked when you order. Served with our World Famous Fries and your choice of an icy soft drink.",
-                    image = "https://raw.githubusercontent.com/DumbPolyglotProgrammer/PigGame/master/images/" + "menu_item_double_quarter_pounder_with_cheese_meal.png",
-                    price = 0.00,
-                    categoryId = 4
-                ),
-                MenuItem(
-                    id = 4006,
-                    name = "Filet-O-Fish Meal",
-                    description = "A classic fish sandwich value meal made with wild-caught Alaskan Pollock on a regular McDonald’s bun, served with our World Famous Fries and your choice of an icy soft drink. Enjoy a Filet-O-Fish Meal today.",
-                    image = "https://raw.githubusercontent.com/DumbPolyglotProgrammer/PigGame/master/images/" + "menu_item_filet_o_fish_meal.png",
-                    price = 0.00,
-                    categoryId = 4
-                ),
 //                MenuItem(
 //                    id = 6003,
 //                    name = "McFlurry with M&M'S Candies",
