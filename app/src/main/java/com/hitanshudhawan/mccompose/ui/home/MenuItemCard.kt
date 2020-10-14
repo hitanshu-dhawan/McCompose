@@ -1,6 +1,6 @@
 package com.hitanshudhawan.mccompose.ui.home
 
-import androidx.compose.foundation.Box
+import androidx.compose.foundation.Text
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
 import androidx.compose.material.MaterialTheme
@@ -8,6 +8,9 @@ import androidx.compose.material.Surface
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.layout.ContentScale
+import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.sp
 import androidx.ui.tooling.preview.Preview
 import com.hitanshudhawan.mccompose.model.MenuItem
 import com.hitanshudhawan.mccompose.ui.theme.McComposeTheme
@@ -15,14 +18,66 @@ import dev.chrisbanes.accompanist.coil.CoilImage
 
 @Composable
 fun MenuItemCard(
-    menuItem: MenuItem,
-    modifier: Modifier = Modifier
+    menuItem: MenuItem
 ) {
     Surface(
-        modifier = modifier.fillMaxWidth(),
-        shape = MaterialTheme.shapes.medium,
+        modifier = Modifier
+            .fillMaxWidth()
+            .preferredHeight(160.dp),
+        color = MaterialTheme.colors.background,
+        contentColor = MaterialTheme.colors.onSurface
     ) {
-        // TODO ...
+        ConstraintLayout(
+            modifier = Modifier.fillMaxSize()
+        ) {
+
+            val (card, name, image) = createRefs()
+
+            // Card
+            Surface(
+                modifier = Modifier
+                    .constrainAs(card) {
+                        start.linkTo(parent.start, margin = 16.dp) // todo : 16 dp get from outside or global horizontal padding
+                        end.linkTo(parent.end, margin = 16.dp) // todo : 16 dp get from outside or global horizontal padding
+                        top.linkTo(parent.top, margin = 32.dp)
+                        bottom.linkTo(parent.bottom)
+
+                        width = Dimension.fillToConstraints
+                        height = Dimension.fillToConstraints
+                    },
+                shape = MaterialTheme.shapes.medium
+            ) {
+                Row(modifier = Modifier.clickable(onClick = { /*todo*/ })) {}
+            }
+
+            Text(
+                text = menuItem.name,
+                style = MaterialTheme.typography.subtitle1.copy(fontWeight = FontWeight.Medium, fontSize = 18.sp), // TODO : fix typography theme
+                modifier = Modifier
+                    .constrainAs(name) {
+                        start.linkTo(card.start, margin = 24.dp)
+                        end.linkTo(image.start)
+                        top.linkTo(card.top)
+                        bottom.linkTo(card.bottom)
+
+                        width = Dimension.fillToConstraints
+                        height = Dimension.wrapContent
+                    }
+            )
+
+            CoilImage(
+                data = menuItem.image,
+                contentScale = ContentScale.Crop,
+                modifier = Modifier
+                    .aspectRatio(1.40f)
+                    .constrainAs(image) {
+                        end.linkTo(parent.end)
+                        top.linkTo(parent.top)
+                        bottom.linkTo(parent.bottom)
+                    }
+            )
+
+        }
     }
 }
 

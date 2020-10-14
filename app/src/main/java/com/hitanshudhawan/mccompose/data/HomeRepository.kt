@@ -77,14 +77,14 @@ object HomeRepository {
                     price = 0.00,
                     categoryId = 6
                 ),
-                MenuItem(
-                    id = 6006,
-                    name = "McFlurry with OREO Cookies",
-                    description = "The McDonald’s McFlurry with OREO Cookies is an popular combination of OREO pieces and vanilla soft serve!",
-                    image = "https://raw.githubusercontent.com/DumbPolyglotProgrammer/PigGame/master/images/" + "menu_item_mcflurry_with_oreo_cookies.png",
-                    price = 0.00,
-                    categoryId = 6
-                )
+//                MenuItem(
+//                    id = 6006,
+//                    name = "McFlurry with OREO Cookies",
+//                    description = "The McDonald’s McFlurry with OREO Cookies is an popular combination of OREO pieces and vanilla soft serve!",
+//                    image = "https://raw.githubusercontent.com/DumbPolyglotProgrammer/PigGame/master/images/" + "menu_item_mcflurry_with_oreo_cookies.png",
+//                    price = 0.00,
+//                    categoryId = 6
+//                )
             ),
             recommendedMenuItems = listOf(
                 MenuItem(
@@ -104,21 +104,21 @@ object HomeRepository {
                     categoryId = 1
                 ),
                 MenuItem(
-                    id = 2003,
-                    name = "Large French Fries",
+                    id = 2002,
+                    name = "Medium French Fries",
                     description = "Our World Famous Fries are made with premium potatoes such as the Russet Burbank and the Shepody. With 0g of trans fat per labeled serving, these epic fries are crispy and golden on the outside and fluffy on the inside.",
-                    image = "https://raw.githubusercontent.com/DumbPolyglotProgrammer/PigGame/master/images/" + "menu_item_large_french_fries.png",
+                    image = "https://raw.githubusercontent.com/DumbPolyglotProgrammer/PigGame/master/images/" + "menu_item_medium_french_fries.png",
                     price = 0.00,
                     categoryId = 2
                 ),
-                MenuItem(
-                    id = 3005,
-                    name = "Chocolate Shake",
-                    description = "Chocolate Shake featuring our deliciously creamy vanilla soft serve and chocolate syrup, topped with whipped topping.",
-                    image = "https://raw.githubusercontent.com/DumbPolyglotProgrammer/PigGame/master/images/" + "menu_item_chocolate_shake.png",
-                    price = 0.00,
-                    categoryId = 3
-                ),
+//                MenuItem(
+//                    id = 3005,
+//                    name = "Chocolate Shake",
+//                    description = "Chocolate Shake featuring our deliciously creamy vanilla soft serve and chocolate syrup, topped with whipped topping.",
+//                    image = "https://raw.githubusercontent.com/DumbPolyglotProgrammer/PigGame/master/images/" + "menu_item_chocolate_shake.png",
+//                    price = 0.00,
+//                    categoryId = 3
+//                ),
                 MenuItem(
                     id = 3008,
                     name = "McCafé Hot Chocolate",
@@ -127,14 +127,14 @@ object HomeRepository {
                     price = 0.00,
                     categoryId = 3
                 ),
-                MenuItem(
-                    id = 3012,
-                    name = "Minute Maid Blue Raspberry Slushie",
-                    description = "Turn up summer with this Minute Maid Blue Raspberry Slushie, full of sweet, fruity blue raspberry flavor, available only at McDonald’s.",
-                    image = "https://raw.githubusercontent.com/DumbPolyglotProgrammer/PigGame/master/images/" + "menu_item_minute_maid_blue_raspberry_slushie.png",
-                    price = 0.00,
-                    categoryId = 3
-                ),
+//                MenuItem(
+//                    id = 3012,
+//                    name = "Minute Maid Blue Raspberry Slushie",
+//                    description = "Turn up summer with this Minute Maid Blue Raspberry Slushie, full of sweet, fruity blue raspberry flavor, available only at McDonald’s.",
+//                    image = "https://raw.githubusercontent.com/DumbPolyglotProgrammer/PigGame/master/images/" + "menu_item_minute_maid_blue_raspberry_slushie.png",
+//                    price = 0.00,
+//                    categoryId = 3
+//                ),
                 MenuItem(
                     id = 4001,
                     name = "Big Mac Combo Meal",
@@ -159,22 +159,22 @@ object HomeRepository {
                     price = 0.00,
                     categoryId = 4
                 ),
-                MenuItem(
-                    id = 6003,
-                    name = "McFlurry with M&M'S Candies",
-                    description = "The McDonald’s M&M McFlurry is a sweet, creamy M&M’S dessert of vanilla soft serve with M&M’S chocolate candies swirled in.",
-                    image = "https://raw.githubusercontent.com/DumbPolyglotProgrammer/PigGame/master/images/" + "menu_item_mcflurry_with_m_and_m_candies.png",
-                    price = 0.00,
-                    categoryId = 6
-                ),
-                MenuItem(
-                    id = 6007,
-                    name = "Baked Apple Pie",
-                    description = "McDonald's Baked Apple Pie is loaded with 100% American-grown apples, with a lattice crust baked to perfection and topped with sprinkled sugar.",
-                    image = "https://raw.githubusercontent.com/DumbPolyglotProgrammer/PigGame/master/images/" + "menu_item_baked_apple_pie.png",
-                    price = 0.00,
-                    categoryId = 6
-                )
+//                MenuItem(
+//                    id = 6003,
+//                    name = "McFlurry with M&M'S Candies",
+//                    description = "The McDonald’s M&M McFlurry is a sweet, creamy M&M’S dessert of vanilla soft serve with M&M’S chocolate candies swirled in.",
+//                    image = "https://raw.githubusercontent.com/DumbPolyglotProgrammer/PigGame/master/images/" + "menu_item_mcflurry_with_m_and_m_candies.png",
+//                    price = 0.00,
+//                    categoryId = 6
+//                ),
+//                MenuItem(
+//                    id = 6007,
+//                    name = "Baked Apple Pie",
+//                    description = "McDonald's Baked Apple Pie is loaded with 100% American-grown apples, with a lattice crust baked to perfection and topped with sprinkled sugar.",
+//                    image = "https://raw.githubusercontent.com/DumbPolyglotProgrammer/PigGame/master/images/" + "menu_item_baked_apple_pie.png",
+//                    price = 0.00,
+//                    categoryId = 6
+//                )
             )
         )
     }
