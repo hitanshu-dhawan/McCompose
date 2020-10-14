@@ -18,7 +18,8 @@ import dev.chrisbanes.accompanist.coil.CoilImage
 
 @Composable
 fun MenuItemCard(
-    menuItem: MenuItem
+    menuItem: MenuItem,
+    onClick: () -> Unit
 ) {
     Surface(
         modifier = Modifier
@@ -47,7 +48,7 @@ fun MenuItemCard(
                     },
                 shape = MaterialTheme.shapes.medium
             ) {
-                Row(modifier = Modifier.clickable(onClick = { /*todo*/ })) {}
+                Row(modifier = Modifier.clickable(onClick = onClick)) {}
             }
 
             Text(
@@ -94,7 +95,8 @@ fun MenuItemCardPreview() {
                 image = "https://raw.githubusercontent.com/DumbPolyglotProgrammer/PigGame/master/images/" + "menu_item_double_quarter_pounder_with_cheese_meal.png",
                 price = 0.00,
                 categoryId = 4
-            )
+            ),
+            onClick = {}
         )
     }
 }
@@ -112,7 +114,8 @@ fun MenuItemCardDarkPreview() {
                 image = "https://raw.githubusercontent.com/DumbPolyglotProgrammer/PigGame/master/images/" + "menu_item_double_quarter_pounder_with_cheese_meal.png",
                 price = 0.00,
                 categoryId = 4
-            )
+            ),
+            onClick = {}
         )
     }
 }

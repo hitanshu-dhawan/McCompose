@@ -22,6 +22,7 @@ import dev.chrisbanes.accompanist.coil.CoilImage
 fun SpotlightCard(
     title: String,
     imageUrl: String,
+    onClick: () -> Unit
 ) {
 
     val isLightTheme = MaterialTheme.colors.isLight
@@ -35,7 +36,7 @@ fun SpotlightCard(
         Column(
             modifier = Modifier
                 .fillMaxWidth()
-                .clickable(onClick = { /*todo*/ })
+                .clickable(onClick = onClick)
                 .padding(vertical = 16.dp)
         ) {
             Text(
@@ -102,7 +103,8 @@ fun SpotlightCardPreview() {
         SpotlightCard(
             // todo : image in preview
             imageUrl = "https://www.mcdonalds.com/is/image/content/dam/usa/nfl/assets/meal/desktop/h-mcdonalds-Double-Quarter-Pounder-with-Cheese-Extra-Value-Meals.jpg",
-            title = "Happy Meals"
+            title = "Happy Meals",
+            onClick = {}
         )
     }
 }
@@ -114,7 +116,8 @@ fun SpotlightCardDarkPreview() {
         SpotlightCard(
             // todo : image in preview
             imageUrl = "https://www.mcdonalds.com/is/image/content/dam/usa/nfl/assets/meal/desktop/h-mcdonalds-Double-Quarter-Pounder-with-Cheese-Extra-Value-Meals.jpg",
-            title = "Happy Meals"
+            title = "Happy Meals",
+            onClick = {}
         )
     }
 }

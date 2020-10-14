@@ -15,7 +15,10 @@ import com.hitanshudhawan.mccompose.ui.components.SpotlightCard
 import com.hitanshudhawan.mccompose.ui.theme.McComposeTheme
 
 @Composable
-fun HomeScreen() {
+fun HomeScreen(
+    onCategoryClick: () -> Unit,
+    onMenuItemClick: () -> Unit,
+) {
 
     val data = HomeRepository.getHomeData()
 
@@ -56,7 +59,8 @@ fun HomeScreen() {
                 data.categories.forEach { category ->
                     SpotlightCard(
                         imageUrl = category.image,
-                        title = category.name
+                        title = category.name,
+                        onClick = onCategoryClick
                     )
                     Spacer(modifier = Modifier.preferredWidth(horizontalPadding))
                 }
@@ -73,7 +77,10 @@ fun HomeScreen() {
             Spacer(modifier = Modifier.preferredHeight(16.dp))
 
             data.popularMenuItems.forEach { menuItem ->
-                MenuItemCard(menuItem = menuItem)
+                MenuItemCard(
+                    menuItem = menuItem,
+                    onClick = onMenuItemClick
+                )
                 Spacer(modifier = Modifier.preferredHeight(horizontalPadding))
             }
 
@@ -88,7 +95,10 @@ fun HomeScreen() {
             Spacer(modifier = Modifier.preferredHeight(16.dp))
 
             data.recommendedMenuItems.forEach { menuItem ->
-                MenuItemCard(menuItem = menuItem)
+                MenuItemCard(
+                    menuItem = menuItem,
+                    onClick = onMenuItemClick
+                )
                 Spacer(modifier = Modifier.preferredHeight(horizontalPadding))
             }
 
@@ -102,7 +112,10 @@ fun HomeScreen() {
 @Composable
 fun HomeScreenPreview() {
     McComposeTheme {
-        HomeScreen()
+        HomeScreen(
+            onCategoryClick = {},
+            onMenuItemClick = {},
+        )
     }
 }
 
@@ -110,6 +123,9 @@ fun HomeScreenPreview() {
 @Composable
 fun HomeScreenDarkPreview() {
     McComposeTheme(lightTheme = false) {
-        HomeScreen()
+        HomeScreen(
+            onCategoryClick = {},
+            onMenuItemClick = {},
+        )
     }
 }
