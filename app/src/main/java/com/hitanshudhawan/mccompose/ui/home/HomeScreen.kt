@@ -72,13 +72,9 @@ fun HomeScreen() {
 
             Spacer(modifier = Modifier.preferredHeight(16.dp))
 
-            // TODO : Use LazyColumnFor
-            ScrollableColumn {
-                //Spacer(modifier = Modifier.preferredHeight(horizontalPadding))
-                data.popularMenuItems.forEach { menuItem ->
-                    MenuItemCard(menuItem = menuItem)
-                    Spacer(modifier = Modifier.preferredHeight(horizontalPadding))
-                }
+            data.popularMenuItems.forEach { menuItem ->
+                MenuItemCard(menuItem = menuItem)
+                Spacer(modifier = Modifier.preferredHeight(horizontalPadding))
             }
 
             Spacer(modifier = Modifier.preferredHeight(16.dp))
@@ -91,13 +87,9 @@ fun HomeScreen() {
 
             Spacer(modifier = Modifier.preferredHeight(16.dp))
 
-            // TODO : Use LazyColumnFor
-            ScrollableColumn {
-                //Spacer(modifier = Modifier.preferredHeight(horizontalPadding))
-                data.recommendedMenuItems.forEach { menuItem ->
-                    MenuItemCard(menuItem = menuItem)
-                    Spacer(modifier = Modifier.preferredHeight(horizontalPadding))
-                }
+            data.recommendedMenuItems.forEach { menuItem ->
+                MenuItemCard(menuItem = menuItem)
+                Spacer(modifier = Modifier.preferredHeight(horizontalPadding))
             }
 
             Spacer(modifier = Modifier.preferredHeight(16.dp))
