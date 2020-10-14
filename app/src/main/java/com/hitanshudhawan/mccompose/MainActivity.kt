@@ -6,6 +6,7 @@ import androidx.compose.animation.Crossfade
 import androidx.compose.runtime.savedinstancestate.savedInstanceState
 import androidx.compose.ui.platform.setContent
 import com.hitanshudhawan.mccompose.ui.home.HomeScreen
+import com.hitanshudhawan.mccompose.ui.menu.MenuScreen
 import com.hitanshudhawan.mccompose.ui.theme.McComposeTheme
 
 class MainActivity : AppCompatActivity() {
@@ -16,7 +17,7 @@ class MainActivity : AppCompatActivity() {
         setContent {
             McComposeTheme(lightTheme = true) {
 
-                val (currentScreen, setCurrentScreen) = savedInstanceState { 0 }
+                val (currentScreen, setCurrentScreen) = savedInstanceState { 0 } // TODO : use enum or sealed class here, look at compose samples...
 
                 Crossfade(currentScreen) { screen ->
                     when (screen) {
@@ -24,10 +25,7 @@ class MainActivity : AppCompatActivity() {
                             onCategoryClick = { setCurrentScreen(1) },
                             onMenuItemClick = { setCurrentScreen(1) },
                         )
-                        1 -> HomeScreen(
-                            onCategoryClick = { setCurrentScreen(0) },
-                            onMenuItemClick = { setCurrentScreen(0) },
-                        )
+                        1 -> MenuScreen()
                     }
                 }
 
