@@ -16,6 +16,8 @@ import com.hitanshudhawan.mccompose.model.MenuItem
 import com.hitanshudhawan.mccompose.ui.theme.McComposeTheme
 import dev.chrisbanes.accompanist.coil.CoilImage
 
+// TODO : Important, some weired issue in ConstraintLayout after updating compose version to 1.0.0-alpha05, issue with random z-axis of views...
+
 @Composable
 fun MenuItemCard(
     menuItem: MenuItem,
