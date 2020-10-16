@@ -28,7 +28,7 @@ fun SearchBar(
             modifier = Modifier
                 .clickable(onClick = { /*todo*/ })
                 .padding(16.dp),
-            verticalGravity = Alignment.CenterVertically
+            verticalAlignment = Alignment.CenterVertically
         ) {
             Icon(asset = Icons.Default.Search)
             Spacer(modifier = Modifier.preferredWidth(8.dp))

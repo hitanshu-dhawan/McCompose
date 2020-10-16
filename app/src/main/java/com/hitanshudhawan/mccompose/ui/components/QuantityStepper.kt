@@ -92,7 +92,8 @@ fun QuantityStepperIcon(
     Box(
         modifier = modifier
             .background(backgroundColor)
-            .padding(horizontal = 4.dp, vertical = 8.dp)
+            .padding(horizontal = 4.dp, vertical = 8.dp),
+        gravity = ContentGravity.Center
     ) {
         Icon(
             asset = asset,
