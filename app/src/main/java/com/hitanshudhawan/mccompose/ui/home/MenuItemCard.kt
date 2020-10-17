@@ -11,6 +11,7 @@ import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.compose.ui.zIndex
 import androidx.ui.tooling.preview.Preview
 import com.hitanshudhawan.mccompose.model.MenuItem
 import com.hitanshudhawan.mccompose.ui.theme.McComposeTheme
@@ -39,6 +40,7 @@ fun MenuItemCard(
             // Card
             Surface(
                 modifier = Modifier
+                    .zIndex(0.1f) // TODO : remove this hack after the ConstraintLayout fix
                     .constrainAs(card) {
                         start.linkTo(parent.start, margin = 16.dp) // todo : 16 dp get from outside or global horizontal padding
                         end.linkTo(parent.end, margin = 16.dp) // todo : 16 dp get from outside or global horizontal padding
@@ -57,6 +59,7 @@ fun MenuItemCard(
                 text = menuItem.name,
                 style = MaterialTheme.typography.subtitle1.copy(fontWeight = FontWeight.Medium, fontSize = 18.sp), // TODO : fix typography theme
                 modifier = Modifier
+                    .zIndex(0.2f) // TODO : remove this hack after the ConstraintLayout fix
                     .constrainAs(name) {
                         start.linkTo(card.start, margin = 24.dp)
                         end.linkTo(image.start)
@@ -72,6 +75,7 @@ fun MenuItemCard(
                 data = menuItem.image,
                 contentScale = ContentScale.Crop,
                 modifier = Modifier
+                    .zIndex(0.3f) // TODO : remove this hack after the ConstraintLayout fix
                     .aspectRatio(1.40f)
                     .constrainAs(image) {
                         end.linkTo(parent.end)
