@@ -4,8 +4,10 @@ import androidx.compose.foundation.*
 import androidx.compose.material.Scaffold
 import androidx.compose.material.TopAppBar
 import androidx.compose.runtime.Composable
+import androidx.compose.ui.graphics.Color
 import androidx.ui.tooling.preview.Preview
 import com.hitanshudhawan.mccompose.data.MenuRepository
+import com.hitanshudhawan.mccompose.ui.components.QuantityStepper
 import com.hitanshudhawan.mccompose.ui.theme.McComposeTheme
 
 @Composable
@@ -25,7 +27,22 @@ fun MenuScreen(
 
         // TODO...
 
-        Text(text = "Hello ${data.menuItems.random().name}!")
+        ScrollableColumn {
+
+            Text(text = "Hello ${data.menuItems.random().name}!")
+
+            data.menuItems.forEachIndexed { index, _ ->
+                QuantityStepper(
+                    count = index,
+                    onIncrement = {},
+                    onDecrement = {},
+                    text = "ADD",
+                    primaryColor = Color(0xff304ffe),
+                    secondaryColor = Color(0xfff0f0f0)
+                )
+            }
+
+        }
 
     }
 }
