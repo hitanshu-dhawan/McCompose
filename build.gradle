@@ -1,17 +1,17 @@
-// Top-level build file where you can add configuration options common to all sub-projects/modules.
+import com.hitanshudhawan.mccompose.buildsrc.Libs
+
 buildscript {
-    ext {
-        compose_version = '1.0.0-alpha05'
-    }
-    ext.kotlin_version = "1.4.10"
+
     repositories {
         google()
         jcenter()
     }
+
     dependencies {
-        classpath "com.android.tools.build:gradle:4.2.0-alpha13"
-        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
+        classpath Libs.androidGradlePlugin
+        classpath Libs.Kotlin.gradlePlugin
     }
+
 }
 
 allprojects {
