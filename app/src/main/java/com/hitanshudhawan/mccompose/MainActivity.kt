@@ -17,7 +17,7 @@ class MainActivity : AppCompatActivity() {
         setContent {
             McComposeTheme(lightTheme = true) {
 
-                val (currentScreen, setCurrentScreen) = savedInstanceState { 0 } // TODO : use enum or sealed class here, look at compose samples...
+                val (currentScreen, setCurrentScreen) = savedInstanceState { 1 } // TODO : use enum or sealed class here, look at compose samples...
 
                 Crossfade(currentScreen) { screen ->
                     when (screen) {

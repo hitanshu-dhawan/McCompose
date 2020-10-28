@@ -1,21 +1,27 @@
 package com.hitanshudhawan.mccompose.ui.menu
 
 import androidx.compose.foundation.*
+import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.lazy.LazyColumnFor
+import androidx.compose.foundation.lazy.LazyColumnForIndexed
 import androidx.compose.material.Scaffold
 import androidx.compose.material.TopAppBar
 import androidx.compose.runtime.Composable
-import androidx.compose.ui.graphics.Color
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.livedata.observeAsState
+import androidx.compose.ui.Modifier
+import androidx.compose.ui.unit.dp
+import androidx.compose.ui.viewinterop.viewModel
 import androidx.ui.tooling.preview.Preview
-import com.hitanshudhawan.mccompose.data.MenuRepository
-import com.hitanshudhawan.mccompose.ui.components.QuantityStepper
+import com.hitanshudhawan.mccompose.model.Menu
 import com.hitanshudhawan.mccompose.ui.theme.McComposeTheme
 
 @Composable
 fun MenuScreen(
-    // ...
+    viewModel: MenuViewModel = viewModel()
 ) {
 
-    val data = MenuRepository.getMenuData()
+    val data by viewModel.data.observeAsState(Menu(emptyList(), emptyList()))
 
     Scaffold(
         topBar = {
@@ -27,21 +33,15 @@ fun MenuScreen(
 
         // TODO...
 
-        ScrollableColumn {
-
-            Text(text = "Hello ${data.menuItems.random().name}!")
-
-            data.menuItems.forEachIndexed { index, _ ->
-                QuantityStepper(
-                    count = index,
-                    onIncrement = {},
-                    onDecrement = {},
-                    text = "ADD",
-                    primaryColor = Color(0xff304ffe),
-                    secondaryColor = Color(0xfff0f0f0)
-                )
-            }
-
+        LazyColumnFor(
+            items = data.menuItems
+        ) { menuItem ->
+            MenuItem(
+                menuItem = menuItem,
+                onIncrement = { viewModel.incrementMenuItemQuantity(menuItem) },
+                onDecrement = { viewModel.decrementMenuItemQuantity(menuItem) },
+                modifier = Modifier.padding(16.dp)
+            )
         }
 
     }
