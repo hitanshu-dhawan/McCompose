@@ -2,9 +2,11 @@ package com.hitanshudhawan.mccompose
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
-import androidx.compose.animation.Crossfade
-import androidx.compose.runtime.savedinstancestate.savedInstanceState
 import androidx.compose.ui.platform.setContent
+import androidx.navigation.compose.NavHost
+import androidx.navigation.compose.composable
+import androidx.navigation.compose.navigate
+import androidx.navigation.compose.rememberNavController
 import com.hitanshudhawan.mccompose.ui.home.HomeScreen
 import com.hitanshudhawan.mccompose.ui.menu.MenuScreen
 import com.hitanshudhawan.mccompose.ui.theme.McComposeTheme
@@ -17,16 +19,21 @@ class MainActivity : AppCompatActivity() {
         setContent {
             McComposeTheme(lightTheme = true) {
 
-                val (currentScreen, setCurrentScreen) = savedInstanceState { 1 } // TODO : use enum or sealed class here, look at compose samples...
+                val navController = rememberNavController()
 
-                Crossfade(currentScreen) { screen ->
-                    when (screen) {
-                        0 -> HomeScreen(
-                            onCategoryClick = { setCurrentScreen(1) },
-                            onMenuItemClick = { setCurrentScreen(1) },
+                NavHost(navController, startDestination = "home") {
+
+                    composable("home") {
+                        HomeScreen(
+                            onCategoryClick = { navController.navigate("menu") },
+                            onMenuItemClick = { navController.navigate("menu") },
                         )
-                        1 -> MenuScreen()
                     }
+
+                    composable("menu") {
+                        MenuScreen()
+                    }
+
                 }
 
             }
