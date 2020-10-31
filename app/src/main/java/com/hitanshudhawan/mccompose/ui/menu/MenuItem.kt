@@ -67,12 +67,9 @@ fun MenuItem(
                     )
                     Spacer(modifier = Modifier.weight(1f))
                     QuantityStepper(
-                        count = menuItem.quantity,
-                        onIncrement = onIncrementMenuItemQuantity,
-                        onDecrement = onDecrementMenuItemQuantity,
-                        text = "ADD",
-                        primaryColor = Color(0xff304ffe),
-                        secondaryColor = Color(0xfff0f0f0)
+                        quantity = menuItem.quantity,
+                        onIncrementQuantity = onIncrementMenuItemQuantity,
+                        onDecrementQuantity = onDecrementMenuItemQuantity,
                     )
                 }
             }
