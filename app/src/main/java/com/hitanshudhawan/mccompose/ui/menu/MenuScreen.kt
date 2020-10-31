@@ -1,7 +1,9 @@
 package com.hitanshudhawan.mccompose.ui.menu
 
 import androidx.compose.foundation.*
+import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.preferredHeight
 import androidx.compose.foundation.lazy.LazyColumnFor
 import androidx.compose.foundation.lazy.LazyColumnForIndexed
 import androidx.compose.material.Scaffold
@@ -33,15 +35,17 @@ fun MenuScreen(
 
         // TODO...
 
+        Spacer(modifier = Modifier.preferredHeight(16.dp))
         LazyColumnFor(
             items = data.menuItems
         ) { menuItem ->
             MenuItem(
                 menuItem = menuItem,
-                onIncrement = { viewModel.incrementMenuItemQuantity(menuItem) },
-                onDecrement = { viewModel.decrementMenuItemQuantity(menuItem) },
-                modifier = Modifier.padding(16.dp)
+                onIncrementMenuItemQuantity = { viewModel.incrementMenuItemQuantity(menuItem) },
+                onDecrementMenuItemQuantity = { viewModel.decrementMenuItemQuantity(menuItem) },
+                modifier = Modifier.padding(horizontal = 16.dp)
             )
+            Spacer(modifier = Modifier.preferredHeight(16.dp))
         }
 
     }

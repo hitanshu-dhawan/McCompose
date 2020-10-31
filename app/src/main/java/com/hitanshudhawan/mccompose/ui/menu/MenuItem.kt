@@ -1,14 +1,18 @@
 package com.hitanshudhawan.mccompose.ui.menu
 
 import androidx.compose.foundation.Text
+import androidx.compose.foundation.background
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Surface
 import androidx.compose.runtime.Composable
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.ui.tooling.preview.Preview
@@ -17,47 +21,62 @@ import com.hitanshudhawan.mccompose.ui.components.QuantityStepper
 import com.hitanshudhawan.mccompose.ui.theme.McComposeTheme
 import dev.chrisbanes.accompanist.coil.CoilImage
 
-// TODO : Change this design...
-
 @Composable
 fun MenuItem(
     menuItem: MenuItem,
-    onIncrement: () -> Unit,
-    onDecrement: () -> Unit,
+    onIncrementMenuItemQuantity: () -> Unit,
+    onDecrementMenuItemQuantity: () -> Unit,
     modifier: Modifier = Modifier
 ) {
     Surface(
-        modifier = modifier.fillMaxWidth()
+        modifier = modifier.fillMaxWidth(),
+        shape = MaterialTheme.shapes.medium
     ) {
-
-        Row {
-
+        Row(
+            modifier = Modifier
+                .clickable(onClick = { /*todo*/ })
+                .padding(16.dp)
+        ) {
             CoilImage(
                 data = menuItem.image,
-                contentScale = ContentScale.Fit,
+                contentScale = ContentScale.Crop,
                 modifier = Modifier
                     .preferredSize(80.dp)
                     .aspectRatio(1.00f)
             )
-
-            Text(
-                text = menuItem.name,
-                style = MaterialTheme.typography.subtitle1.copy(fontWeight = FontWeight.Medium, fontSize = 18.sp), // TODO : fix typography theme
-                modifier = Modifier
-                    .weight(1f)
-            )
-
-            QuantityStepper(
-                count = menuItem.quantity,
-                onIncrement = onIncrement,
-                onDecrement = onDecrement,
-                text = "ADD",
-                primaryColor = Color(0xff304ffe),
-                secondaryColor = Color(0xfff0f0f0)
-            )
-
+            Spacer(modifier = Modifier.preferredWidth(16.dp))
+            Column(
+                modifier = Modifier.weight(1f)
+            ) {
+                Text(
+                    text = menuItem.name,
+                    style = MaterialTheme.typography.subtitle1.copy(fontWeight = FontWeight.Medium, fontSize = 18.sp), // TODO : fix typography theme
+                )
+                Text(
+                    text = menuItem.description,
+                    maxLines = 4,
+                    overflow = TextOverflow.Ellipsis,
+                    style = MaterialTheme.typography.subtitle1.copy(fontWeight = FontWeight.Thin, fontSize = 16.sp), // TODO : fix typography theme
+                )
+                Row(
+                    verticalAlignment = Alignment.CenterVertically
+                ) {
+                    Text(
+                        text = "$" + "9.99",
+                        style = MaterialTheme.typography.subtitle1.copy(fontWeight = FontWeight.Thin, fontSize = 14.sp), // TODO : fix typography theme
+                    )
+                    Spacer(modifier = Modifier.weight(1f))
+                    QuantityStepper(
+                        count = menuItem.quantity,
+                        onIncrement = onIncrementMenuItemQuantity,
+                        onDecrement = onDecrementMenuItemQuantity,
+                        text = "ADD",
+                        primaryColor = Color(0xff304ffe),
+                        secondaryColor = Color(0xfff0f0f0)
+                    )
+                }
+            }
         }
-
     }
 }
 
@@ -75,8 +94,8 @@ fun MenuCardPreview() {
                 price = 0.00,
                 categoryId = 4
             ),
-            onIncrement = {},
-            onDecrement = {},
+            onIncrementMenuItemQuantity = {},
+            onDecrementMenuItemQuantity = {},
         )
     }
 }
@@ -95,8 +114,8 @@ fun MenuItemDarkPreview() {
                 price = 0.00,
                 categoryId = 4
             ),
-            onIncrement = {},
-            onDecrement = {},
+            onIncrementMenuItemQuantity = {},
+            onDecrementMenuItemQuantity = {},
         )
     }
 }
