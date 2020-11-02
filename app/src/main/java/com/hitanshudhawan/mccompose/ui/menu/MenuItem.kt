@@ -54,9 +54,9 @@ fun MenuItem(
                 )
                 Text(
                     text = menuItem.description,
-                    maxLines = 4,
-                    overflow = TextOverflow.Ellipsis,
                     style = MaterialTheme.typography.subtitle1.copy(fontWeight = FontWeight.Thin, fontSize = 16.sp), // TODO : fix typography theme
+                    maxLines = 4,
+                    overflow = TextOverflow.Ellipsis
                 )
                 Row(
                     verticalAlignment = Alignment.CenterVertically

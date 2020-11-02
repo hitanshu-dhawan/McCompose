@@ -11,6 +11,7 @@ import androidx.compose.material.icons.filled.Search
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.ui.tooling.preview.Preview
 import com.hitanshudhawan.mccompose.ui.theme.McComposeTheme
@@ -22,11 +23,13 @@ fun SearchBar(
 ) {
     Surface(
         modifier = modifier.fillMaxWidth(),
-        shape = MaterialTheme.shapes.medium
+        shape = MaterialTheme.shapes.medium,
+        color = MaterialTheme.colors.surface,
+        contentColor = MaterialTheme.colors.onSurface.copy(alpha = 0.5f)
     ) {
         Row(
             modifier = Modifier
-                .clickable(onClick = { /*todo*/ })
+                .clickable(onClick = {})
                 .padding(16.dp),
             verticalAlignment = Alignment.CenterVertically
         ) {
@@ -34,10 +37,8 @@ fun SearchBar(
             Spacer(modifier = Modifier.preferredWidth(8.dp))
             Text(
                 text = text,
-                style = MaterialTheme.typography.subtitle1
+                style = MaterialTheme.typography.subtitle1.copy(fontWeight = FontWeight.Normal)
             )
-            // TODO : Fix tint of icon and text, by contentColor or onPrimary/onSurface from Theme
-            // TODO : MaterialTheme.colors.onSurface.copy(alpha = 0.1f)
         }
     }
 }

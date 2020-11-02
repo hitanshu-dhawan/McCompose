@@ -1,6 +1,5 @@
 package com.hitanshudhawan.mccompose.ui.components
 
-import androidx.compose.foundation.Box
 import androidx.compose.foundation.Text
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
@@ -41,9 +40,9 @@ fun SpotlightCard(
         ) {
             Text(
                 text = title,
+                style = MaterialTheme.typography.h6,
                 maxLines = 1,
                 overflow = TextOverflow.Ellipsis,
-                style = MaterialTheme.typography.h6,
                 modifier = Modifier.padding(horizontal = 16.dp)
             )
             Spacer(modifier = Modifier.preferredHeight(16.dp))

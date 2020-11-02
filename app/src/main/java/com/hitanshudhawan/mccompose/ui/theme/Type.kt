@@ -9,68 +9,55 @@ import androidx.compose.ui.unit.sp
 
 val typography = Typography(
     h1 = TextStyle(
-        fontWeight = FontWeight.Light,
         fontSize = 96.sp,
-        letterSpacing = (-1.5).sp
+        fontWeight = FontWeight.Bold,
     ),
     h2 = TextStyle(
-        fontWeight = FontWeight.Light,
         fontSize = 60.sp,
-        letterSpacing = (-0.5).sp
+        fontWeight = FontWeight.Bold,
     ),
     h3 = TextStyle(
-        fontWeight = FontWeight.Normal,
         fontSize = 48.sp,
-        letterSpacing = 0.sp
+        fontWeight = FontWeight.Bold,
     ),
     h4 = TextStyle(
-        fontWeight = FontWeight.Normal,
-        fontSize = 34.sp,
-        letterSpacing = 0.25.sp
+        fontSize = 28.sp,
+        fontWeight = FontWeight.Bold,
     ),
     h5 = TextStyle(
-        fontWeight = FontWeight.Normal,
         fontSize = 24.sp,
-        letterSpacing = 0.sp
+        fontWeight = FontWeight.Bold,
     ),
     h6 = TextStyle(
-        fontWeight = FontWeight.Medium,
         fontSize = 20.sp,
-        letterSpacing = 0.15.sp
+        fontWeight = FontWeight.Bold,
     ),
     subtitle1 = TextStyle(
-        fontWeight = FontWeight.Normal,
         fontSize = 16.sp,
-        letterSpacing = 0.15.sp
+        fontWeight = FontWeight.Medium,
     ),
     subtitle2 = TextStyle(
-        fontWeight = FontWeight.Medium,
         fontSize = 14.sp,
-        letterSpacing = 0.1.sp
+        fontWeight = FontWeight.Medium,
     ),
     body1 = TextStyle(
-        fontWeight = FontWeight.Normal,
         fontSize = 16.sp,
-        letterSpacing = 0.5.sp
+        fontWeight = FontWeight.Normal,
     ),
     body2 = TextStyle(
-        fontWeight = FontWeight.Normal,
         fontSize = 14.sp,
-        letterSpacing = 0.25.sp
+        fontWeight = FontWeight.Normal,
     ),
     button = TextStyle(
-        fontWeight = FontWeight.Medium,
         fontSize = 14.sp,
-        letterSpacing = 1.25.sp
+        fontWeight = FontWeight.Normal,
     ),
     caption = TextStyle(
-        fontWeight = FontWeight.Normal,
         fontSize = 12.sp,
-        letterSpacing = 0.4.sp
+        fontWeight = FontWeight.Normal,
     ),
     overline = TextStyle(
-        fontWeight = FontWeight.Normal,
         fontSize = 10.sp,
-        letterSpacing = 1.5.sp
+        fontWeight = FontWeight.Normal,
     )
 )

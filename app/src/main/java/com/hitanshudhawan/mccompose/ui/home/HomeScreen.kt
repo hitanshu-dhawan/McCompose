@@ -41,7 +41,7 @@ fun HomeScreen(
 
             Text(
                 text = "Hi ${data.user.name}!",
-                style = MaterialTheme.typography.h4,
+                style = MaterialTheme.typography.h3,
                 modifier = Modifier.padding(horizontal = horizontalPadding)
             )
 
@@ -70,7 +70,7 @@ fun HomeScreen(
 
             Text(
                 text = "Popular",
-                style = MaterialTheme.typography.h6,
+                style = MaterialTheme.typography.h4,
                 modifier = Modifier.padding(horizontal = horizontalPadding)
             )
 
@@ -88,7 +88,7 @@ fun HomeScreen(
 
             Text(
                 text = "Recommended",
-                style = MaterialTheme.typography.h6,
+                style = MaterialTheme.typography.h4,
                 modifier = Modifier.padding(horizontal = horizontalPadding)
             )
 
