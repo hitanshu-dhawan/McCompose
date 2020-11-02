@@ -8,16 +8,19 @@ import androidx.compose.material.Surface
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.layout.ContentScale
-import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
-import androidx.compose.ui.unit.sp
 import androidx.compose.ui.zIndex
 import androidx.ui.tooling.preview.Preview
 import com.hitanshudhawan.mccompose.model.MenuItem
 import com.hitanshudhawan.mccompose.ui.theme.McComposeTheme
 import dev.chrisbanes.accompanist.coil.CoilImage
 
-// TODO : Important, some weired issue in ConstraintLayout after updating compose version to 1.0.0-alpha05, issue with random z-axis of views...
+// TODO...
+// Styling
+// 1. Bold, Color etc. of texts
+// Logic
+// 1. Menu item price formatting and color, maybe green
 
 @Composable
 fun MenuItemCard(
@@ -35,12 +38,12 @@ fun MenuItemCard(
             modifier = Modifier.fillMaxSize()
         ) {
 
-            val (card, name, image) = createRefs()
+            val (card, name, price, image) = createRefs()
 
             // Card
             Surface(
                 modifier = Modifier
-                    .zIndex(0.1f) // TODO : remove this hack after the ConstraintLayout fix
+                    .zIndex(0.1f) // todo : compose bug
                     .constrainAs(card) {
                         start.linkTo(parent.start, margin = 16.dp) // todo : 16 dp get from outside or global horizontal padding
                         end.linkTo(parent.end, margin = 16.dp) // todo : 16 dp get from outside or global horizontal padding
@@ -57,14 +60,30 @@ fun MenuItemCard(
 
             Text(
                 text = menuItem.name,
-                style = MaterialTheme.typography.subtitle1.copy(fontWeight = FontWeight.Medium, fontSize = 18.sp), // TODO : fix typography theme
+                style = MaterialTheme.typography.subtitle1,
+                maxLines = 3,
+                overflow = TextOverflow.Ellipsis,
                 modifier = Modifier
-                    .zIndex(0.2f) // TODO : remove this hack after the ConstraintLayout fix
+                    .zIndex(0.2f) // todo : compose bug
                     .constrainAs(name) {
-                        start.linkTo(card.start, margin = 24.dp)
+                        start.linkTo(card.start, margin = 16.dp)
                         end.linkTo(image.start)
-                        top.linkTo(card.top)
-                        bottom.linkTo(card.bottom)
+                        top.linkTo(card.top, margin = 16.dp)
+
+                        width = Dimension.fillToConstraints
+                        height = Dimension.wrapContent
+                    }
+            )
+
+            Text(
+                text = "$" + "9.99",
+                style = MaterialTheme.typography.subtitle2,
+                modifier = Modifier
+                    .zIndex(0.2f) // todo : compose bug
+                    .constrainAs(price) {
+                        start.linkTo(card.start, margin = 16.dp)
+                        end.linkTo(image.start)
+                        bottom.linkTo(card.bottom, margin = 16.dp)
 
                         width = Dimension.fillToConstraints
                         height = Dimension.wrapContent
@@ -75,7 +94,7 @@ fun MenuItemCard(
                 data = menuItem.image,
                 contentScale = ContentScale.Crop,
                 modifier = Modifier
-                    .zIndex(0.3f) // TODO : remove this hack after the ConstraintLayout fix
+                    .zIndex(0.3f) // todo : compose bug
                     .aspectRatio(1.40f)
                     .constrainAs(image) {
                         end.linkTo(parent.end)
@@ -95,12 +114,12 @@ fun MenuItemCardPreview() {
         // todo : image in preview
         MenuItemCard(
             menuItem = MenuItem(
-                id = 4004,
+                id = 0,
                 name = "Double Quarter Pounder with Cheese Meal",
-                description = "Get double the fresh beef flavor with a Double Quarter Pounder with Cheese made with fresh beef that’s cooked when you order. Served with our World Famous Fries and your choice of an icy soft drink.",
+                description = "",
                 image = "https://raw.githubusercontent.com/DumbPolyglotProgrammer/PigGame/master/images/" + "menu_item_double_quarter_pounder_with_cheese_meal.png",
                 price = 0.00,
-                categoryId = 4
+                categoryId = 0
             ),
             onClick = {}
         )
@@ -114,12 +133,12 @@ fun MenuItemCardDarkPreview() {
         // todo : image in preview
         MenuItemCard(
             menuItem = MenuItem(
-                id = 4004,
+                id = 0,
                 name = "Double Quarter Pounder with Cheese Meal",
-                description = "Get double the fresh beef flavor with a Double Quarter Pounder with Cheese made with fresh beef that’s cooked when you order. Served with our World Famous Fries and your choice of an icy soft drink.",
+                description = "",
                 image = "https://raw.githubusercontent.com/DumbPolyglotProgrammer/PigGame/master/images/" + "menu_item_double_quarter_pounder_with_cheese_meal.png",
                 price = 0.00,
-                categoryId = 4
+                categoryId = 0
             ),
             onClick = {}
         )

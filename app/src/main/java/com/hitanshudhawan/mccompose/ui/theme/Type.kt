@@ -33,19 +33,19 @@ val typography = Typography(
         fontWeight = FontWeight.Bold,
     ),
     subtitle1 = TextStyle(
-        fontSize = 16.sp,
+        fontSize = 18.sp,
         fontWeight = FontWeight.Medium,
     ),
     subtitle2 = TextStyle(
-        fontSize = 14.sp,
+        fontSize = 16.sp,
         fontWeight = FontWeight.Medium,
     ),
     body1 = TextStyle(
-        fontSize = 16.sp,
+        fontSize = 18.sp,
         fontWeight = FontWeight.Normal,
     ),
     body2 = TextStyle(
-        fontSize = 14.sp,
+        fontSize = 16.sp,
         fontWeight = FontWeight.Normal,
     ),
     button = TextStyle(
