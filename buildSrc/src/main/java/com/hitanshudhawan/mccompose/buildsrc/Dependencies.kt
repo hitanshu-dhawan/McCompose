@@ -5,7 +5,7 @@ object Libs {
     const val androidGradlePlugin = "com.android.tools.build:gradle:4.2.0-alpha15"
 
     object Accompanist {
-        private const val version = "0.3.2"
+        private const val version = "0.3.3.1"
         const val coil = "dev.chrisbanes.accompanist:accompanist-coil:$version"
     }
 
@@ -21,7 +21,7 @@ object Libs {
         const val material = "com.google.android.material:material:1.2.0"
 
         object Compose {
-            private const val version = "1.0.0-alpha06"
+            private const val version = "1.0.0-alpha07"
 
             const val foundation = "androidx.compose.foundation:foundation:$version"
             const val layout = "androidx.compose.foundation:foundation-layout:$version"
