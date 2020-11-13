@@ -43,7 +43,6 @@ fun MenuItemCard(
             // Card
             Surface(
                 modifier = Modifier
-                    .zIndex(0.1f) // todo : compose bug
                     .constrainAs(card) {
                         start.linkTo(parent.start, margin = 16.dp) // todo : 16 dp get from outside or global horizontal padding
                         end.linkTo(parent.end, margin = 16.dp) // todo : 16 dp get from outside or global horizontal padding
@@ -64,7 +63,6 @@ fun MenuItemCard(
                 maxLines = 3,
                 overflow = TextOverflow.Ellipsis,
                 modifier = Modifier
-                    .zIndex(0.2f) // todo : compose bug
                     .constrainAs(name) {
                         start.linkTo(card.start, margin = 16.dp)
                         end.linkTo(image.start)
@@ -79,7 +77,6 @@ fun MenuItemCard(
                 text = "$" + "9.99",
                 style = MaterialTheme.typography.subtitle2,
                 modifier = Modifier
-                    .zIndex(0.2f) // todo : compose bug
                     .constrainAs(price) {
                         start.linkTo(card.start, margin = 16.dp)
                         end.linkTo(image.start)
@@ -94,7 +91,6 @@ fun MenuItemCard(
                 data = menuItem.image,
                 contentScale = ContentScale.Crop,
                 modifier = Modifier
-                    .zIndex(0.3f) // todo : compose bug
                     .aspectRatio(1.40f)
                     .constrainAs(image) {
                         end.linkTo(parent.end)
