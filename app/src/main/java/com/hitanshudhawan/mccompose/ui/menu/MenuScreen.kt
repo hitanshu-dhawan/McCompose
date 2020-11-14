@@ -43,9 +43,9 @@ fun MenuScreen(
                 menuItem = menuItem,
                 onIncrementMenuItemQuantity = { viewModel.incrementMenuItemQuantity(menuItem) },
                 onDecrementMenuItemQuantity = { viewModel.decrementMenuItemQuantity(menuItem) },
-                modifier = Modifier.padding(horizontal = 16.dp)
+                //modifier = Modifier.padding(horizontal = 16.dp)
             )
-            Spacer(modifier = Modifier.preferredHeight(16.dp))
+            //Spacer(modifier = Modifier.preferredHeight(16.dp))
         }
 
     }
