@@ -35,6 +35,8 @@ private val backgroundColor = ColorPropKey()
 private val contentColor = ColorPropKey()
 private val iconSize = DpPropKey()
 
+// TODO : Fix the UI for Dark theme
+
 private val QuantityToggleTransitionDefinition = transitionDefinition<QuantityToggleState> {
     state(QuantityToggleState.Zero) {
         this[backgroundColor] = Color.White
