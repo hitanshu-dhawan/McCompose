@@ -97,7 +97,7 @@ private fun getRandomBackgroundColor(isLightTheme: Boolean): Color {
 
 @Preview("Spotlight Card")
 @Composable
-fun SpotlightCardPreview() {
+private fun SpotlightCardPreview() {
     McComposeTheme {
         SpotlightCard(
             // todo : image in preview
@@ -110,7 +110,7 @@ fun SpotlightCardPreview() {
 
 @Preview("Spotlight Card • Dark")
 @Composable
-fun SpotlightCardDarkPreview() {
+private fun SpotlightCardDarkPreview() {
     McComposeTheme(lightTheme = false) {
         SpotlightCard(
             // todo : image in preview

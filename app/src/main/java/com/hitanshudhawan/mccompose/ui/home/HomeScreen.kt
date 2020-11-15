@@ -111,7 +111,7 @@ fun HomeScreen(
 
 @Preview("HomeScreen")
 @Composable
-fun HomeScreenPreview() {
+private fun HomeScreenPreview() {
     McComposeTheme {
         HomeScreen(
             onCategoryClick = {},
@@ -122,7 +122,7 @@ fun HomeScreenPreview() {
 
 @Preview("HomeScreen • Dark")
 @Composable
-fun HomeScreenDarkPreview() {
+private fun HomeScreenDarkPreview() {
     McComposeTheme(lightTheme = false) {
         HomeScreen(
             onCategoryClick = {},

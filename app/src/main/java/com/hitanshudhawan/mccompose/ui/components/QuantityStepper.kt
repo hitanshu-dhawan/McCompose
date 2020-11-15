@@ -15,7 +15,7 @@ fun QuantityStepper(
 
 @Preview("QuantityStepper • Zero")
 @Composable
-fun QuantityStepperZeroPreview() {
+private fun QuantityStepperZeroPreview() {
     McComposeTheme {
         QuantityStepper(
             quantity = 0,
@@ -27,7 +27,7 @@ fun QuantityStepperZeroPreview() {
 
 @Preview("QuantityStepper • NonZero")
 @Composable
-fun QuantityStepperNonZeroPreview() {
+private fun QuantityStepperNonZeroPreview() {
     McComposeTheme {
         QuantityStepper(
             quantity = 3,
@@ -39,7 +39,7 @@ fun QuantityStepperNonZeroPreview() {
 
 @Preview("QuantityStepper • Zero • Dark")
 @Composable
-fun QuantityStepperZeroDarkPreview() {
+private fun QuantityStepperZeroDarkPreview() {
     McComposeTheme(lightTheme = false) {
         QuantityStepper(
             quantity = 0,
@@ -51,7 +51,7 @@ fun QuantityStepperZeroDarkPreview() {
 
 @Preview("QuantityStepper • NonZero • Dark")
 @Composable
-fun QuantityStepperNonZeroDarkPreview() {
+private fun QuantityStepperNonZeroDarkPreview() {
     McComposeTheme(lightTheme = false) {
         QuantityStepper(
             quantity = 3,

@@ -45,7 +45,7 @@ fun SearchBar(
 
 @Preview("SearchBar")
 @Composable
-fun SearchBarPreview() {
+private fun SearchBarPreview() {
     McComposeTheme {
         SearchBar(
             text = "Find what you want..."
@@ -55,7 +55,7 @@ fun SearchBarPreview() {
 
 @Preview("SearchBar • Dark")
 @Composable
-fun SearchBarDarkPreview() {
+private fun SearchBarDarkPreview() {
     McComposeTheme(lightTheme = false) {
         SearchBar(
             text = "Find what you want..."

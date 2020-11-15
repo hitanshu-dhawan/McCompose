@@ -104,7 +104,7 @@ fun MenuItemCard(
 
 @Preview("Menu Item Card")
 @Composable
-fun MenuItemCardPreview() {
+private fun MenuItemCardPreview() {
     McComposeTheme {
         // todo : image in preview
         MenuItemCard(
@@ -123,7 +123,7 @@ fun MenuItemCardPreview() {
 
 @Preview("Menu Item Card • Dark")
 @Composable
-fun MenuItemCardDarkPreview() {
+private fun MenuItemCardDarkPreview() {
     McComposeTheme(lightTheme = false) {
         // todo : image in preview
         MenuItemCard(

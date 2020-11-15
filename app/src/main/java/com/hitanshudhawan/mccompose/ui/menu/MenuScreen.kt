@@ -51,7 +51,7 @@ fun MenuScreen(
 
 @Preview("MenuScreen")
 @Composable
-fun MenuScreenPreview() {
+private fun MenuScreenPreview() {
     McComposeTheme {
         MenuScreen()
     }
@@ -59,7 +59,7 @@ fun MenuScreenPreview() {
 
 @Preview("MenuScreen • Dark")
 @Composable
-fun MenuScreenDarkPreview() {
+private fun MenuScreenDarkPreview() {
     McComposeTheme(lightTheme = false) {
         MenuScreen()
     }

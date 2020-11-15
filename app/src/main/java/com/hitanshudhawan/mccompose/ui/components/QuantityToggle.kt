@@ -91,7 +91,7 @@ fun QuantityToggle(
 
 @Preview("QuantityToggle • Zero")
 @Composable
-fun QuantityToggleZeroPreview() {
+private fun QuantityToggleZeroPreview() {
     McComposeTheme {
         QuantityToggle(
             quantity = 0,
@@ -103,7 +103,7 @@ fun QuantityToggleZeroPreview() {
 
 @Preview("QuantityToggle • NonZero")
 @Composable
-fun QuantityToggleNonZeroPreview() {
+private fun QuantityToggleNonZeroPreview() {
     McComposeTheme {
         QuantityToggle(
             quantity = 1,
@@ -115,7 +115,7 @@ fun QuantityToggleNonZeroPreview() {
 
 @Preview("QuantityToggle • Zero • Dark")
 @Composable
-fun QuantityToggleZeroDarkPreview() {
+private fun QuantityToggleZeroDarkPreview() {
     McComposeTheme(lightTheme = false) {
         QuantityToggle(
             quantity = 0,
@@ -127,7 +127,7 @@ fun QuantityToggleZeroDarkPreview() {
 
 @Preview("QuantityToggle • NonZero • Dark")
 @Composable
-fun QuantityToggleNonZeroDarkPreview() {
+private fun QuantityToggleNonZeroDarkPreview() {
     McComposeTheme(lightTheme = false) {
         QuantityToggle(
             quantity = 1,
