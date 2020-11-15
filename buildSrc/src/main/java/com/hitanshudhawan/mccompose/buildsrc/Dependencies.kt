@@ -2,7 +2,7 @@ package com.hitanshudhawan.mccompose.buildsrc
 
 object Libs {
 
-    const val androidGradlePlugin = "com.android.tools.build:gradle:4.2.0-alpha15"
+    const val androidGradlePlugin = "com.android.tools.build:gradle:4.2.0-alpha16"
 
     object Accompanist {
         private const val version = "0.3.3.1"
