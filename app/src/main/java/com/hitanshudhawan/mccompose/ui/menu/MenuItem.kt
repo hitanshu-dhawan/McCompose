@@ -16,7 +16,7 @@ import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import androidx.ui.tooling.preview.Preview
 import com.hitanshudhawan.mccompose.model.MenuItem
-import com.hitanshudhawan.mccompose.ui.components.QuantityStepper
+import com.hitanshudhawan.mccompose.ui.components.QuantityToggle
 import com.hitanshudhawan.mccompose.ui.theme.McComposeTheme
 import dev.chrisbanes.accompanist.coil.CoilImage
 
@@ -73,7 +73,7 @@ fun MenuItem(
                         style = MaterialTheme.typography.subtitle2
                     )
                     Spacer(modifier = Modifier.weight(1f))
-                    QuantityStepper(
+                    QuantityToggle(
                         quantity = menuItem.quantity,
                         onIncrementQuantity = onIncrementMenuItemQuantity,
                         onDecrementQuantity = onDecrementMenuItemQuantity,
