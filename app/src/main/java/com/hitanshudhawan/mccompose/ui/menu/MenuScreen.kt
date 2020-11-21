@@ -1,16 +1,13 @@
 package com.hitanshudhawan.mccompose.ui.menu
 
-import androidx.compose.foundation.layout.Spacer
-import androidx.compose.foundation.layout.preferredHeight
 import androidx.compose.foundation.lazy.LazyColumnFor
+import androidx.compose.material.Divider
 import androidx.compose.material.Scaffold
 import androidx.compose.material.Text
 import androidx.compose.material.TopAppBar
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.livedata.observeAsState
-import androidx.compose.ui.Modifier
-import androidx.compose.ui.unit.dp
 import androidx.compose.ui.viewinterop.viewModel
 import androidx.ui.tooling.preview.Preview
 import com.hitanshudhawan.mccompose.model.Menu
@@ -31,9 +28,6 @@ fun MenuScreen(
         }
     ) {
 
-        // TODO...
-
-        Spacer(modifier = Modifier.preferredHeight(16.dp))
         LazyColumnFor(
             items = data.menuItems
         ) { menuItem ->
@@ -41,9 +35,8 @@ fun MenuScreen(
                 menuItem = menuItem,
                 onIncrementMenuItemQuantity = { viewModel.incrementMenuItemQuantity(menuItem) },
                 onDecrementMenuItemQuantity = { viewModel.decrementMenuItemQuantity(menuItem) },
-                //modifier = Modifier.padding(horizontal = 16.dp)
             )
-            //Spacer(modifier = Modifier.preferredHeight(16.dp))
+            Divider()
         }
 
     }

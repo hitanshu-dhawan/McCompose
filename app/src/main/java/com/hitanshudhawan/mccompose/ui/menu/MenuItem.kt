@@ -34,10 +34,9 @@ fun MenuItem(
     menuItem: MenuItem,
     onIncrementMenuItemQuantity: () -> Unit,
     onDecrementMenuItemQuantity: () -> Unit,
-    modifier: Modifier = Modifier
 ) {
     Surface(
-        modifier = modifier.fillMaxWidth(),
+        modifier = Modifier.fillMaxWidth(),
         color = MaterialTheme.colors.background,
         contentColor = MaterialTheme.colors.onSurface
     ) {
@@ -73,7 +72,7 @@ fun MenuItem(
                     maxLines = 4,
                     overflow = TextOverflow.Ellipsis
                 )
-                Spacer(modifier = Modifier.preferredHeight(4.dp))
+                Spacer(modifier = Modifier.preferredHeight(8.dp))
                 Row(
                     verticalAlignment = Alignment.CenterVertically
                 ) {
