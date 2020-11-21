@@ -24,8 +24,8 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
 import androidx.ui.tooling.preview.Preview
+import com.hitanshudhawan.mccompose.ui.theme.Amber200
 import com.hitanshudhawan.mccompose.ui.theme.Amber500
-import com.hitanshudhawan.mccompose.ui.theme.Amber700
 import com.hitanshudhawan.mccompose.ui.theme.McComposeTheme
 
 
@@ -35,17 +35,28 @@ private val backgroundColor = ColorPropKey()
 private val contentColor = ColorPropKey()
 private val iconSize = DpPropKey()
 
-// TODO : Fix the UI for Dark theme
-
-private val QuantityToggleTransitionDefinition = transitionDefinition<QuantityToggleState> {
+private val QuantityToggleLightThemeTransitionDefinition = transitionDefinition<QuantityToggleState> {
     state(QuantityToggleState.Zero) {
         this[backgroundColor] = Color.White
-        this[contentColor] = Amber700
+        this[contentColor] = Amber500
         this[iconSize] = 0.dp
     }
     state(QuantityToggleState.NonZero) {
         this[backgroundColor] = Amber500
         this[contentColor] = Color.White
+        this[iconSize] = 18.dp
+    }
+}
+
+private val QuantityToggleDarkThemeTransitionDefinition = transitionDefinition<QuantityToggleState> {
+    state(QuantityToggleState.Zero) {
+        this[backgroundColor] = Color.Black
+        this[contentColor] = Amber200
+        this[iconSize] = 0.dp
+    }
+    state(QuantityToggleState.NonZero) {
+        this[backgroundColor] = Amber200
+        this[contentColor] = Color.Black
         this[iconSize] = 18.dp
     }
 }
@@ -57,8 +68,10 @@ fun QuantityToggle(
     onDecrementQuantity: () -> Unit,
 ) {
 
+    val isLightTheme = MaterialTheme.colors.isLight
+
     val quantityToggleTransitionState = transition(
-        definition = QuantityToggleTransitionDefinition,
+        definition = if (isLightTheme) QuantityToggleLightThemeTransitionDefinition else QuantityToggleDarkThemeTransitionDefinition,
         toState = if (quantity == 0) QuantityToggleState.Zero else QuantityToggleState.NonZero
     )
 
@@ -69,7 +82,7 @@ fun QuantityToggle(
         shape = MaterialTheme.shapes.small,
         color = quantityToggleTransitionState[backgroundColor],
         contentColor = quantityToggleTransitionState[contentColor],
-        border = BorderStroke(2.dp, Amber500)
+        border = BorderStroke(2.dp, if (isLightTheme) Amber500 else Amber200)
     ) {
         Row(
             modifier = Modifier
