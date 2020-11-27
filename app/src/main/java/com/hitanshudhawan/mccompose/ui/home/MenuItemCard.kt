@@ -21,12 +21,6 @@ import com.hitanshudhawan.mccompose.model.MenuItem
 import com.hitanshudhawan.mccompose.ui.theme.McComposeTheme
 import dev.chrisbanes.accompanist.coil.CoilImage
 
-// TODO...
-// Styling
-// 1. Bold, Color etc. of texts
-// Logic
-// 1. Menu item price formatting and color, maybe green
-
 @Composable
 fun MenuItemCard(
     menuItem: MenuItem,
@@ -49,8 +43,8 @@ fun MenuItemCard(
             Surface(
                 modifier = Modifier
                     .constrainAs(card) {
-                        start.linkTo(parent.start, margin = 16.dp) // todo : 16 dp get from outside or global horizontal padding
-                        end.linkTo(parent.end, margin = 16.dp) // todo : 16 dp get from outside or global horizontal padding
+                        start.linkTo(parent.start, margin = 16.dp)
+                        end.linkTo(parent.end, margin = 16.dp)
                         top.linkTo(parent.top, margin = 32.dp)
                         bottom.linkTo(parent.bottom)
 
@@ -79,7 +73,7 @@ fun MenuItemCard(
             )
 
             Text(
-                text = "$" + "9.99",
+                text = "$" + "%.2f".format(menuItem.price),
                 style = MaterialTheme.typography.subtitle2,
                 modifier = Modifier
                     .constrainAs(price) {
