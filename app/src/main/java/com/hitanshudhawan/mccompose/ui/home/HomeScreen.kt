@@ -35,40 +35,35 @@ fun HomeScreen(
             )
         }
     ) {
-
-        // TODO : Use a global size here, e.g. like in shapes and colors (theme)
-        val horizontalPadding = 16.dp
-
         ScrollableColumn(
-            modifier = Modifier
-                .fillMaxSize()
+            modifier = Modifier.fillMaxSize()
         ) {
             Spacer(modifier = Modifier.preferredHeight(16.dp))
 
             Text(
                 text = "Hi ${data.user.name}!",
                 style = MaterialTheme.typography.h3,
-                modifier = Modifier.padding(horizontal = horizontalPadding)
+                modifier = Modifier.padding(horizontal = 16.dp)
             )
 
             Spacer(modifier = Modifier.preferredHeight(16.dp))
 
             SearchBar(
                 text = "Find what you want...",
-                modifier = Modifier.padding(horizontal = horizontalPadding)
+                modifier = Modifier.padding(horizontal = 16.dp)
             )
 
             Spacer(modifier = Modifier.preferredHeight(16.dp))
 
             ScrollableRow {
-                Spacer(modifier = Modifier.preferredWidth(horizontalPadding))
+                Spacer(modifier = Modifier.preferredWidth(16.dp))
                 data.categories.forEach { category ->
                     SpotlightCard(
                         imageUrl = category.image,
                         title = category.name,
                         onClick = onCategoryClick
                     )
-                    Spacer(modifier = Modifier.preferredWidth(horizontalPadding))
+                    Spacer(modifier = Modifier.preferredWidth(16.dp))
                 }
             }
 
@@ -77,17 +72,15 @@ fun HomeScreen(
             Text(
                 text = "Popular",
                 style = MaterialTheme.typography.h4,
-                modifier = Modifier.padding(horizontal = horizontalPadding)
+                modifier = Modifier.padding(horizontal = 16.dp)
             )
-
-            Spacer(modifier = Modifier.preferredHeight(16.dp))
 
             data.popularMenuItems.forEach { menuItem ->
                 MenuItemCard(
                     menuItem = menuItem,
                     onClick = onMenuItemClick
                 )
-                Spacer(modifier = Modifier.preferredHeight(horizontalPadding))
+                Spacer(modifier = Modifier.preferredHeight(8.dp))
             }
 
             Spacer(modifier = Modifier.preferredHeight(16.dp))
@@ -95,22 +88,19 @@ fun HomeScreen(
             Text(
                 text = "Recommended",
                 style = MaterialTheme.typography.h4,
-                modifier = Modifier.padding(horizontal = horizontalPadding)
+                modifier = Modifier.padding(horizontal = 16.dp)
             )
-
-            Spacer(modifier = Modifier.preferredHeight(16.dp))
 
             data.recommendedMenuItems.forEach { menuItem ->
                 MenuItemCard(
                     menuItem = menuItem,
                     onClick = onMenuItemClick
                 )
-                Spacer(modifier = Modifier.preferredHeight(horizontalPadding))
+                Spacer(modifier = Modifier.preferredHeight(8.dp))
             }
 
             Spacer(modifier = Modifier.preferredHeight(16.dp))
         }
-
     }
 }
 
