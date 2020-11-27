@@ -84,7 +84,7 @@ object HomeRepository {
 //                    image = "https://raw.githubusercontent.com/DumbPolyglotProgrammer/PigGame/master/images/" + "menu_item_mcflurry_with_oreo_cookies.png",
 //                    price = 0.00,
 //                    categoryId = 6
-//                )
+//                ),
             ),
             recommendedMenuItems = listOf(
                 MenuItem(
@@ -174,7 +174,7 @@ object HomeRepository {
 //                    image = "https://raw.githubusercontent.com/DumbPolyglotProgrammer/PigGame/master/images/" + "menu_item_baked_apple_pie.png",
 //                    price = 0.00,
 //                    categoryId = 6
-//                )
+//                ),
             )
         )
     }
