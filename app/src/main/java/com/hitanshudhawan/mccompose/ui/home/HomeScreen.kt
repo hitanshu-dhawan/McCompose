@@ -59,8 +59,8 @@ fun HomeScreen(
                 Spacer(modifier = Modifier.preferredWidth(16.dp))
                 data.categories.forEach { category ->
                     SpotlightCard(
-                        imageUrl = category.image,
                         title = category.name,
+                        imageUrl = category.image,
                         onClick = onCategoryClick
                     )
                     Spacer(modifier = Modifier.preferredWidth(16.dp))

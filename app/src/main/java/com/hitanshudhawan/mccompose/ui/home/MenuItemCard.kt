@@ -106,13 +106,12 @@ fun MenuItemCard(
 @Composable
 private fun MenuItemCardPreview() {
     McComposeTheme {
-        // todo : image in preview
         MenuItemCard(
             menuItem = MenuItem(
                 id = 0,
                 name = "Double Quarter Pounder with Cheese Meal",
                 description = "",
-                image = "https://raw.githubusercontent.com/DumbPolyglotProgrammer/PigGame/master/images/" + "menu_item_double_quarter_pounder_with_cheese_meal.png",
+                image = "",
                 price = 0.00,
                 categoryId = 0
             ),
@@ -125,13 +124,12 @@ private fun MenuItemCardPreview() {
 @Composable
 private fun MenuItemCardDarkPreview() {
     McComposeTheme(lightTheme = false) {
-        // todo : image in preview
         MenuItemCard(
             menuItem = MenuItem(
                 id = 0,
                 name = "Double Quarter Pounder with Cheese Meal",
                 description = "",
-                image = "https://raw.githubusercontent.com/DumbPolyglotProgrammer/PigGame/master/images/" + "menu_item_double_quarter_pounder_with_cheese_meal.png",
+                image = "",
                 price = 0.00,
                 categoryId = 0
             ),

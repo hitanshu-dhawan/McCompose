@@ -109,9 +109,8 @@ private fun getRandomBackgroundColor(isLightTheme: Boolean): Color {
 private fun SpotlightCardPreview() {
     McComposeTheme {
         SpotlightCard(
-            // todo : image in preview
-            imageUrl = "https://www.mcdonalds.com/is/image/content/dam/usa/nfl/assets/meal/desktop/h-mcdonalds-Double-Quarter-Pounder-with-Cheese-Extra-Value-Meals.jpg",
             title = "Happy Meals",
+            imageUrl = "",
             onClick = {}
         )
     }
@@ -122,9 +121,8 @@ private fun SpotlightCardPreview() {
 private fun SpotlightCardDarkPreview() {
     McComposeTheme(lightTheme = false) {
         SpotlightCard(
-            // todo : image in preview
-            imageUrl = "https://www.mcdonalds.com/is/image/content/dam/usa/nfl/assets/meal/desktop/h-mcdonalds-Double-Quarter-Pounder-with-Cheese-Extra-Value-Meals.jpg",
             title = "Happy Meals",
+            imageUrl = "",
             onClick = {}
         )
     }
