@@ -2,6 +2,7 @@ package com.hitanshudhawan.mccompose.ui.components
 
 import androidx.compose.animation.ColorPropKey
 import androidx.compose.animation.DpPropKey
+import androidx.compose.animation.animateContentSize
 import androidx.compose.animation.core.transitionDefinition
 import androidx.compose.animation.transition
 import androidx.compose.foundation.BorderStroke
@@ -95,10 +96,10 @@ fun QuantityToggle(
                 asset = Icons.Rounded.Done,
                 modifier = Modifier.preferredSize(quantityToggleTransitionState[iconSize])
             )
-            // TODO : Find a way to animate this text ( "ADD" <---> "ADDED" )
             Text(
                 text = if (quantity == 0) "ADD" else "ADDED",
-                style = MaterialTheme.typography.button
+                style = MaterialTheme.typography.button,
+                modifier = Modifier.animateContentSize()
             )
         }
     }
