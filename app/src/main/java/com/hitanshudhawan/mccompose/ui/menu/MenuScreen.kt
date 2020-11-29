@@ -1,5 +1,7 @@
 package com.hitanshudhawan.mccompose.ui.menu
 
+import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.LazyColumnFor
 import androidx.compose.material.Divider
 import androidx.compose.material.Scaffold
@@ -8,6 +10,9 @@ import androidx.compose.material.TopAppBar
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.livedata.observeAsState
+import androidx.compose.ui.Alignment
+import androidx.compose.ui.Modifier
+import androidx.compose.ui.unit.dp
 import androidx.compose.ui.viewinterop.viewModel
 import androidx.ui.tooling.preview.Preview
 import com.hitanshudhawan.mccompose.model.Menu
@@ -27,18 +32,31 @@ fun MenuScreen(
             )
         }
     ) {
+        Box {
 
-        LazyColumnFor(
-            items = data.menuItems
-        ) { menuItem ->
-            MenuItem(
-                menuItem = menuItem,
-                onIncrementMenuItemQuantity = { viewModel.incrementMenuItemQuantity(menuItem) },
-                onDecrementMenuItemQuantity = { viewModel.decrementMenuItemQuantity(menuItem) },
-            )
-            Divider()
+            LazyColumnFor(
+                items = data.menuItems
+            ) { menuItem ->
+                MenuItem(
+                    menuItem = menuItem,
+                    onIncrementMenuItemQuantity = { viewModel.incrementMenuItemQuantity(menuItem) },
+                    onDecrementMenuItemQuantity = { viewModel.decrementMenuItemQuantity(menuItem) },
+                )
+                Divider()
+            }
+
+            if (data.menuItems.any { it.quantity != 0 }) {
+                MenuCartButton(
+                    quantity = data.menuItems.sumOf { it.quantity },
+                    price = data.menuItems.sumOf { it.price },
+                    onClick = {},
+                    modifier = Modifier
+                        .padding(16.dp)
+                        .align(Alignment.BottomCenter)
+                )
+            }
+
         }
-
     }
 }
 

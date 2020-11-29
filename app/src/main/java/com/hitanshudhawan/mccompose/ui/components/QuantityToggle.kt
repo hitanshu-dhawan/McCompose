@@ -24,8 +24,8 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
 import androidx.ui.tooling.preview.Preview
-import com.hitanshudhawan.mccompose.ui.theme.Amber200
 import com.hitanshudhawan.mccompose.ui.theme.Amber500
+import com.hitanshudhawan.mccompose.ui.theme.Amber700
 import com.hitanshudhawan.mccompose.ui.theme.McComposeTheme
 
 
@@ -51,11 +51,11 @@ private val QuantityToggleLightThemeTransitionDefinition = transitionDefinition<
 private val QuantityToggleDarkThemeTransitionDefinition = transitionDefinition<QuantityToggleState> {
     state(QuantityToggleState.Zero) {
         this[backgroundColor] = Color.Black
-        this[contentColor] = Amber200
+        this[contentColor] = Amber700
         this[iconSize] = 0.dp
     }
     state(QuantityToggleState.NonZero) {
-        this[backgroundColor] = Amber200
+        this[backgroundColor] = Amber700
         this[contentColor] = Color.Black
         this[iconSize] = 18.dp
     }
@@ -82,7 +82,7 @@ fun QuantityToggle(
         shape = MaterialTheme.shapes.small,
         color = quantityToggleTransitionState[backgroundColor],
         contentColor = quantityToggleTransitionState[contentColor],
-        border = BorderStroke(2.dp, if (isLightTheme) Amber500 else Amber200)
+        border = BorderStroke(2.dp, if (isLightTheme) Amber500 else Amber700)
     ) {
         Row(
             modifier = Modifier
