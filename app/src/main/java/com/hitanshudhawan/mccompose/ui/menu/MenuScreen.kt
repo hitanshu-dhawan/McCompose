@@ -4,9 +4,13 @@ import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.LazyColumnFor
 import androidx.compose.material.Divider
+import androidx.compose.material.Icon
+import androidx.compose.material.IconButton
 import androidx.compose.material.Scaffold
 import androidx.compose.material.Text
 import androidx.compose.material.TopAppBar
+import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.rounded.ArrowBack
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.livedata.observeAsState
@@ -20,15 +24,22 @@ import com.hitanshudhawan.mccompose.ui.theme.McComposeTheme
 
 @Composable
 fun MenuScreen(
-    viewModel: MenuViewModel = viewModel()
+    onBackClick: () -> Unit
 ) {
+
+    val viewModel: MenuViewModel = viewModel()
 
     val data by viewModel.data.observeAsState(Menu(emptyList(), emptyList()))
 
     Scaffold(
         topBar = {
             TopAppBar(
-                title = { Text(text = "McDonald's Menu") }
+                title = { Text(text = "McDonald's Menu") },
+                navigationIcon = {
+                    IconButton(onClick = onBackClick) {
+                        Icon(asset = Icons.Rounded.ArrowBack)
+                    }
+                }
             )
         }
     ) {
@@ -64,7 +75,9 @@ fun MenuScreen(
 @Composable
 private fun MenuScreenPreview() {
     McComposeTheme {
-        MenuScreen()
+        MenuScreen(
+            onBackClick = {}
+        )
     }
 }
 
@@ -72,6 +85,8 @@ private fun MenuScreenPreview() {
 @Composable
 private fun MenuScreenDarkPreview() {
     McComposeTheme(lightTheme = false) {
-        MenuScreen()
+        MenuScreen(
+            onBackClick = {}
+        )
     }
 }

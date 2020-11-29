@@ -31,7 +31,9 @@ class MainActivity : AppCompatActivity() {
                     }
 
                     composable("menu") {
-                        MenuScreen()
+                        MenuScreen(
+                            onBackClick = { navController.navigateUp() }
+                        )
                     }
 
                 }
