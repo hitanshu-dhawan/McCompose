@@ -21,7 +21,7 @@ import androidx.ui.tooling.preview.Preview
 import com.hitanshudhawan.mccompose.ui.theme.McComposeTheme
 
 @Composable
-fun MenuCartButton(
+fun CartButton(
     quantity: Int,
     price: Double,
     onClick: () -> Unit,
@@ -68,7 +68,7 @@ fun MenuCartButton(
 @Composable
 private fun MenuCartButtonPreview() {
     McComposeTheme {
-        MenuCartButton(
+        CartButton(
             quantity = 3,
             price = 0.0,
             onClick = {}
@@ -80,7 +80,7 @@ private fun MenuCartButtonPreview() {
 @Composable
 private fun MenuCartButtonDarkPreview() {
     McComposeTheme(lightTheme = false) {
-        MenuCartButton(
+        CartButton(
             quantity = 3,
             price = 0.0,
             onClick = {}

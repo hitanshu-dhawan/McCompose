@@ -80,7 +80,7 @@ fun MenuScreen(
                     .padding(16.dp)
                     .align(Alignment.BottomCenter)
             ) {
-                MenuCartButton(
+                CartButton(
                     quantity = data.menuItems.sumOf { it.quantity },
                     price = data.menuItems.sumOf { it.price },
                     onClick = {}
