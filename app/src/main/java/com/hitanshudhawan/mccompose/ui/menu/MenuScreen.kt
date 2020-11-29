@@ -1,5 +1,9 @@
 package com.hitanshudhawan.mccompose.ui.menu
 
+import androidx.compose.animation.AnimatedVisibility
+import androidx.compose.animation.ExperimentalAnimationApi
+import androidx.compose.animation.slideInVertically
+import androidx.compose.animation.slideOutVertically
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.LazyColumnFor
@@ -22,6 +26,7 @@ import androidx.ui.tooling.preview.Preview
 import com.hitanshudhawan.mccompose.model.Menu
 import com.hitanshudhawan.mccompose.ui.theme.McComposeTheme
 
+@ExperimentalAnimationApi
 @Composable
 fun MenuScreen(
     onBackClick: () -> Unit
@@ -56,14 +61,22 @@ fun MenuScreen(
                 Divider()
             }
 
-            if (data.menuItems.any { it.quantity != 0 }) {
+            AnimatedVisibility(
+                visible = data.menuItems.any { it.quantity != 0 },
+                enter = slideInVertically(
+                    initialOffsetY = { it * 2 }
+                ),
+                exit = slideOutVertically(
+                    targetOffsetY = { it * 2 }
+                ),
+                modifier = Modifier
+                    .padding(16.dp)
+                    .align(Alignment.BottomCenter)
+            ) {
                 MenuCartButton(
                     quantity = data.menuItems.sumOf { it.quantity },
                     price = data.menuItems.sumOf { it.price },
-                    onClick = {},
-                    modifier = Modifier
-                        .padding(16.dp)
-                        .align(Alignment.BottomCenter)
+                    onClick = {}
                 )
             }
 
@@ -71,6 +84,7 @@ fun MenuScreen(
     }
 }
 
+@ExperimentalAnimationApi
 @Preview("MenuScreen")
 @Composable
 private fun MenuScreenPreview() {
@@ -81,6 +95,7 @@ private fun MenuScreenPreview() {
     }
 }
 
+@ExperimentalAnimationApi
 @Preview("MenuScreen • Dark")
 @Composable
 private fun MenuScreenDarkPreview() {
