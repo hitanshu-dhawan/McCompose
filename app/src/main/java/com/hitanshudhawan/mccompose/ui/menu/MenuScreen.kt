@@ -5,6 +5,7 @@ import androidx.compose.animation.ExperimentalAnimationApi
 import androidx.compose.animation.slideInVertically
 import androidx.compose.animation.slideOutVertically
 import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.LazyColumnFor
 import androidx.compose.material.Divider
@@ -50,15 +51,21 @@ fun MenuScreen(
     ) {
         Box {
 
-            LazyColumnFor(
-                items = data.menuItems
-            ) { menuItem ->
-                MenuItem(
-                    menuItem = menuItem,
-                    onIncrementMenuItemQuantity = { viewModel.incrementMenuItemQuantity(menuItem) },
-                    onDecrementMenuItemQuantity = { viewModel.decrementMenuItemQuantity(menuItem) },
-                )
-                Divider()
+            Column {
+
+                CategoryTabs()
+
+                LazyColumnFor(
+                    items = data.menuItems
+                ) { menuItem ->
+                    MenuItem(
+                        menuItem = menuItem,
+                        onIncrementMenuItemQuantity = { viewModel.incrementMenuItemQuantity(menuItem) },
+                        onDecrementMenuItemQuantity = { viewModel.decrementMenuItemQuantity(menuItem) },
+                    )
+                    Divider()
+                }
+
             }
 
             AnimatedVisibility(
