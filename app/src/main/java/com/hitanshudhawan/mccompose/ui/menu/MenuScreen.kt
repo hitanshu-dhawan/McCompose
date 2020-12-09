@@ -53,7 +53,10 @@ fun MenuScreen(
 
             Column {
 
-                CategoryTabs()
+                CategoryTabs(
+                    categories = data.categories
+                )
+                Divider()
 
                 LazyColumnFor(
                     items = data.menuItems
