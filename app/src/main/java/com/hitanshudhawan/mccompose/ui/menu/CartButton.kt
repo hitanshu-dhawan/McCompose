@@ -17,7 +17,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
-import androidx.ui.tooling.preview.Preview
+import androidx.compose.ui.tooling.preview.Preview
 import com.hitanshudhawan.mccompose.ui.theme.McComposeTheme
 
 @Composable
@@ -59,7 +59,7 @@ fun CartButton(
                 text = "VIEW CART",
                 style = MaterialTheme.typography.button
             )
-            Icon(asset = Icons.Rounded.ChevronRight)
+            Icon(Icons.Rounded.ChevronRight)
         }
     }
 }

@@ -17,7 +17,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
-import androidx.ui.tooling.preview.Preview
+import androidx.compose.ui.tooling.preview.Preview
 import com.hitanshudhawan.mccompose.ui.theme.McComposeTheme
 
 @Composable
@@ -37,7 +37,7 @@ fun SearchBar(
                 .padding(16.dp),
             verticalAlignment = Alignment.CenterVertically
         ) {
-            Icon(asset = Icons.Rounded.Search)
+            Icon(Icons.Rounded.Search)
             Spacer(modifier = Modifier.preferredWidth(8.dp))
             Text(
                 text = text,

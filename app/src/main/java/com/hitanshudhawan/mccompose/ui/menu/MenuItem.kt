@@ -23,7 +23,7 @@ import androidx.compose.ui.draw.clip
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
-import androidx.ui.tooling.preview.Preview
+import androidx.compose.ui.tooling.preview.Preview
 import com.hitanshudhawan.mccompose.model.MenuItem
 import com.hitanshudhawan.mccompose.ui.components.QuantityToggle
 import com.hitanshudhawan.mccompose.ui.theme.McComposeTheme
@@ -50,7 +50,7 @@ fun MenuItem(
                     .preferredSize(120.dp)
                     .clip(RoundedCornerShape(16.dp))
                     .background(MaterialTheme.colors.surface),
-                alignment = Alignment.Center
+                contentAlignment = Alignment.Center
             ) {
                 CoilImage(
                     data = menuItem.image,

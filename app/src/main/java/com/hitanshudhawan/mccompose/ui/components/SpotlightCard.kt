@@ -22,7 +22,7 @@ import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.layout.Layout
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
-import androidx.ui.tooling.preview.Preview
+import androidx.compose.ui.tooling.preview.Preview
 import com.hitanshudhawan.mccompose.ui.theme.McComposeTheme
 import dev.chrisbanes.accompanist.coil.CoilImage
 
@@ -61,7 +61,7 @@ fun SpotlightCard(
                     .aspectRatio(1.00f),
             ) {
                 Layout(
-                    children = {
+                    content = {
                         CoilImage(
                             data = imageUrl,
                             contentScale = ContentScale.Fit,
