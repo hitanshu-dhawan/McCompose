@@ -23,7 +23,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.viewinterop.viewModel
-import androidx.ui.tooling.preview.Preview
+import androidx.compose.ui.tooling.preview.Preview
 import com.hitanshudhawan.mccompose.model.Menu
 import com.hitanshudhawan.mccompose.ui.theme.McComposeTheme
 
@@ -43,7 +43,7 @@ fun MenuScreen(
                 title = { Text(text = "McDonald's Menu") },
                 navigationIcon = {
                     IconButton(onClick = onBackClick) {
-                        Icon(asset = Icons.Rounded.ArrowBack)
+                        Icon(Icons.Rounded.ArrowBack)
                     }
                 }
             )

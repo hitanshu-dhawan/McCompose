@@ -24,7 +24,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
-import androidx.ui.tooling.preview.Preview
+import androidx.compose.ui.tooling.preview.Preview
 import com.hitanshudhawan.mccompose.ui.theme.Amber500
 import com.hitanshudhawan.mccompose.ui.theme.Amber700
 import com.hitanshudhawan.mccompose.ui.theme.McComposeTheme
@@ -93,7 +93,7 @@ fun QuantityToggle(
             verticalAlignment = Alignment.CenterVertically
         ) {
             Icon(
-                asset = Icons.Rounded.Done,
+                imageVector = Icons.Rounded.Done,
                 modifier = Modifier.preferredSize(quantityToggleTransitionState[iconSize])
             )
             Text(

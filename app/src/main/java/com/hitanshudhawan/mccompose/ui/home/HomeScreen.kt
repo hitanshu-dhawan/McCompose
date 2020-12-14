@@ -14,7 +14,7 @@ import androidx.compose.material.TopAppBar
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
-import androidx.ui.tooling.preview.Preview
+import androidx.compose.ui.tooling.preview.Preview
 import com.hitanshudhawan.mccompose.data.HomeRepository
 import com.hitanshudhawan.mccompose.ui.components.SearchBar
 import com.hitanshudhawan.mccompose.ui.components.SpotlightCard

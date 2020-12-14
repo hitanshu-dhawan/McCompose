@@ -1,7 +1,7 @@
 package com.hitanshudhawan.mccompose.ui.components
 
 import androidx.compose.runtime.Composable
-import androidx.ui.tooling.preview.Preview
+import androidx.compose.ui.tooling.preview.Preview
 import com.hitanshudhawan.mccompose.ui.theme.McComposeTheme
 
 @Composable
