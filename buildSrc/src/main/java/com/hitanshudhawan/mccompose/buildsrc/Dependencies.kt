@@ -5,12 +5,12 @@ object Libs {
     const val androidGradlePlugin = "com.android.tools.build:gradle:7.0.0-alpha02"
 
     object Accompanist {
-        private const val version = "0.4.0"
+        private const val version = "0.4.1"
         const val coil = "dev.chrisbanes.accompanist:accompanist-coil:$version"
     }
 
     object Kotlin {
-        private const val version = "1.4.20"
+        private const val version = "1.4.21"
         const val stdlib = "org.jetbrains.kotlin:kotlin-stdlib-jdk8:$version"
         const val gradlePlugin = "org.jetbrains.kotlin:kotlin-gradle-plugin:$version"
         const val extensions = "org.jetbrains.kotlin:kotlin-android-extensions:$version"
@@ -21,7 +21,7 @@ object Libs {
         const val material = "com.google.android.material:material:1.2.0"
 
         object Compose {
-            private const val version = "1.0.0-alpha08"
+            private const val version = "1.0.0-alpha09"
 
             const val foundation = "androidx.compose.foundation:foundation:$version"
             const val layout = "androidx.compose.foundation:foundation-layout:$version"
