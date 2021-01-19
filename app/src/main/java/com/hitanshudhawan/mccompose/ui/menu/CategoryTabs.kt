@@ -28,11 +28,12 @@ import com.hitanshudhawan.mccompose.ui.theme.McComposeTheme
 import com.hitanshudhawan.mccompose.ui.theme.Red500
 import com.hitanshudhawan.mccompose.ui.theme.Red700
 import dev.chrisbanes.accompanist.coil.CoilImage
-import kotlin.random.Random
 
 @Composable
 fun CategoryTabs(
-    categories: List<Category>
+    categories: List<Category>,
+    selectedCategory: Category,
+    onClick: (Category) -> Unit
 ) {
     ScrollableRow(
         modifier = Modifier.padding(vertical = 16.dp)
@@ -41,8 +42,8 @@ fun CategoryTabs(
         categories.forEach { category ->
             CategoryTab(
                 category = category,
-                selected = Random.nextBoolean(), // TODO : Just for testing!
-                onClick = { /*todo*/ }
+                selected = category == selectedCategory,
+                onClick = { onClick(category) }
             )
             Spacer(modifier = Modifier.preferredWidth(16.dp))
         }
@@ -125,7 +126,9 @@ private fun CategoryTab(
 private fun CategoryTabsPreview() {
     McComposeTheme {
         CategoryTabs(
-            categories = CategoriesRepository.getCategoriesData()
+            categories = CategoriesRepository.getCategoriesData(),
+            selectedCategory = CategoriesRepository.getCategoriesData().first(),
+            onClick = {}
         )
     }
 }
@@ -135,7 +138,9 @@ private fun CategoryTabsPreview() {
 private fun CategoryTabsDarkPreview() {
     McComposeTheme(lightTheme = false) {
         CategoryTabs(
-            categories = CategoriesRepository.getCategoriesData()
+            categories = CategoriesRepository.getCategoriesData(),
+            selectedCategory = CategoriesRepository.getCategoriesData().first(),
+            onClick = {}
         )
     }
 }

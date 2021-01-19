@@ -10,6 +10,7 @@ import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.preferredHeight
 import androidx.compose.foundation.lazy.LazyColumn
+import androidx.compose.foundation.lazy.rememberLazyListState
 import androidx.compose.material.Divider
 import androidx.compose.material.Icon
 import androidx.compose.material.IconButton
@@ -22,13 +23,16 @@ import androidx.compose.material.icons.rounded.ArrowBack
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.livedata.observeAsState
+import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.viewinterop.viewModel
 import androidx.compose.ui.tooling.preview.Preview
+import com.hitanshudhawan.mccompose.model.Category
 import com.hitanshudhawan.mccompose.model.Menu
 import com.hitanshudhawan.mccompose.ui.theme.McComposeTheme
+import kotlinx.coroutines.launch
 
 @ExperimentalAnimationApi
 @Composable
@@ -39,6 +43,10 @@ fun MenuScreen(
     val viewModel: MenuViewModel = viewModel()
 
     val data by viewModel.data.observeAsState(Menu(emptyList(), emptyList()))
+
+    val lazyListState = rememberLazyListState()
+
+    val coroutineScope = rememberCoroutineScope()
 
     Scaffold(
         topBar = {
@@ -57,11 +65,17 @@ fun MenuScreen(
             Column {
 
                 CategoryTabs(
-                    categories = data.categories
+                    categories = data.categories,
+                    selectedCategory = lazyListState.firstVisibleItemIndex.getCategory(data),
+                    onClick = { category ->
+                        coroutineScope.launch { lazyListState.snapToItemIndex(category.getIndex(data)) }
+                    }
                 )
                 Divider()
 
-                LazyColumn {
+                LazyColumn(
+                    state = lazyListState
+                ) {
                     for (category in data.categories) {
                         item {
                             Text(
@@ -109,6 +123,18 @@ fun MenuScreen(
 
         }
     }
+}
+
+private fun Int.getCategory(menu: Menu): Category {
+    return menu.categories.last { it.getIndex(menu) <= this }
+}
+
+private fun Category.getIndex(menu: Menu): Int {
+    var index = menu.categories.indexOf(this)
+    for (i in 0 until index) {
+        index += menu.menuItems.filter { it.categoryId == menu.categories[i].id }.size
+    }
+    return index
 }
 
 @ExperimentalAnimationApi
