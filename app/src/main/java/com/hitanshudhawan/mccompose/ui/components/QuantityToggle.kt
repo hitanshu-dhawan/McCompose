@@ -32,9 +32,9 @@ import com.hitanshudhawan.mccompose.ui.theme.McComposeTheme
 
 private enum class QuantityToggleState { Zero, NonZero }
 
-private val backgroundColor = ColorPropKey()
-private val contentColor = ColorPropKey()
-private val iconSize = DpPropKey()
+private val backgroundColor = ColorPropKey(label = "Background Color")
+private val contentColor = ColorPropKey(label = "Content Color")
+private val iconSize = DpPropKey(label = "Icon Size")
 
 private val QuantityToggleLightThemeTransitionDefinition = transitionDefinition<QuantityToggleState> {
     state(QuantityToggleState.Zero) {

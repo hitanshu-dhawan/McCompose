@@ -53,8 +53,8 @@ fun CategoryTabs(
 
 private enum class CategoryTabState { Selected, NotSelected }
 
-private val backgroundColor = ColorPropKey()
-private val contentColor = ColorPropKey()
+private val backgroundColor = ColorPropKey(label = "Background Color")
+private val contentColor = ColorPropKey(label = "Content Color")
 
 private val CategoryTabLightThemeTransitionDefinition = transitionDefinition<CategoryTabState> {
     state(CategoryTabState.Selected) {
