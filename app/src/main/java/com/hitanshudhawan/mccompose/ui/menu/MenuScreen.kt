@@ -6,11 +6,14 @@ import androidx.compose.animation.slideInVertically
 import androidx.compose.animation.slideOutVertically
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.padding
-import androidx.compose.foundation.lazy.LazyColumnFor
+import androidx.compose.foundation.layout.preferredHeight
+import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.material.Divider
 import androidx.compose.material.Icon
 import androidx.compose.material.IconButton
+import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Scaffold
 import androidx.compose.material.Text
 import androidx.compose.material.TopAppBar
@@ -58,15 +61,29 @@ fun MenuScreen(
                 )
                 Divider()
 
-                LazyColumnFor(
-                    items = data.menuItems
-                ) { menuItem ->
-                    MenuItem(
-                        menuItem = menuItem,
-                        onIncrementMenuItemQuantity = { viewModel.incrementMenuItemQuantity(menuItem) },
-                        onDecrementMenuItemQuantity = { viewModel.decrementMenuItemQuantity(menuItem) },
-                    )
-                    Divider()
+                LazyColumn {
+                    for (category in data.categories) {
+                        item {
+                            Text(
+                                text = category.name,
+                                style = MaterialTheme.typography.h4,
+                                modifier = Modifier.padding(16.dp)
+                            )
+                        }
+                        val menuItems = data.menuItems.filter { it.categoryId == category.id }
+                        itemsIndexed(menuItems) { index, menuItem ->
+                            MenuItem(
+                                menuItem = menuItem,
+                                onIncrementMenuItemQuantity = { viewModel.incrementMenuItemQuantity(menuItem) },
+                                onDecrementMenuItemQuantity = { viewModel.decrementMenuItemQuantity(menuItem) },
+                            )
+                            if (index != menuItems.lastIndex)
+                                Divider(modifier = Modifier.padding(horizontal = 16.dp))
+                        }
+                    }
+                    item {
+                        Spacer(modifier = Modifier.preferredHeight(80.dp))
+                    }
                 }
 
             }
