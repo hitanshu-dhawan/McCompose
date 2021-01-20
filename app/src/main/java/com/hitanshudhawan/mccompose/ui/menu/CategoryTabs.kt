@@ -4,7 +4,6 @@ import androidx.compose.animation.ColorPropKey
 import androidx.compose.animation.core.transitionDefinition
 import androidx.compose.animation.transition
 import androidx.compose.foundation.BorderStroke
-import androidx.compose.foundation.ScrollableRow
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
@@ -13,6 +12,7 @@ import androidx.compose.foundation.layout.preferredHeight
 import androidx.compose.foundation.layout.preferredWidth
 import androidx.compose.foundation.layout.wrapContentWidth
 import androidx.compose.material.MaterialTheme
+import androidx.compose.material.ScrollableTabRow
 import androidx.compose.material.Surface
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
@@ -33,19 +33,23 @@ import dev.chrisbanes.accompanist.coil.CoilImage
 fun CategoryTabs(
     categories: List<Category>,
     selectedCategory: Category,
-    onClick: (Category) -> Unit
+    onCategorySelected: (Category) -> Unit
 ) {
-    ScrollableRow(
-        modifier = Modifier.padding(vertical = 16.dp)
+    ScrollableTabRow(
+        selectedTabIndex = categories.indexOf(selectedCategory),
+        backgroundColor = MaterialTheme.colors.background,
+        contentColor = MaterialTheme.colors.onSurface,
+        edgePadding = 8.dp,
+        indicator = {},
+        divider = {}
     ) {
-        Spacer(modifier = Modifier.preferredWidth(16.dp))
         categories.forEach { category ->
             CategoryTab(
                 category = category,
                 selected = category == selectedCategory,
-                onClick = { onClick(category) }
+                onClick = { onCategorySelected(category) },
+                modifier = Modifier.padding(horizontal = 8.dp, vertical = 16.dp)
             )
-            Spacer(modifier = Modifier.preferredWidth(16.dp))
         }
     }
 }
@@ -82,7 +86,8 @@ private val CategoryTabDarkThemeTransitionDefinition = transitionDefinition<Cate
 private fun CategoryTab(
     category: Category,
     selected: Boolean,
-    onClick: () -> Unit
+    onClick: () -> Unit,
+    modifier: Modifier = Modifier
 ) {
 
     val isLightTheme = MaterialTheme.colors.isLight
@@ -93,7 +98,7 @@ private fun CategoryTab(
     )
 
     Surface(
-        modifier = Modifier,
+        modifier = modifier,
         shape = MaterialTheme.shapes.small,
         color = categoryTabTransitionState[backgroundColor],
         contentColor = categoryTabTransitionState[contentColor],
@@ -128,7 +133,7 @@ private fun CategoryTabsPreview() {
         CategoryTabs(
             categories = CategoriesRepository.getCategoriesData(),
             selectedCategory = CategoriesRepository.getCategoriesData().first(),
-            onClick = {}
+            onCategorySelected = {}
         )
     }
 }
@@ -140,7 +145,7 @@ private fun CategoryTabsDarkPreview() {
         CategoryTabs(
             categories = CategoriesRepository.getCategoriesData(),
             selectedCategory = CategoriesRepository.getCategoriesData().first(),
-            onClick = {}
+            onCategorySelected = {}
         )
     }
 }

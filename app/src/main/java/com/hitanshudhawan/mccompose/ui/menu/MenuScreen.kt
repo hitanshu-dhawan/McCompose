@@ -67,7 +67,7 @@ fun MenuScreen(
                 CategoryTabs(
                     categories = data.categories,
                     selectedCategory = lazyListState.firstVisibleItemIndex.getCategory(data),
-                    onClick = { category ->
+                    onCategorySelected = { category ->
                         coroutineScope.launch { lazyListState.snapToItemIndex(category.getIndex(data)) }
                     }
                 )
