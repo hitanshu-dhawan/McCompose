@@ -30,10 +30,10 @@ android {
         targetCompatibility JavaVersion.VERSION_1_8
     }
 
-    // TODO : kotlinOptions block can be removed after deprecated Composable functions are removed
     kotlinOptions {
-        jvmTarget = '1.8'
-        useIR = true
+        jvmTarget = JavaVersion.VERSION_1_8
+        allWarningsAsErrors = true
+        freeCompilerArgs += ["-Xallow-jvm-ir-dependencies"]
     }
 
     buildFeatures {
