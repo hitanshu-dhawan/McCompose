@@ -24,7 +24,6 @@ import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.tooling.preview.Preview
 import com.hitanshudhawan.mccompose.ui.theme.McComposeTheme
-import dev.chrisbanes.accompanist.coil.CoilImage
 
 @Composable
 fun SpotlightCard(
@@ -62,8 +61,8 @@ fun SpotlightCard(
             ) {
                 Layout(
                     content = {
-                        CoilImage(
-                            data = imageUrl,
+                        NetworkImage(
+                            imageUrl = imageUrl,
                             contentScale = ContentScale.Fit,
                             modifier = Modifier
                                 .wrapContentWidth()

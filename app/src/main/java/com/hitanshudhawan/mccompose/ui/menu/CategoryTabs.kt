@@ -24,10 +24,10 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.tooling.preview.Preview
 import com.hitanshudhawan.mccompose.data.CategoriesRepository
 import com.hitanshudhawan.mccompose.model.Category
+import com.hitanshudhawan.mccompose.ui.components.NetworkImage
 import com.hitanshudhawan.mccompose.ui.theme.McComposeTheme
 import com.hitanshudhawan.mccompose.ui.theme.Red500
 import com.hitanshudhawan.mccompose.ui.theme.Red700
-import dev.chrisbanes.accompanist.coil.CoilImage
 
 @Composable
 fun CategoryTabs(
@@ -110,8 +110,8 @@ private fun CategoryTab(
                 .padding(horizontal = 16.dp, vertical = 8.dp),
             verticalAlignment = Alignment.CenterVertically
         ) {
-            CoilImage(
-                data = category.image,
+            NetworkImage(
+                imageUrl = category.image,
                 contentScale = ContentScale.Fit,
                 modifier = Modifier
                     .wrapContentWidth()

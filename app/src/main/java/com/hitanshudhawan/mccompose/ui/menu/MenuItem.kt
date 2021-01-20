@@ -25,9 +25,9 @@ import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.tooling.preview.Preview
 import com.hitanshudhawan.mccompose.model.MenuItem
+import com.hitanshudhawan.mccompose.ui.components.NetworkImage
 import com.hitanshudhawan.mccompose.ui.components.QuantityToggle
 import com.hitanshudhawan.mccompose.ui.theme.McComposeTheme
-import dev.chrisbanes.accompanist.coil.CoilImage
 
 @Composable
 fun MenuItem(
@@ -52,8 +52,8 @@ fun MenuItem(
                     .background(MaterialTheme.colors.surface),
                 contentAlignment = Alignment.Center
             ) {
-                CoilImage(
-                    data = menuItem.image,
+                NetworkImage(
+                    imageUrl = menuItem.image,
                     contentScale = ContentScale.Crop,
                     modifier = Modifier
                         .fillMaxWidth()
