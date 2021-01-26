@@ -20,6 +20,8 @@ object Libs {
 
         const val material = "com.google.android.material:material:1.2.0"
 
+        const val navigation = "androidx.navigation:navigation-compose:1.0.0-alpha04"
+
         object Compose {
             private const val version = "1.0.0-alpha09"
 
@@ -32,19 +34,6 @@ object Libs {
             const val runtime = "androidx.compose.runtime:runtime:$version"
             const val runtimeLiveData = "androidx.compose.runtime:runtime-livedata:$version"
             const val tooling = "androidx.compose.ui:ui-tooling:$version"
-        }
-
-        object Test {
-            private const val version = "1.2.0"
-            const val core = "androidx.test:core:$version"
-            const val rules = "androidx.test:rules:$version"
-
-            object Ext {
-                private const val version = "1.1.2-rc01"
-                const val junit = "androidx.test.ext:junit-ktx:$version"
-            }
-
-            const val espressoCore = "androidx.test.espresso:espresso-core:3.2.0"
         }
     }
 }
