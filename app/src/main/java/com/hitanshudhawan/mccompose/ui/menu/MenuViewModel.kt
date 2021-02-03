@@ -13,7 +13,6 @@ class MenuViewModel : ViewModel() {
     val data: LiveData<Menu> = _data
 
     fun incrementMenuItemQuantity(menuItem: MenuItem) {
-        // TODO : Is it possible to have recomposition without copying and making a new instance of list item ?
         _data.value = _data.value!!.let { menu ->
             menu.copy(
                 menuItems = menu.menuItems.toMutableList().also { menuItems ->
@@ -24,7 +23,6 @@ class MenuViewModel : ViewModel() {
     }
 
     fun decrementMenuItemQuantity(menuItem: MenuItem) {
-        // TODO : Is it possible to have recomposition without copying and making a new instance of list item ?
         _data.value = _data.value!!.let { menu ->
             menu.copy(
                 menuItems = menu.menuItems.toMutableList().also { menuItems ->
@@ -33,5 +31,7 @@ class MenuViewModel : ViewModel() {
             )
         }
     }
+
+    // TODO : Is it possible to have recomposition without copying and making a new instance of list item ?
 
 }
