@@ -103,7 +103,7 @@ fun MenuScreen(
             }
 
             AnimatedVisibility(
-                visible = data.menuItems.any { it.quantity != 0 },
+                visible = data.menuItems.any { it.quantity > 0 },
                 enter = slideInVertically(
                     initialOffsetY = { it * 2 }
                 ),
@@ -116,7 +116,7 @@ fun MenuScreen(
             ) {
                 CartButton(
                     quantity = data.menuItems.sumOf { it.quantity },
-                    price = data.menuItems.sumOf { it.price },
+                    price = data.menuItems.filter { it.quantity > 0 }.sumOf { it.price },
                     onClick = {}
                 )
             }
