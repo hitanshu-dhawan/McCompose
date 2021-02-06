@@ -1,7 +1,12 @@
 # 🍔 McCompose
 A McDonald’s app built with [Jetpack Compose](https://developer.android.com/jetpack/compose).
 
-## :page_facing_up: Licence
+## 📱 Screenshots
+| Home Screen 🌕 | Menu Screen 🌕 | Home Screen 🌑 | Menu Screen 🌑 |
+| ---- | ---- | ---- | ---- |
+| ![](images/home-screen-light.png) | ![](images/menu-screen-light.png) | ![](images/home-screen-dark.png) | ![](images/menu-screen-dark.png) |
+
+## 📄 Licence
 ```
 Copyright (c) 2020 Hitanshu Dhawan
 
