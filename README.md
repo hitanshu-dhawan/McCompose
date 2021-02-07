@@ -27,7 +27,9 @@ A McDonald’s app built with [Jetpack Compose](https://developer.android.com/je
 | ![](images/dark-theme-ui-1.png) | ![](images/dark-theme-ui-2.png) | ![](images/dark-theme-ui-3.png) |
 
 ### ⮕ State Management
-
+|  |  |
+| ---- | ---- |
+| ![](images/menu-screen-state-management-1.gif) | ![](images/menu-screen-state-management-2.gif) |
 
 ## 📄 Licence
 ```
