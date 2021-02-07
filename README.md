@@ -11,9 +11,23 @@ A McDonald’s app built with [Jetpack Compose](https://developer.android.com/je
 ## ✨ Features
 
 ### ⮕ Animations
-### ⮕ Custom Layout
-### ⮕ Dark Theme
+|  |  |
+| ---- | ---- |
+| ![](images/quantity-toggle-animation-ide.gif) | ![](images/menu-screen-cart-button-animation.gif) |
+
+### ⮕ Custom Layouts
+|  |  |
+| ---- | ---- |
+| ![](images/spotlight-card-ui.png) | ![](images/menu-item-card-ui.png) |
+
+### ⮕ Light/Dark Theme
+|  |  |  |
+| ---- | ---- | ---- |
+| ![](images/light-theme-ui-1.png) | ![](images/light-theme-ui-2.png) | ![](images/light-theme-ui-3.png) |
+| ![](images/dark-theme-ui-1.png) | ![](images/dark-theme-ui-2.png) | ![](images/dark-theme-ui-3.png) |
+
 ### ⮕ State Management
+
 
 ## 📄 Licence
 ```
