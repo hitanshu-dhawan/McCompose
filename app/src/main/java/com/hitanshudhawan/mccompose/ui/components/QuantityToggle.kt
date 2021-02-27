@@ -11,9 +11,8 @@ import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.aspectRatio
 import androidx.compose.foundation.layout.fillMaxWidth
-import androidx.compose.foundation.layout.preferredSize
-import androidx.compose.foundation.layout.preferredWidth
-import androidx.compose.material.Icon
+import androidx.compose.foundation.layout.size
+import androidx.compose.foundation.layout.width
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Surface
 import androidx.compose.material.Text
@@ -78,7 +77,7 @@ fun QuantityToggle(
 
     Surface(
         modifier = Modifier
-            .preferredWidth(90.dp)
+            .width(90.dp)
             .aspectRatio(2.75f),
         shape = MaterialTheme.shapes.small,
         color = quantityToggleTransitionState[backgroundColor],
@@ -94,7 +93,7 @@ fun QuantityToggle(
         ) {
             Icon(
                 imageVector = Icons.Rounded.Done,
-                modifier = Modifier.preferredSize(quantityToggleTransitionState[iconSize])
+                modifier = Modifier.size(quantityToggleTransitionState[iconSize])
             )
             Text(
                 text = if (quantity == 0) "ADD" else "ADDED",

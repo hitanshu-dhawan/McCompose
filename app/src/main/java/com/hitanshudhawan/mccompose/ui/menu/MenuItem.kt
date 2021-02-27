@@ -8,10 +8,10 @@ import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.aspectRatio
 import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
-import androidx.compose.foundation.layout.preferredHeight
-import androidx.compose.foundation.layout.preferredSize
-import androidx.compose.foundation.layout.preferredWidth
+import androidx.compose.foundation.layout.size
+import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Surface
@@ -47,7 +47,7 @@ fun MenuItem(
         ) {
             Box(
                 modifier = Modifier
-                    .preferredSize(120.dp)
+                    .size(120.dp)
                     .clip(RoundedCornerShape(16.dp))
                     .background(MaterialTheme.colors.surface),
                 contentAlignment = Alignment.Center
@@ -60,7 +60,7 @@ fun MenuItem(
                         .aspectRatio(1.40f)
                 )
             }
-            Spacer(modifier = Modifier.preferredWidth(8.dp))
+            Spacer(modifier = Modifier.width(8.dp))
             Column {
                 Text(
                     text = menuItem.name,
@@ -72,7 +72,7 @@ fun MenuItem(
                     maxLines = 4,
                     overflow = TextOverflow.Ellipsis
                 )
-                Spacer(modifier = Modifier.preferredHeight(8.dp))
+                Spacer(modifier = Modifier.height(8.dp))
                 Row(
                     verticalAlignment = Alignment.CenterVertically
                 ) {

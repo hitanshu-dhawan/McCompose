@@ -7,9 +7,9 @@ import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.aspectRatio
 import androidx.compose.foundation.layout.fillMaxHeight
 import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
-import androidx.compose.foundation.layout.preferredHeight
-import androidx.compose.foundation.layout.preferredWidth
+import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.layout.wrapContentWidth
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Surface
@@ -35,7 +35,7 @@ fun SpotlightCard(
     val isLightTheme = MaterialTheme.colors.isLight
 
     Surface(
-        modifier = Modifier.preferredWidth(160.dp),
+        modifier = Modifier.width(160.dp),
         shape = MaterialTheme.shapes.medium,
         color = remember { getRandomBackgroundColor(isLightTheme) },
         contentColor = MaterialTheme.colors.onSurface
@@ -53,7 +53,7 @@ fun SpotlightCard(
                 overflow = TextOverflow.Ellipsis,
                 modifier = Modifier.padding(horizontal = 16.dp)
             )
-            Spacer(modifier = Modifier.preferredHeight(16.dp))
+            Spacer(modifier = Modifier.height(16.dp))
             Box(
                 modifier = Modifier
                     .fillMaxWidth()

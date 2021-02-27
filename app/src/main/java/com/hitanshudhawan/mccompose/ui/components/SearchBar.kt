@@ -5,8 +5,7 @@ import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
-import androidx.compose.foundation.layout.preferredWidth
-import androidx.compose.material.Icon
+import androidx.compose.foundation.layout.width
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Surface
 import androidx.compose.material.Text
@@ -38,7 +37,7 @@ fun SearchBar(
             verticalAlignment = Alignment.CenterVertically
         ) {
             Icon(Icons.Rounded.Search)
-            Spacer(modifier = Modifier.preferredWidth(8.dp))
+            Spacer(modifier = Modifier.width(8.dp))
             Text(
                 text = text,
                 style = MaterialTheme.typography.subtitle1.copy(fontWeight = FontWeight.Normal)

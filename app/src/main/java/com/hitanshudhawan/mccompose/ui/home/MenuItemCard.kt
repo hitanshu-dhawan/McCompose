@@ -1,13 +1,11 @@
 package com.hitanshudhawan.mccompose.ui.home
 
 import androidx.compose.foundation.clickable
-import androidx.compose.foundation.layout.ConstraintLayout
-import androidx.compose.foundation.layout.Dimension
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.aspectRatio
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
-import androidx.compose.foundation.layout.preferredHeight
+import androidx.compose.foundation.layout.height
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Surface
 import androidx.compose.material.Text
@@ -17,6 +15,8 @@ import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.tooling.preview.Preview
+import androidx.constraintlayout.compose.ConstraintLayout
+import androidx.constraintlayout.compose.Dimension
 import com.hitanshudhawan.mccompose.model.MenuItem
 import com.hitanshudhawan.mccompose.ui.components.NetworkImage
 import com.hitanshudhawan.mccompose.ui.theme.McComposeTheme
@@ -29,7 +29,7 @@ fun MenuItemCard(
     Surface(
         modifier = Modifier
             .fillMaxWidth()
-            .preferredHeight(160.dp),
+            .height(160.dp),
         color = MaterialTheme.colors.background,
         contentColor = MaterialTheme.colors.onSurface
     ) {

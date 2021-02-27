@@ -4,9 +4,9 @@ import androidx.compose.foundation.ScrollableColumn
 import androidx.compose.foundation.ScrollableRow
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
-import androidx.compose.foundation.layout.preferredHeight
-import androidx.compose.foundation.layout.preferredWidth
+import androidx.compose.foundation.layout.width
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Scaffold
 import androidx.compose.material.Text
@@ -38,7 +38,7 @@ fun HomeScreen(
         ScrollableColumn(
             modifier = Modifier.fillMaxSize()
         ) {
-            Spacer(modifier = Modifier.preferredHeight(16.dp))
+            Spacer(modifier = Modifier.height(16.dp))
 
             Text(
                 text = "Hi ${data.user.name}!",
@@ -46,28 +46,28 @@ fun HomeScreen(
                 modifier = Modifier.padding(horizontal = 16.dp)
             )
 
-            Spacer(modifier = Modifier.preferredHeight(16.dp))
+            Spacer(modifier = Modifier.height(16.dp))
 
             SearchBar(
                 text = "Find what you want...",
                 modifier = Modifier.padding(horizontal = 16.dp)
             )
 
-            Spacer(modifier = Modifier.preferredHeight(16.dp))
+            Spacer(modifier = Modifier.height(16.dp))
 
             ScrollableRow {
-                Spacer(modifier = Modifier.preferredWidth(16.dp))
+                Spacer(modifier = Modifier.width(16.dp))
                 data.categories.forEach { category ->
                     SpotlightCard(
                         title = category.name,
                         imageUrl = category.image,
                         onClick = onCategoryClick
                     )
-                    Spacer(modifier = Modifier.preferredWidth(16.dp))
+                    Spacer(modifier = Modifier.width(16.dp))
                 }
             }
 
-            Spacer(modifier = Modifier.preferredHeight(16.dp))
+            Spacer(modifier = Modifier.height(16.dp))
 
             Text(
                 text = "Popular",
@@ -80,10 +80,10 @@ fun HomeScreen(
                     menuItem = menuItem,
                     onClick = onMenuItemClick
                 )
-                Spacer(modifier = Modifier.preferredHeight(8.dp))
+                Spacer(modifier = Modifier.height(8.dp))
             }
 
-            Spacer(modifier = Modifier.preferredHeight(16.dp))
+            Spacer(modifier = Modifier.height(16.dp))
 
             Text(
                 text = "Recommended",
@@ -96,10 +96,10 @@ fun HomeScreen(
                     menuItem = menuItem,
                     onClick = onMenuItemClick
                 )
-                Spacer(modifier = Modifier.preferredHeight(8.dp))
+                Spacer(modifier = Modifier.height(8.dp))
             }
 
-            Spacer(modifier = Modifier.preferredHeight(16.dp))
+            Spacer(modifier = Modifier.height(16.dp))
         }
     }
 }

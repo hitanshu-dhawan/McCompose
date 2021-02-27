@@ -7,9 +7,9 @@ import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
+import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
-import androidx.compose.foundation.layout.preferredHeight
-import androidx.compose.foundation.layout.preferredWidth
+import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.layout.wrapContentWidth
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.ScrollableTabRow
@@ -115,9 +115,9 @@ private fun CategoryTab(
                 contentScale = ContentScale.Fit,
                 modifier = Modifier
                     .wrapContentWidth()
-                    .preferredHeight(32.dp)
+                    .height(32.dp)
             )
-            Spacer(modifier = Modifier.preferredWidth(8.dp))
+            Spacer(modifier = Modifier.width(8.dp))
             Text(
                 text = category.name,
                 style = MaterialTheme.typography.button
