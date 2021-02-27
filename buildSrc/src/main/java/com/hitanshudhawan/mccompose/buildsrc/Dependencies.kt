@@ -2,15 +2,17 @@ package com.hitanshudhawan.mccompose.buildsrc
 
 object Libs {
 
-    const val androidGradlePlugin = "com.android.tools.build:gradle:7.0.0-alpha02"
+    const val androidGradlePlugin = "com.android.tools.build:gradle:7.0.0-alpha08"
+
+    const val material = "com.google.android.material:material:1.2.0"
 
     object Accompanist {
-        private const val version = "0.4.1"
+        private const val version = "0.6.0"
         const val coil = "dev.chrisbanes.accompanist:accompanist-coil:$version"
     }
 
     object Kotlin {
-        private const val version = "1.4.21"
+        private const val version = "1.4.30"
         const val stdlib = "org.jetbrains.kotlin:kotlin-stdlib-jdk8:$version"
         const val gradlePlugin = "org.jetbrains.kotlin:kotlin-gradle-plugin:$version"
         const val extensions = "org.jetbrains.kotlin:kotlin-android-extensions:$version"
@@ -18,12 +20,18 @@ object Libs {
 
     object AndroidX {
 
-        const val material = "com.google.android.material:material:1.2.0"
+        object Activity {
+            private const val version = "1.3.0-alpha03"
+            const val activityCompose = "androidx.activity:activity-compose:$version"
+        }
 
-        const val navigation = "androidx.navigation:navigation-compose:1.0.0-alpha04"
+        object Navigation {
+            private const val version = "1.0.0-alpha08"
+            const val navigationCompose = "androidx.navigation:navigation-compose:$version"
+        }
 
         object Compose {
-            private const val version = "1.0.0-alpha09"
+            const val version = "1.0.0-beta01"
 
             const val foundation = "androidx.compose.foundation:foundation:$version"
             const val layout = "androidx.compose.foundation:foundation-layout:$version"
