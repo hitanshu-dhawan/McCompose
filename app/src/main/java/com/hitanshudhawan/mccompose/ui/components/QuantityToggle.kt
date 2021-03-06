@@ -12,6 +12,7 @@ import androidx.compose.foundation.layout.aspectRatio
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
+import androidx.compose.material.LocalContentColor
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Surface
 import androidx.compose.material.Text
@@ -28,49 +29,12 @@ import com.hitanshudhawan.mccompose.ui.theme.McComposeTheme
 
 private enum class QuantityToggleState { Zero, NonZero }
 
-//private val backgroundColor = ColorPropKey(label = "Background Color")
-//private val contentColor = ColorPropKey(label = "Content Color")
-//private val iconSize = DpPropKey(label = "Icon Size")
-
-//private val QuantityToggleLightThemeTransitionDefinition = transitionDefinition<QuantityToggleState> {
-//    state(QuantityToggleState.Zero) {
-//        this[backgroundColor] = Color.White
-//        this[contentColor] = Amber500
-//        this[iconSize] = 0.dp
-//    }
-//    state(QuantityToggleState.NonZero) {
-//        this[backgroundColor] = Amber500
-//        this[contentColor] = Color.White
-//        this[iconSize] = 18.dp
-//    }
-//}
-
-//private val QuantityToggleDarkThemeTransitionDefinition = transitionDefinition<QuantityToggleState> {
-//    state(QuantityToggleState.Zero) {
-//        this[backgroundColor] = Color.Black
-//        this[contentColor] = Amber700
-//        this[iconSize] = 0.dp
-//    }
-//    state(QuantityToggleState.NonZero) {
-//        this[backgroundColor] = Amber700
-//        this[contentColor] = Color.Black
-//        this[iconSize] = 18.dp
-//    }
-//}
-
 @Composable
 fun QuantityToggle(
     quantity: Int,
     onIncrementQuantity: () -> Unit,
     onDecrementQuantity: () -> Unit,
 ) {
-
-//    val isLightTheme = MaterialTheme.colors.isLight
-
-//    val quantityToggleTransitionState = transition(
-//        definition = if (isLightTheme) QuantityToggleLightThemeTransitionDefinition else QuantityToggleDarkThemeTransitionDefinition,
-//        toState = if (quantity == 0) QuantityToggleState.Zero else QuantityToggleState.NonZero
-//    )
 
     val transition = updateTransition(if (quantity == 0) QuantityToggleState.Zero else QuantityToggleState.NonZero)
 
@@ -83,7 +47,7 @@ fun QuantityToggle(
     val contentColor by transition.animateColor { state ->
         when (state) {
             QuantityToggleState.Zero -> MaterialTheme.colors.secondary
-            QuantityToggleState.NonZero -> MaterialTheme.colors.onPrimary
+            QuantityToggleState.NonZero -> LocalContentColor.current
         }
     }
     val iconSize by transition.animateDp { state ->
@@ -100,7 +64,6 @@ fun QuantityToggle(
         shape = MaterialTheme.shapes.small,
         color = backgroundColor,
         contentColor = contentColor,
-//        border = BorderStroke(2.dp, if (isLightTheme) Amber500 else Amber700)
         border = BorderStroke(2.dp, MaterialTheme.colors.secondary)
     ) {
         Row(

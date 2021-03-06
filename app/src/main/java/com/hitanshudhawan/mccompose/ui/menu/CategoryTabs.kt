@@ -10,6 +10,7 @@ import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.layout.wrapContentWidth
+import androidx.compose.material.LocalContentColor
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.ScrollableTabRow
 import androidx.compose.material.Surface
@@ -54,31 +55,6 @@ fun CategoryTabs(
 
 private enum class CategoryTabState { Selected, NotSelected }
 
-//private val backgroundColor = ColorPropKey(label = "Background Color")
-//private val contentColor = ColorPropKey(label = "Content Color")
-
-//private val CategoryTabLightThemeTransitionDefinition = transitionDefinition<CategoryTabState> {
-//    state(CategoryTabState.Selected) {
-//        this[backgroundColor] = Red500
-//        this[contentColor] = Color.White
-//    }
-//    state(CategoryTabState.NotSelected) {
-//        this[backgroundColor] = Color.White
-//        this[contentColor] = Red500
-//    }
-//}
-
-//private val CategoryTabDarkThemeTransitionDefinition = transitionDefinition<CategoryTabState> {
-//    state(CategoryTabState.Selected) {
-//        this[backgroundColor] = Red700
-//        this[contentColor] = Color.Black
-//    }
-//    state(CategoryTabState.NotSelected) {
-//        this[backgroundColor] = Color.Black
-//        this[contentColor] = Red700
-//    }
-//}
-
 @Composable
 private fun CategoryTab(
     category: Category,
@@ -86,13 +62,6 @@ private fun CategoryTab(
     onClick: () -> Unit,
     modifier: Modifier = Modifier
 ) {
-
-//    val isLightTheme = MaterialTheme.colors.isLight
-
-//    val categoryTabTransitionState = transition(
-//        definition = if (isLightTheme) CategoryTabLightThemeTransitionDefinition else CategoryTabDarkThemeTransitionDefinition,
-//        toState = if (selected) CategoryTabState.Selected else CategoryTabState.NotSelected
-//    )
 
     val transition = updateTransition(if (selected) CategoryTabState.Selected else CategoryTabState.NotSelected)
 
@@ -104,7 +73,7 @@ private fun CategoryTab(
     }
     val contentColor by transition.animateColor { state ->
         when (state) {
-            CategoryTabState.Selected -> MaterialTheme.colors.onPrimary
+            CategoryTabState.Selected -> LocalContentColor.current
             CategoryTabState.NotSelected -> MaterialTheme.colors.primary
         }
     }
@@ -114,7 +83,6 @@ private fun CategoryTab(
         shape = MaterialTheme.shapes.small,
         color = backgroundColor,
         contentColor = contentColor,
-//        border = BorderStroke(2.dp, if (isLightTheme) Red500 else Red700)
         border = BorderStroke(2.dp, MaterialTheme.colors.primary)
     ) {
         Row(
