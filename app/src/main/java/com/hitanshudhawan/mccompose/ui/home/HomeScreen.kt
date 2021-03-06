@@ -1,12 +1,13 @@
 package com.hitanshudhawan.mccompose.ui.home
 
-import androidx.compose.foundation.ScrollableColumn
-import androidx.compose.foundation.ScrollableRow
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.width
+import androidx.compose.foundation.lazy.LazyColumn
+import androidx.compose.foundation.lazy.LazyRow
+import androidx.compose.foundation.lazy.items
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Scaffold
 import androidx.compose.material.Text
@@ -35,47 +36,55 @@ fun HomeScreen(
             )
         }
     ) {
-        ScrollableColumn(
+        LazyColumn(
             modifier = Modifier.fillMaxSize()
         ) {
-            Spacer(modifier = Modifier.height(16.dp))
+            item { Spacer(modifier = Modifier.height(16.dp)) }
 
-            Text(
-                text = "Hi ${data.user.name}!",
-                style = MaterialTheme.typography.h3,
-                modifier = Modifier.padding(horizontal = 16.dp)
-            )
+            item {
+                Text(
+                    text = "Hi ${data.user.name}!",
+                    style = MaterialTheme.typography.h3,
+                    modifier = Modifier.padding(horizontal = 16.dp)
+                )
+            }
 
-            Spacer(modifier = Modifier.height(16.dp))
+            item { Spacer(modifier = Modifier.height(16.dp)) }
 
-            SearchBar(
-                text = "Find what you want...",
-                modifier = Modifier.padding(horizontal = 16.dp)
-            )
+            item {
+                SearchBar(
+                    text = "Find what you want...",
+                    modifier = Modifier.padding(horizontal = 16.dp)
+                )
+            }
 
-            Spacer(modifier = Modifier.height(16.dp))
+            item { Spacer(modifier = Modifier.height(16.dp)) }
 
-            ScrollableRow {
-                Spacer(modifier = Modifier.width(16.dp))
-                data.categories.forEach { category ->
-                    SpotlightCard(
-                        title = category.name,
-                        imageUrl = category.image,
-                        onClick = onCategoryClick
-                    )
-                    Spacer(modifier = Modifier.width(16.dp))
+            item {
+                LazyRow {
+                    item { Spacer(modifier = Modifier.width(16.dp)) }
+                    items(data.categories) { category ->
+                        SpotlightCard(
+                            title = category.name,
+                            imageUrl = category.image,
+                            onClick = onCategoryClick
+                        )
+                        Spacer(modifier = Modifier.width(16.dp))
+                    }
                 }
             }
 
-            Spacer(modifier = Modifier.height(16.dp))
+            item { Spacer(modifier = Modifier.height(16.dp)) }
 
-            Text(
-                text = "Popular",
-                style = MaterialTheme.typography.h4,
-                modifier = Modifier.padding(horizontal = 16.dp)
-            )
+            item {
+                Text(
+                    text = "Popular",
+                    style = MaterialTheme.typography.h4,
+                    modifier = Modifier.padding(horizontal = 16.dp)
+                )
+            }
 
-            data.popularMenuItems.forEach { menuItem ->
+            items(data.popularMenuItems) { menuItem ->
                 MenuItemCard(
                     menuItem = menuItem,
                     onClick = onMenuItemClick
@@ -83,15 +92,17 @@ fun HomeScreen(
                 Spacer(modifier = Modifier.height(8.dp))
             }
 
-            Spacer(modifier = Modifier.height(16.dp))
+            item { Spacer(modifier = Modifier.height(16.dp)) }
 
-            Text(
-                text = "Recommended",
-                style = MaterialTheme.typography.h4,
-                modifier = Modifier.padding(horizontal = 16.dp)
-            )
+            item {
+                Text(
+                    text = "Recommended",
+                    style = MaterialTheme.typography.h4,
+                    modifier = Modifier.padding(horizontal = 16.dp)
+                )
+            }
 
-            data.recommendedMenuItems.forEach { menuItem ->
+            items(data.recommendedMenuItems) { menuItem ->
                 MenuItemCard(
                     menuItem = menuItem,
                     onClick = onMenuItemClick
@@ -99,7 +110,7 @@ fun HomeScreen(
                 Spacer(modifier = Modifier.height(8.dp))
             }
 
-            Spacer(modifier = Modifier.height(16.dp))
+            item { Spacer(modifier = Modifier.height(16.dp)) }
         }
     }
 }

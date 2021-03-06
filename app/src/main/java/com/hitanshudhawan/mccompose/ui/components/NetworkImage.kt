@@ -15,8 +15,8 @@ fun NetworkImage(
     CoilImage(
         data = imageUrl,
         contentDescription = null,
-        contentScale = contentScale,
         modifier = modifier,
+        contentScale = contentScale,
         fadeIn = fadeIn,
     )
 }
