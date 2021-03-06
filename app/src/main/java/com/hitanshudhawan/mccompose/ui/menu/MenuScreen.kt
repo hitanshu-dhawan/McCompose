@@ -131,8 +131,9 @@ private fun Int.getCategory(menu: Menu): Category {
 }
 
 private fun Category.getIndex(menu: Menu): Int {
-    var index = menu.categories.indexOf(this)
-    for (i in 0 until index) {
+    var index = 0
+    for (i in 0 until menu.categories.indexOf(this)) {
+        index += 1
         index += menu.menuItems.filter { it.categoryId == menu.categories[i].id }.size
     }
     return index
