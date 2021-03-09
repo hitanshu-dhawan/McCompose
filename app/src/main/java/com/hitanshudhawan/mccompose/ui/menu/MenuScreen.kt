@@ -7,12 +7,12 @@ import androidx.compose.animation.slideOutVertically
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
+import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
-import androidx.compose.foundation.layout.preferredHeight
 import androidx.compose.foundation.lazy.LazyColumn
+import androidx.compose.foundation.lazy.itemsIndexed
 import androidx.compose.foundation.lazy.rememberLazyListState
 import androidx.compose.material.Divider
-import androidx.compose.material.Icon
 import androidx.compose.material.IconButton
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Scaffold
@@ -27,10 +27,11 @@ import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
-import androidx.compose.ui.viewinterop.viewModel
 import androidx.compose.ui.tooling.preview.Preview
+import androidx.lifecycle.viewmodel.compose.viewModel
 import com.hitanshudhawan.mccompose.model.Category
 import com.hitanshudhawan.mccompose.model.Menu
+import com.hitanshudhawan.mccompose.ui.components.Icon
 import com.hitanshudhawan.mccompose.ui.theme.McComposeTheme
 import kotlinx.coroutines.launch
 
@@ -68,7 +69,7 @@ fun MenuScreen(
                     categories = data.categories,
                     selectedCategory = lazyListState.firstVisibleItemIndex.getCategory(data),
                     onCategorySelected = { category ->
-                        coroutineScope.launch { lazyListState.snapToItemIndex(category.getIndex(data)) }
+                        coroutineScope.launch { lazyListState.scrollToItem(category.getIndex(data)) }
                     }
                 )
                 Divider()
@@ -96,7 +97,7 @@ fun MenuScreen(
                         }
                     }
                     item {
-                        Spacer(modifier = Modifier.preferredHeight(80.dp))
+                        Spacer(modifier = Modifier.height(80.dp))
                     }
                 }
 
@@ -130,8 +131,9 @@ private fun Int.getCategory(menu: Menu): Category {
 }
 
 private fun Category.getIndex(menu: Menu): Int {
-    var index = menu.categories.indexOf(this)
-    for (i in 0 until index) {
+    var index = 0
+    for (i in 0 until menu.categories.indexOf(this)) {
+        index += 1
         index += menu.menuItems.filter { it.categoryId == menu.categories[i].id }.size
     }
     return index

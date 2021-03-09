@@ -41,7 +41,6 @@ android {
     }
 
     composeOptions {
-        kotlinCompilerVersion Libs.Kotlin.version
         kotlinCompilerExtensionVersion Libs.AndroidX.Compose.version
     }
 
@@ -50,7 +49,7 @@ android {
 dependencies {
     implementation Libs.Kotlin.stdlib
 
-    implementation Libs.AndroidX.material
+    implementation Libs.material
 
     implementation Libs.AndroidX.Compose.foundation
     implementation Libs.AndroidX.Compose.layout
@@ -62,7 +61,11 @@ dependencies {
     implementation Libs.AndroidX.Compose.runtimeLiveData
     implementation Libs.AndroidX.Compose.tooling
 
-    implementation Libs.AndroidX.navigation
+    implementation Libs.AndroidX.Activity.activityCompose
+
+    implementation Libs.AndroidX.ConstraintLayout.constraintLayoutCompose
+
+    implementation Libs.AndroidX.Navigation.navigationCompose
 
     implementation Libs.Accompanist.coil
 }
