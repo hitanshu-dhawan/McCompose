@@ -33,7 +33,6 @@ android {
     kotlinOptions {
         jvmTarget = JavaVersion.VERSION_1_8
         allWarningsAsErrors = true
-        freeCompilerArgs += ["-Xallow-jvm-ir-dependencies"]
     }
 
     buildFeatures {

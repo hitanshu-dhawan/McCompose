@@ -1,9 +1,10 @@
 package com.hitanshudhawan.mccompose.ui.components
 
+import androidx.compose.foundation.Image
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.layout.ContentScale
-import dev.chrisbanes.accompanist.coil.CoilImage
+import com.google.accompanist.coil.rememberCoilPainter
 
 @Composable
 fun NetworkImage(
@@ -12,11 +13,13 @@ fun NetworkImage(
     contentScale: ContentScale = ContentScale.Fit,
     fadeIn: Boolean = true,
 ) {
-    CoilImage(
-        data = imageUrl,
+    Image(
+        painter = rememberCoilPainter(
+            imageUrl,
+            fadeIn = fadeIn
+        ),
         contentDescription = null,
         modifier = modifier,
         contentScale = contentScale,
-        fadeIn = fadeIn,
     )
 }
