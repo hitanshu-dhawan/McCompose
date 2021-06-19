@@ -22,6 +22,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.tooling.preview.Preview
+import com.hitanshudhawan.mccompose.R
 import com.hitanshudhawan.mccompose.data.CategoriesRepository
 import com.hitanshudhawan.mccompose.model.Category
 import com.hitanshudhawan.mccompose.ui.components.NetworkImage
@@ -96,7 +97,8 @@ private fun CategoryTab(
                 contentScale = ContentScale.Fit,
                 modifier = Modifier
                     .wrapContentWidth()
-                    .height(32.dp)
+                    .height(32.dp),
+                previewPlaceholder = R.drawable.category_burgers
             )
             Spacer(modifier = Modifier.width(8.dp))
             Text(

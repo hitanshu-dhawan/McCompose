@@ -17,6 +17,7 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.constraintlayout.compose.ConstraintLayout
 import androidx.constraintlayout.compose.Dimension
+import com.hitanshudhawan.mccompose.R
 import com.hitanshudhawan.mccompose.model.MenuItem
 import com.hitanshudhawan.mccompose.ui.components.NetworkImage
 import com.hitanshudhawan.mccompose.ui.theme.McComposeTheme
@@ -95,7 +96,8 @@ fun MenuItemCard(
                         end.linkTo(parent.end)
                         top.linkTo(parent.top)
                         bottom.linkTo(parent.bottom)
-                    }
+                    },
+                previewPlaceholder = R.drawable.menu_item_double_quarter_pounder_with_cheese_meal
             )
 
         }

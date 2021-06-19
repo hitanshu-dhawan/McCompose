@@ -1,5 +1,6 @@
 package com.hitanshudhawan.mccompose.ui.components
 
+import androidx.annotation.DrawableRes
 import androidx.compose.foundation.Image
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
@@ -12,11 +13,13 @@ fun NetworkImage(
     modifier: Modifier = Modifier,
     contentScale: ContentScale = ContentScale.Fit,
     fadeIn: Boolean = true,
+    @DrawableRes previewPlaceholder: Int = 0
 ) {
     Image(
         painter = rememberCoilPainter(
             imageUrl,
-            fadeIn = fadeIn
+            fadeIn = fadeIn,
+            previewPlaceholder = previewPlaceholder
         ),
         contentDescription = null,
         modifier = modifier,

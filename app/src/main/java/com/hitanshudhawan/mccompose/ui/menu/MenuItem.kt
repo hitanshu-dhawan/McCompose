@@ -24,6 +24,7 @@ import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.tooling.preview.Preview
+import com.hitanshudhawan.mccompose.R
 import com.hitanshudhawan.mccompose.model.MenuItem
 import com.hitanshudhawan.mccompose.ui.components.NetworkImage
 import com.hitanshudhawan.mccompose.ui.components.QuantityToggle
@@ -57,7 +58,8 @@ fun MenuItem(
                     contentScale = ContentScale.Crop,
                     modifier = Modifier
                         .fillMaxWidth()
-                        .aspectRatio(1.40f)
+                        .aspectRatio(1.40f),
+                    previewPlaceholder = R.drawable.menu_item_double_quarter_pounder_with_cheese_meal
                 )
             }
             Spacer(modifier = Modifier.width(8.dp))

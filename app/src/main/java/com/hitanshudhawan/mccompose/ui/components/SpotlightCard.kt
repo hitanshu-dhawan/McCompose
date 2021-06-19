@@ -23,6 +23,7 @@ import androidx.compose.ui.layout.Layout
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.tooling.preview.Preview
+import com.hitanshudhawan.mccompose.R
 import com.hitanshudhawan.mccompose.ui.theme.McComposeTheme
 
 @Composable
@@ -66,7 +67,8 @@ fun SpotlightCard(
                             contentScale = ContentScale.Fit,
                             modifier = Modifier
                                 .wrapContentWidth()
-                                .fillMaxHeight()
+                                .fillMaxHeight(),
+                            previewPlaceholder = R.drawable.category_happy_meals
                         )
                     }
                 ) { measurables, constraints ->
