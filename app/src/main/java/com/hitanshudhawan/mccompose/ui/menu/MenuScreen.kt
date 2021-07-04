@@ -38,7 +38,8 @@ import kotlinx.coroutines.launch
 @ExperimentalAnimationApi
 @Composable
 fun MenuScreen(
-    onBackClick: () -> Unit
+    onBackClick: () -> Unit,
+    onMenuItemClick: (Long) -> Unit
 ) {
 
     val viewModel: MenuViewModel = viewModel()
@@ -89,6 +90,7 @@ fun MenuScreen(
                         itemsIndexed(menuItems) { index, menuItem ->
                             MenuItem(
                                 menuItem = menuItem,
+                                onClick = { onMenuItemClick(menuItem.id) },
                                 onIncrementMenuItemQuantity = { viewModel.incrementMenuItemQuantity(menuItem) },
                                 onDecrementMenuItemQuantity = { viewModel.decrementMenuItemQuantity(menuItem) },
                             )
@@ -145,7 +147,8 @@ private fun Category.getIndex(menu: Menu): Int {
 private fun MenuScreenPreview() {
     McComposeTheme {
         MenuScreen(
-            onBackClick = {}
+            onBackClick = {},
+            onMenuItemClick = {}
         )
     }
 }
@@ -156,7 +159,8 @@ private fun MenuScreenPreview() {
 private fun MenuScreenDarkPreview() {
     McComposeTheme(lightTheme = false) {
         MenuScreen(
-            onBackClick = {}
+            onBackClick = {},
+            onMenuItemClick = {}
         )
     }
 }

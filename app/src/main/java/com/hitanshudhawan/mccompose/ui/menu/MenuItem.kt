@@ -33,6 +33,7 @@ import com.hitanshudhawan.mccompose.ui.theme.McComposeTheme
 @Composable
 fun MenuItem(
     menuItem: MenuItem,
+    onClick: () -> Unit,
     onIncrementMenuItemQuantity: () -> Unit,
     onDecrementMenuItemQuantity: () -> Unit,
 ) {
@@ -43,7 +44,7 @@ fun MenuItem(
     ) {
         Row(
             modifier = Modifier
-                .clickable(onClick = {})
+                .clickable(onClick = onClick)
                 .padding(16.dp)
         ) {
             Box(
@@ -107,6 +108,7 @@ private fun MenuCardPreview() {
                 price = 0.00,
                 categoryId = 0
             ),
+            onClick = {},
             onIncrementMenuItemQuantity = {},
             onDecrementMenuItemQuantity = {},
         )
@@ -126,6 +128,7 @@ private fun MenuItemDarkPreview() {
                 price = 0.00,
                 categoryId = 0
             ),
+            onClick = {},
             onIncrementMenuItemQuantity = {},
             onDecrementMenuItemQuantity = {},
         )
