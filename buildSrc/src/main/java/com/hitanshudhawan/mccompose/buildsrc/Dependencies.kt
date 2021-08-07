@@ -2,12 +2,12 @@ package com.hitanshudhawan.mccompose.buildsrc
 
 object Libs {
 
-    const val androidGradlePlugin = "com.android.tools.build:gradle:7.0.0-beta04"
+    const val androidGradlePlugin = "com.android.tools.build:gradle:7.0.0"
 
     const val material = "com.google.android.material:material:1.2.0"
 
     object Accompanist {
-        private const val version = "0.13.0"
+        private const val version = "0.15.0"
         const val coil = "com.google.accompanist:accompanist-coil:$version"
     }
 
@@ -21,22 +21,22 @@ object Libs {
     object AndroidX {
 
         object Activity {
-            private const val version = "1.3.0-rc01"
+            private const val version = "1.3.0"
             const val activityCompose = "androidx.activity:activity-compose:$version"
         }
 
         object ConstraintLayout {
-            private const val version = "1.0.0-alpha08"
+            private const val version = "1.0.0-beta01"
             const val constraintLayoutCompose = "androidx.constraintlayout:constraintlayout-compose:$version"
         }
 
         object Navigation {
-            private const val version = "2.4.0-alpha04"
+            private const val version = "2.4.0-alpha05"
             const val navigationCompose = "androidx.navigation:navigation-compose:$version"
         }
 
         object Compose {
-            const val version = "1.0.0-rc01"
+            const val version = "1.0.0"
 
             const val foundation = "androidx.compose.foundation:foundation:$version"
             const val layout = "androidx.compose.foundation:foundation-layout:$version"
