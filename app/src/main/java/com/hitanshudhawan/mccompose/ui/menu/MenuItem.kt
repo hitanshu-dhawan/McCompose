@@ -13,9 +13,9 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.shape.RoundedCornerShape
-import androidx.compose.material.MaterialTheme
-import androidx.compose.material.Surface
-import androidx.compose.material.Text
+import androidx.compose.material3.MaterialTheme
+import androidx.compose.material3.Surface
+import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
@@ -39,8 +39,8 @@ fun MenuItem(
 ) {
     Surface(
         modifier = Modifier.fillMaxWidth(),
-        color = MaterialTheme.colors.background,
-        contentColor = MaterialTheme.colors.onSurface
+        color = MaterialTheme.colorScheme.background,
+        contentColor = MaterialTheme.colorScheme.onSurface
     ) {
         Row(
             modifier = Modifier
@@ -51,7 +51,7 @@ fun MenuItem(
                 modifier = Modifier
                     .size(120.dp)
                     .clip(RoundedCornerShape(16.dp))
-                    .background(MaterialTheme.colors.surface),
+                    .background(MaterialTheme.colorScheme.surface),
                 contentAlignment = Alignment.Center
             ) {
                 NetworkImage(
@@ -67,11 +67,11 @@ fun MenuItem(
             Column {
                 Text(
                     text = menuItem.name,
-                    style = MaterialTheme.typography.subtitle1
+                    style = MaterialTheme.typography.titleSmall
                 )
                 Text(
                     text = menuItem.description,
-                    style = MaterialTheme.typography.body2,
+                    style = MaterialTheme.typography.bodyMedium,
                     maxLines = 4,
                     overflow = TextOverflow.Ellipsis
                 )
@@ -81,7 +81,7 @@ fun MenuItem(
                 ) {
                     Text(
                         text = "$" + "%.2f".format(menuItem.price),
-                        style = MaterialTheme.typography.subtitle2
+                        style = MaterialTheme.typography.titleSmall
                     )
                     Spacer(modifier = Modifier.weight(1f))
                     QuantityToggle(

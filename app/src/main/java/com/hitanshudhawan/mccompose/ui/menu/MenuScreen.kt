@@ -12,17 +12,11 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.itemsIndexed
 import androidx.compose.foundation.lazy.rememberLazyListState
-import androidx.compose.material.Divider
-import androidx.compose.material.IconButton
-import androidx.compose.material.MaterialTheme
-import androidx.compose.material.Scaffold
-import androidx.compose.material.Text
-import androidx.compose.material.TopAppBar
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.rounded.ArrowBack
+import androidx.compose.material3.*
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
-import androidx.compose.runtime.livedata.observeAsState
 import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
@@ -31,10 +25,11 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.lifecycle.viewmodel.compose.viewModel
 import com.hitanshudhawan.mccompose.model.Category
 import com.hitanshudhawan.mccompose.model.Menu
-import com.hitanshudhawan.mccompose.ui.components.Icon
+import com.hitanshudhawan.mccompose.ui.components.CustomIcon
 import com.hitanshudhawan.mccompose.ui.theme.McComposeTheme
 import kotlinx.coroutines.launch
 
+@OptIn(ExperimentalMaterial3Api::class)
 @ExperimentalAnimationApi
 @Composable
 fun MenuScreen(
@@ -44,7 +39,7 @@ fun MenuScreen(
 
     val viewModel: MenuViewModel = viewModel()
 
-    val data by viewModel.data.observeAsState(Menu(emptyList(), emptyList()))
+    val data by viewModel.data
 
     val lazyListState = rememberLazyListState()
 
@@ -56,13 +51,16 @@ fun MenuScreen(
                 title = { Text(text = "McDonald's Menu") },
                 navigationIcon = {
                     IconButton(onClick = onBackClick) {
-                        Icon(Icons.Rounded.ArrowBack)
+                        CustomIcon(Icons.Rounded.ArrowBack)
                     }
                 }
             )
         }
-    ) {
-        Box {
+    ) {paddingValues->
+        Box(
+            modifier =Modifier
+                .padding(paddingValues)
+        ) {
 
             Column {
 
@@ -82,7 +80,7 @@ fun MenuScreen(
                         item {
                             Text(
                                 text = category.name,
-                                style = MaterialTheme.typography.h4,
+                                style = MaterialTheme.typography.titleSmall,
                                 modifier = Modifier.padding(16.dp)
                             )
                         }
@@ -94,8 +92,10 @@ fun MenuScreen(
                                 onIncrementMenuItemQuantity = { viewModel.incrementMenuItemQuantity(menuItem) },
                                 onDecrementMenuItemQuantity = { viewModel.decrementMenuItemQuantity(menuItem) },
                             )
-                            if (index != menuItems.lastIndex)
+                            if (index != menuItems.lastIndex) {
                                 Divider(modifier = Modifier.padding(horizontal = 16.dp))
+                            }
+
                         }
                     }
                     item {

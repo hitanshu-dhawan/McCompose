@@ -1,11 +1,13 @@
 package com.hitanshudhawan.mccompose.ui.components
 
 import androidx.annotation.DrawableRes
-import androidx.compose.foundation.Image
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.layout.ContentScale
-import com.google.accompanist.coil.rememberCoilPainter
+import androidx.compose.ui.platform.LocalContext
+import coil.compose.AsyncImage
+import coil.request.ImageRequest
+
 
 @Composable
 fun NetworkImage(
@@ -15,12 +17,11 @@ fun NetworkImage(
     fadeIn: Boolean = true,
     @DrawableRes previewPlaceholder: Int = 0
 ) {
-    Image(
-        painter = rememberCoilPainter(
-            imageUrl,
-            fadeIn = fadeIn,
-            previewPlaceholder = previewPlaceholder
-        ),
+
+    AsyncImage(
+        model = ImageRequest.Builder(LocalContext.current)
+            .data(imageUrl)
+            .build(),
         contentDescription = null,
         modifier = modifier,
         contentScale = contentScale,

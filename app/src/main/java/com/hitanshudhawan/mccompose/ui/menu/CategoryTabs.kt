@@ -10,11 +10,7 @@ import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.layout.wrapContentWidth
-import androidx.compose.material.LocalContentColor
-import androidx.compose.material.MaterialTheme
-import androidx.compose.material.ScrollableTabRow
-import androidx.compose.material.Surface
-import androidx.compose.material.Text
+import androidx.compose.material3.*
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.Alignment
@@ -36,8 +32,8 @@ fun CategoryTabs(
 ) {
     ScrollableTabRow(
         selectedTabIndex = categories.indexOf(selectedCategory),
-        backgroundColor = MaterialTheme.colors.background,
-        contentColor = MaterialTheme.colors.onSurface,
+        containerColor = MaterialTheme.colorScheme.background,
+        contentColor = MaterialTheme.colorScheme.onSurface,
         edgePadding = 8.dp,
         indicator = {},
         divider = {}
@@ -64,18 +60,20 @@ private fun CategoryTab(
     modifier: Modifier = Modifier
 ) {
 
-    val transition = updateTransition(if (selected) CategoryTabState.Selected else CategoryTabState.NotSelected)
+    val transition = updateTransition(if (selected) CategoryTabState.Selected else CategoryTabState.NotSelected,
+        label = ""
+    )
 
-    val backgroundColor by transition.animateColor { state ->
+    val backgroundColor by transition.animateColor(label = "") { state ->
         when (state) {
-            CategoryTabState.Selected -> MaterialTheme.colors.primary
-            CategoryTabState.NotSelected -> MaterialTheme.colors.background
+            CategoryTabState.Selected -> MaterialTheme.colorScheme.primary
+            CategoryTabState.NotSelected -> MaterialTheme.colorScheme.background
         }
     }
-    val contentColor by transition.animateColor { state ->
+    val contentColor by transition.animateColor(label = "") { state ->
         when (state) {
             CategoryTabState.Selected -> LocalContentColor.current
-            CategoryTabState.NotSelected -> MaterialTheme.colors.primary
+            CategoryTabState.NotSelected -> MaterialTheme.colorScheme.primary
         }
     }
 
@@ -84,7 +82,7 @@ private fun CategoryTab(
         shape = MaterialTheme.shapes.small,
         color = backgroundColor,
         contentColor = contentColor,
-        border = BorderStroke(2.dp, MaterialTheme.colors.primary)
+        border = BorderStroke(2.dp, MaterialTheme.colorScheme.primary)
     ) {
         Row(
             modifier = Modifier
@@ -103,7 +101,7 @@ private fun CategoryTab(
             Spacer(modifier = Modifier.width(8.dp))
             Text(
                 text = category.name,
-                style = MaterialTheme.typography.button
+                style = MaterialTheme.typography.labelSmall
             )
         }
     }

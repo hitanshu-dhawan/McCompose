@@ -1,19 +1,20 @@
 package com.hitanshudhawan.mccompose.ui.theme
 
-import androidx.compose.material.MaterialTheme
-import androidx.compose.material.darkColors
-import androidx.compose.material.lightColors
+import androidx.compose.foundation.isSystemInDarkTheme
+import androidx.compose.material3.MaterialTheme
+import androidx.compose.material3.darkColorScheme
+import androidx.compose.material3.lightColorScheme
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.graphics.Color
 
-private val LightThemeColors = lightColors(
+private val LightThemeColors = lightColorScheme(
     primary = Red500,
     secondary = Amber500,
     background = Color.White,
     surface = Gray100
 )
 
-private val DarkThemeColors = darkColors(
+private val DarkThemeColors = darkColorScheme(
     primary = Red700,
     secondary = Amber700,
     background = Color.Black,
@@ -22,11 +23,11 @@ private val DarkThemeColors = darkColors(
 
 @Composable
 fun McComposeTheme(
-    lightTheme: Boolean = true,
+    lightTheme: Boolean = !isSystemInDarkTheme(),
     content: @Composable () -> Unit
 ) {
     MaterialTheme(
-        colors = if (lightTheme) LightThemeColors else DarkThemeColors,
+        colorScheme = if (lightTheme) LightThemeColors else DarkThemeColors,
         typography = typography,
         shapes = shapes,
         content = content

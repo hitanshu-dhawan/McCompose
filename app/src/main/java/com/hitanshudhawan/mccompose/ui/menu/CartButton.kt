@@ -7,17 +7,17 @@ import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
-import androidx.compose.material.MaterialTheme
-import androidx.compose.material.Surface
-import androidx.compose.material.Text
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.rounded.ChevronRight
+import androidx.compose.material3.MaterialTheme
+import androidx.compose.material3.Surface
+import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.tooling.preview.Preview
-import com.hitanshudhawan.mccompose.ui.components.Icon
+import com.hitanshudhawan.mccompose.ui.components.CustomIcon
 import com.hitanshudhawan.mccompose.ui.theme.McComposeTheme
 
 @Composable
@@ -30,9 +30,9 @@ fun CartButton(
     Surface(
         modifier = modifier.fillMaxWidth(),
         shape = MaterialTheme.shapes.small,
-        color = MaterialTheme.colors.secondary,
-        contentColor = MaterialTheme.colors.onSurface,
-        elevation = 16.dp
+        color = MaterialTheme.colorScheme.secondary,
+        contentColor = MaterialTheme.colorScheme.onSurface,
+        tonalElevation = 16.dp
     ) {
         Row(
             modifier = Modifier
@@ -46,20 +46,20 @@ fun CartButton(
                         "$quantity item"
                     else
                         "$quantity items",
-                    style = MaterialTheme.typography.button
+                    style = MaterialTheme.typography.labelSmall
                 )
                 Spacer(modifier = Modifier.height(2.dp))
                 Text(
                     text = "$" + "%.2f".format(price),
-                    style = MaterialTheme.typography.button
+                    style = MaterialTheme.typography.labelSmall
                 )
             }
             Spacer(modifier = Modifier.weight(1f))
             Text(
                 text = "VIEW CART",
-                style = MaterialTheme.typography.button
+                style = MaterialTheme.typography.labelSmall
             )
-            Icon(Icons.Rounded.ChevronRight)
+            CustomIcon(Icons.Rounded.ChevronRight)
         }
     }
 }
