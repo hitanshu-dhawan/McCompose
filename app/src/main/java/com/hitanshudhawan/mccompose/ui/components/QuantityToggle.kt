@@ -12,12 +12,12 @@ import androidx.compose.foundation.layout.aspectRatio
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
-import androidx.compose.material.LocalContentColor
-import androidx.compose.material.MaterialTheme
-import androidx.compose.material.Surface
-import androidx.compose.material.Text
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.rounded.Done
+import androidx.compose.material3.LocalContentColor
+import androidx.compose.material3.MaterialTheme
+import androidx.compose.material3.Surface
+import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.Alignment
@@ -36,21 +36,23 @@ fun QuantityToggle(
     onDecrementQuantity: () -> Unit,
 ) {
 
-    val transition = updateTransition(if (quantity == 0) QuantityToggleState.Zero else QuantityToggleState.NonZero)
+    val transition = updateTransition(if (quantity == 0) QuantityToggleState.Zero else QuantityToggleState.NonZero,
+        label = ""
+    )
 
-    val backgroundColor by transition.animateColor { state ->
+    val backgroundColor by transition.animateColor(label = "") { state ->
         when (state) {
-            QuantityToggleState.Zero -> MaterialTheme.colors.background
-            QuantityToggleState.NonZero -> MaterialTheme.colors.secondary
+            QuantityToggleState.Zero -> MaterialTheme.colorScheme.background
+            QuantityToggleState.NonZero -> MaterialTheme.colorScheme.secondary
         }
     }
-    val contentColor by transition.animateColor { state ->
+    val contentColor by transition.animateColor(label = "") { state ->
         when (state) {
-            QuantityToggleState.Zero -> MaterialTheme.colors.secondary
+            QuantityToggleState.Zero -> MaterialTheme.colorScheme.secondary
             QuantityToggleState.NonZero -> LocalContentColor.current
         }
     }
-    val iconSize by transition.animateDp { state ->
+    val iconSize by transition.animateDp(label = "") { state ->
         when (state) {
             QuantityToggleState.Zero -> 0.dp
             QuantityToggleState.NonZero -> 18.dp
@@ -64,7 +66,7 @@ fun QuantityToggle(
         shape = MaterialTheme.shapes.small,
         color = backgroundColor,
         contentColor = contentColor,
-        border = BorderStroke(2.dp, MaterialTheme.colors.secondary)
+        border = BorderStroke(2.dp, MaterialTheme.colorScheme.secondary)
     ) {
         Row(
             modifier = Modifier
@@ -73,13 +75,13 @@ fun QuantityToggle(
             horizontalArrangement = Arrangement.Center,
             verticalAlignment = Alignment.CenterVertically
         ) {
-            Icon(
+            CustomIcon(
                 imageVector = Icons.Rounded.Done,
                 modifier = Modifier.size(iconSize)
             )
             Text(
                 text = if (quantity == 0) "ADD" else "ADDED",
-                style = MaterialTheme.typography.button,
+                style = MaterialTheme.typography.labelSmall,
                 modifier = Modifier.animateContentSize()
             )
         }

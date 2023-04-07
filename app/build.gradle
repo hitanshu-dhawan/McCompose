@@ -1,21 +1,27 @@
-import com.hitanshudhawan.mccompose.buildsrc.Libs
 
 plugins {
     id 'com.android.application'
-    id 'kotlin-android'
+    id 'org.jetbrains.kotlin.android'
+    id 'kotlin-kapt'
+    id 'dagger.hilt.android.plugin'
+
+
 }
 
 android {
-    compileSdkVersion 30
+    compileSdkVersion 33
 
     defaultConfig {
         applicationId "com.hitanshudhawan.mccompose"
-        minSdkVersion 21
-        targetSdkVersion 30
+        minSdkVersion 28
+        targetSdkVersion 33
         versionCode 1
         versionName "1.0.0"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        vectorDrawables {
+            useSupportLibrary true
+        }
     }
 
     buildTypes {
@@ -26,12 +32,12 @@ android {
     }
 
     compileOptions {
-        sourceCompatibility JavaVersion.VERSION_11
-        targetCompatibility JavaVersion.VERSION_11
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
     }
 
     kotlinOptions {
-        jvmTarget = JavaVersion.VERSION_11
+        jvmTarget = '1.8'
     }
 
     buildFeatures {
@@ -39,31 +45,82 @@ android {
     }
 
     composeOptions {
-        kotlinCompilerExtensionVersion Libs.AndroidX.Compose.version
+        kotlinCompilerExtensionVersion compose_version
+    }
+    packagingOptions {
+        resources {
+            excludes += '/META-INF/{AL2.0,LGPL2.1}'
+        }
     }
 
 }
 
 dependencies {
-    implementation Libs.Kotlin.stdlib
+    implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
+    implementation 'androidx.appcompat:appcompat:1.6.1'
+    def composeBom = platform('androidx.compose:compose-bom:2023.01.00')
+    implementation composeBom
+    androidTestImplementation composeBom
 
-    implementation Libs.material
+    implementation 'androidx.core:core-ktx:1.10.0'
+    implementation 'androidx.lifecycle:lifecycle-runtime-ktx:2.6.1'
+    implementation 'androidx.activity:activity-compose:1.7.0'
+    implementation "androidx.compose.ui:ui"
+    implementation "androidx.compose.ui:ui-tooling-preview"
+    implementation 'androidx.compose.material3:material3:1.1.0-beta02'
+    testImplementation 'junit:junit:4.13.2'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.5'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.1'
+    androidTestImplementation "androidx.compose.ui:ui-test-junit4"
+    debugImplementation "androidx.compose.ui:ui-tooling:"
+    debugImplementation "androidx.compose.ui:ui-test-manifest"
 
-    implementation Libs.AndroidX.Compose.foundation
-    implementation Libs.AndroidX.Compose.layout
-    implementation Libs.AndroidX.Compose.ui
-    implementation Libs.AndroidX.Compose.material
-    implementation Libs.AndroidX.Compose.materialIconsExtended
-    implementation Libs.AndroidX.Compose.animation
-    implementation Libs.AndroidX.Compose.runtime
-    implementation Libs.AndroidX.Compose.runtimeLiveData
-    implementation Libs.AndroidX.Compose.tooling
+    // Compose Navigation
+    implementation "androidx.navigation:navigation-compose:2.5.3"
 
-    implementation Libs.AndroidX.Activity.activityCompose
+    implementation "androidx.hilt:hilt-navigation-compose:1.1.0-alpha01"
 
-    implementation Libs.AndroidX.ConstraintLayout.constraintLayoutCompose
+    //Dagger - Hilt
+    implementation "com.google.dagger:hilt-android:2.44.2"
+    kapt "com.google.dagger:hilt-android-compiler:2.44.2"
+    kapt "androidx.hilt:hilt-compiler:1.0.0"
 
-    implementation Libs.AndroidX.Navigation.navigationCompose
 
-    implementation Libs.Accompanist.coil
+
+    // Coroutines
+    implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-core:1.6.4'
+    implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-android:1.6.4'
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-play-services:1.6.4"
+
+
+
+    // Coil
+    implementation("io.coil-kt:coil-compose:2.2.2")
+
+    // Pager - Accompanist
+    implementation "com.google.accompanist:accompanist-pager:0.27.0"
+
+
+
+// icons
+    implementation 'androidx.compose.material:material-icons-extended'
+
+
+
+    // Retrofit
+    implementation 'com.squareup.retrofit2:retrofit:2.9.0'
+
+    // OkHttp
+    implementation("com.squareup.okhttp3:okhttp:5.0.0-alpha.2")
+
+    // JSON Converter
+    implementation 'com.squareup.retrofit2:converter-gson:2.9.0'
+
+
+
+}
+
+// Allow references to generated code
+kapt {
+    correctErrorTypes = true
 }

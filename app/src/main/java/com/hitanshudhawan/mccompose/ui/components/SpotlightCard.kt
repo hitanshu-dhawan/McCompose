@@ -1,6 +1,7 @@
 package com.hitanshudhawan.mccompose.ui.components
 
 import androidx.compose.foundation.clickable
+import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
@@ -11,9 +12,9 @@ import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.layout.wrapContentWidth
-import androidx.compose.material.MaterialTheme
-import androidx.compose.material.Surface
-import androidx.compose.material.Text
+import androidx.compose.material3.MaterialTheme
+import androidx.compose.material3.Surface
+import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.remember
 import androidx.compose.ui.Modifier
@@ -33,13 +34,13 @@ fun SpotlightCard(
     onClick: () -> Unit
 ) {
 
-    val isLightTheme = MaterialTheme.colors.isLight
+    val isLightTheme = !isSystemInDarkTheme()
 
     Surface(
         modifier = Modifier.width(160.dp),
         shape = MaterialTheme.shapes.medium,
         color = remember { getRandomBackgroundColor(isLightTheme) },
-        contentColor = MaterialTheme.colors.onSurface
+        contentColor = MaterialTheme.colorScheme.onSurface
     ) {
         Column(
             modifier = Modifier
@@ -49,7 +50,7 @@ fun SpotlightCard(
         ) {
             Text(
                 text = title,
-                style = MaterialTheme.typography.h6,
+                style = MaterialTheme.typography.bodySmall,
                 maxLines = 1,
                 overflow = TextOverflow.Ellipsis,
                 modifier = Modifier.padding(horizontal = 16.dp)
